@@ -13,6 +13,9 @@ Elevene kan
 
 **Personvern:** Ingen innlogging, ingen sporing, ingen informasjonskapsler. Ingenting hentes fra andre nettsteder når siden åpnes. Bare innstillingene (språk, skrift osv.) lagres i elevens egen nettleser.
 
+<img width="1347" height="745" alt="image" src="https://github.com/user-attachments/assets/7a47dce2-db44-4655-af9b-15dd1762dcfc" />
+
+
 ---
 
 ## Innhold
