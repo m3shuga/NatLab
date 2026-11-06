@@ -76,6 +76,7 @@ NatLab.ui = {
   explainOwnWords: { nb: 'Forklar med egne ord', en: 'Explain in your own words' },
   discuss: { nb: 'Diskuter med en venn', en: 'Discuss with a partner' },
   goDeeper: { nb: 'Gå dypere', en: 'Go deeper' },
+  deeperNote: { nb: 'fordypning', en: 'extension' },
   correct: { nb: 'Riktig!', en: 'Correct!' },
   notQuite: { nb: 'Ikke helt.', en: 'Not quite.' },
   readAloud: { nb: 'Les opp', en: 'Read aloud' },

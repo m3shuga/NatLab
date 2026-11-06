@@ -184,14 +184,19 @@
   P.activity = function (tid, kind, arg) {
     const T = topicOf(tid);
     let title = '', sub = '', mount;
-    const levelBar = function (redraw) {
+    const levelBar = function (redraw, diagramId) {
       return function (main) {
-        const host = N.$('#act-body', main);
+        const def = N.diagrams[diagramId];
+        if (!def.parts.some(function (pt) { return N.partLevel(def, pt) === 'deeper'; })) {
+          N.$('#act-level', main).remove();
+          redraw(N.$('#act-body', main), 'basic');
+          return;
+        }
         let level = N.settings.level;
         const bar = N.$('#act-level', main);
         const draw = function () {
           bar.innerHTML = '<span class="label" style="font-size:.85rem;color:var(--muted);font-weight:700">' + N.u('levelLabel') + '</span><div class="seg" role="group"><button type="button" data-lv="basic" aria-pressed="' + (level === 'basic') + '">' + N.u('levelBasic') + '</button><button type="button" data-lv="deeper" aria-pressed="' + (level === 'deeper') + '">' + N.u('levelDeeper') + '</button></div>';
-          const fresh = host.cloneNode(false); host.parentNode.replaceChild(fresh, host);
+          const cur = N.$('#act-body', main); const fresh = cur.cloneNode(false); cur.parentNode.replaceChild(fresh, cur);
           redraw(fresh, level);
         };
         bar.addEventListener('click', function (e) { const b = e.target.closest('[data-lv]'); if (b) { level = b.dataset.lv; draw(); } });
@@ -200,10 +205,10 @@
     };
     if (kind === 'merk' && N.diagrams[arg]) {
       title = N.u('labelTitle'); sub = modelName(arg);
-      mount = levelBar(function (el, level) { N.activity.label(el, { diagram: arg, level: level }); });
+      mount = levelBar(function (el, level) { N.activity.label(el, { diagram: arg, level: level }); }, arg);
     } else if (kind === 'koble' && N.diagrams[arg]) {
       title = N.u('matchTitle'); sub = modelName(arg);
-      mount = levelBar(function (el, level) { N.activity.match(el, { diagram: arg, level: level }); });
+      mount = levelBar(function (el, level) { N.activity.match(el, { diagram: arg, level: level }); }, arg);
     } else if (kind === 'sorter') {
       title = N.u('sortTitle');
       mount = function (main) { N.$('#act-level', main).remove(); N.activity.sort(N.$('#act-body', main), { topic: tid, rows: T.practice.sort.rows, cols: T.practice.sort.cols }); };
@@ -253,7 +258,7 @@
             n++;
             return '<li><span class="gnum">' + n + '</span><span><span data-say>' + N.fmt(it.text) + '</span>' +
               (it.link ? ' <a class="glink" href="' + it.link + '">' + N.u('goToPage') + ' →</a>' : '') +
-              (it.level === 'deeper' ? ' <span class="badge deeper">' + N.u('levelDeeper') + '</span>' : '') + '</span></li>';
+              (it.level === 'deeper' ? ' <span class="level-note">(' + N.u('deeperNote') + ')</span>' : '') + '</span></li>';
           }).join('') + '</ol></div>';
         }).join('') +
         (g.official ? '<details class="deeper"><summary>' + N.icon('book') + N.u('officialAims') + '</summary><div class="deeper-body"><div class="official"><ul>' +

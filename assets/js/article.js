@@ -41,7 +41,7 @@
     if (b.p) return '<p data-say>' + N.fmt(b.p) + c.cite(b.src) + '</p>';
     if (b.h3) return '<h3 data-say>' + N.esc(N.t(b.h3)) + '</h3>';
     if (b.list) return '<ul>' + b.list.map(function (x) { return '<li data-say>' + N.fmt(x) + '</li>'; }).join('') + '</ul>' + (b.src ? '<p style="margin-top:-.6rem">' + c.cite(b.src) + '</p>' : '');
-    if (b.keypoints) return '<div class="keypoints"><h3>' + N.u('keyPoints') + '</h3><ul>' + b.keypoints.map(function (x) { return '<li data-say>' + N.fmt(x) + '</li>'; }).join('') + '</ul></div>';
+    if (b.keypoints) return '<div class="keypoints"><h3>' + N.u('keyPoints') + '</h3><ul>' + b.keypoints.map(function (x) { return '<li><span data-say>' + N.fmt(x) + '</span></li>'; }).join('') + '</ul></div>';
     if (b.fact) return '<div class="callout fact">' + coTitle('eye', N.u('didYouKnow')) + '<p data-say>' + N.fmt(b.fact) + c.cite(b.src) + '</p></div>';
     if (b.myth) return '<div class="callout misconception">' + coTitle('cross', N.u('misconception')) +
       '<p data-say><span class="myth">' + N.fmt(b.myth) + '</span></p><p data-say>' + N.fmt(b.truth) + c.cite(b.src) + '</p></div>';
@@ -65,7 +65,7 @@
     }
     if (b.deeper) {
       const open = N.settings.level === 'deeper' ? ' open' : '';
-      return '<details class="deeper"' + open + '><summary><span class="badge deeper">' + N.u('goDeeper') + '</span>' + N.esc(N.t(b.deeper.title)) + '</summary><div class="deeper-body">' +
+      return '<details class="deeper"' + open + '><summary><span class="sum-inner"><span class="badge deeper">' + N.u('goDeeper') + '</span><span class="sum-title">' + N.esc(N.t(b.deeper.title)) + '</span><span class="sum-sign" aria-hidden="true"></span></span></summary><div class="deeper-body">' +
         b.deeper.blocks.map(function (x) { return block(c, x); }).join('') + '</div></details>';
     }
     if (b.steps) {

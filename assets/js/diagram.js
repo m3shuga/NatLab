@@ -113,7 +113,7 @@
       '<button type="button" class="read-btn" data-read="panel">' + N.icon('speaker') + N.u('readAloud') + '</button>' +
       (alt ? '<p class="alt-name"><span class="sr-only">' + N.esc(N.settings.lang === 'en' ? 'Norsk:' : 'Engelsk:') + '</span>' + N.esc(alt) + '</p>' : '') +
       '</div>' +
-      (s.level === 'deeper' ? '<span class="badge deeper">' + N.u('levelDeeper') + '</span>' : '') +
+      (s.level === 'deeper' ? '<p class="level-note">' + N.u('deeperNote') + '</p>' : '') +
       '<dl>' +
       '<div><dt>' + N.u('whatIsIt') + '</dt><dd data-say>' + N.fmt(s.what) + '</dd></div>' +
       '<div><dt>' + N.u('whatDoes') + '</dt><dd data-say>' + N.fmt(s.does) + '</dd></div>' +
@@ -154,10 +154,11 @@
           return '<button type="button" data-model="' + d + '" aria-pressed="' + (d === state.diagram) + '">' + N.esc(N.t(cfg.modelNames[d])) + '</button>';
         }).join('') + '</div>';
       }
+      const anyDeeper = ids.some(function (d) { return N.diagrams[d].parts.some(function (pt) { return N.partLevel(N.diagrams[d], pt) === 'deeper'; }); });
       const toolbar = '<div class="ex-toolbar">' +
-        '<span class="label" id="lvl-label">' + N.u('levelLabel') + '</span>' +
+        (anyDeeper ? '<span class="label" id="lvl-label">' + N.u('levelLabel') + '</span>' +
         '<div class="seg" role="group" aria-labelledby="lvl-label"><button type="button" data-level="basic" aria-pressed="' + (state.level === 'basic') + '">' + N.u('levelBasic') + '</button>' +
-        '<button type="button" data-level="deeper" aria-pressed="' + (state.level === 'deeper') + '">' + N.u('levelDeeper') + '</button></div>' +
+        '<button type="button" data-level="deeper" aria-pressed="' + (state.level === 'deeper') + '">' + N.u('levelDeeper') + '</button></div>' : '') +
         (two ? '' : '<button type="button" class="btn btn-sm" data-pins aria-pressed="' + state.pins + '">' + N.icon('target') + N.u('showNumbers') + '</button>') +
         (cfg.compareWith ? '<button type="button" class="btn btn-sm" data-compare aria-pressed="' + state.compare + '">' + N.icon('compare') + (state.compare ? N.u('compareOff') : N.t(cfg.compareLabel)) + '</button>' : '') +
         '</div>';
