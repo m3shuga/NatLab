@@ -1,0 +1,25 @@
+const { chromium } = require('playwright');
+(async () => {
+  const b = await chromium.launch(); const errs = [];
+  const mk = async (w, h, s) => { const c = await b.newContext({ viewport: { width: w, height: h }, deviceScaleFactor: 1 }); await c.addInitScript((x) => localStorage.setItem('natlab.innstillinger.v1', JSON.stringify(x)), s || {}); const p = await c.newPage(); p.on('pageerror', e => errs.push(e.message)); return p; };
+  let p = await mk(1440, 1000, { level: 'deeper' });
+  const go = async (r) => { await p.goto('http://127.0.0.1:8765/#' + r); await p.waitForTimeout(350); };
+  await go('okologi-okosystemet'); await (await p.$('.slide')).screenshot({ path: 'skjermbilder/scene-skog.png' });
+  await p.click('[data-model="hav"]'); await p.waitForTimeout(200); await (await p.$('.slide')).screenshot({ path: 'skjermbilder/scene-hav.png' });
+  await go('okologi-naeringsnett'); await (await p.$('.slide')).screenshot({ path: 'skjermbilder/web-skog.png' });
+  await p.click('.fw-node[data-node="hare"]'); await p.waitForTimeout(200); await p.screenshot({ path: 'skjermbilder/web-select.png' });
+  await p.click('[data-web="hav"]'); await p.waitForTimeout(200); await (await p.$('.slide')).screenshot({ path: 'skjermbilder/web-hav.png' });
+  await p.click('[data-mode="hvis"]'); await p.click('[data-scn="krabbe"]'); await p.waitForTimeout(200); await p.screenshot({ path: 'skjermbilder/web-whatif.png' });
+  await p.click('[data-web="skog"]'); await p.click('[data-mode="hvis"]'); await p.click('[data-scn="ulv"]'); await p.waitForTimeout(200); await p.screenshot({ path: 'skjermbilder/web-whatif-ulv.png' });
+  await p.click('[data-mode="pyramide"]'); await p.waitForTimeout(200); await p.screenshot({ path: 'skjermbilder/pyramid.png' });
+  await go('okologi'); await p.screenshot({ path: 'skjermbilder/topic.png', fullPage: true });
+  await go('okologi-tilpasning-les'); await p.evaluate(() => document.querySelector('.adapt-grid').scrollIntoView()); await p.screenshot({ path: 'skjermbilder/adapt.png' });
+  await go('okologi-ov-nett-skog'); await p.click('.fw-node[data-node="hare"]'); await p.click('.fw-node[data-node="gaupe"]'); await p.click('.fw-node[data-node="skogmus"]'); await p.click('.fw-node[data-node="gaupe"]'); await p.click('[data-act="check"]'); await p.waitForTimeout(200); await p.screenshot({ path: 'skjermbilder/build.png' });
+  await go('okologi-ov-grupper-biotisk'); await p.click('[data-item="0"]'); await p.click('[data-bin="a"]'); await p.click('[data-item="8"]'); await p.click('[data-bin="a"]'); await p.click('[data-act="check"]'); await p.screenshot({ path: 'skjermbilder/bins.png' });
+  await go('okologi-feltarbeid'); await p.evaluate(() => document.querySelector('.field-sheet').scrollIntoView()); await p.screenshot({ path: 'skjermbilder/field.png' });
+  await go('okologi-energi-les'); await p.evaluate(() => document.querySelector('#s-regn').scrollIntoView()); await p.screenshot({ path: 'skjermbilder/energy.png' });
+  p = await mk(390, 844, { theme: 'dark' });
+  await go('okologi-naeringsnett'); await p.click('.fw-node[data-node="rodrev"]'); await p.waitForTimeout(500); await p.screenshot({ path: 'skjermbilder/m-dark-web.png', fullPage: true });
+  await go('okologi-okosystemet'); await p.screenshot({ path: 'skjermbilder/m-dark-scene.png' });
+  console.log(errs.length ? errs.join('\n') : 'no errors'); await b.close();
+})();
