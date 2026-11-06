@@ -219,5 +219,34 @@ NatLab.ui = {
   footerMade: { nb: 'Laget for naturfag 8.–10. trinn · Bygger på LK20', en: 'Made for science, Years 8–10 · Based on LK20' },
   notFound: { nb: 'Fant ikke siden', en: 'Page not found' },
   notFoundText: { nb: 'Lenken kan være feil, eller siden er flyttet.', en: 'The link may be wrong, or the page has moved.' },
-  devMissing: { nb: 'Utviklermodus: tekster mangler oversettelse', en: 'Developer mode: texts missing translation' }
+  devMissing: { nb: 'Utviklermodus: tekster mangler oversettelse', en: 'Developer mode: texts missing translation' },
+
+  /* Næringsnett */
+  fwReset: { nb: 'Tilbakestill', en: 'Reset' },
+  fwPick: { nb: 'Trykk på en art i nettet', en: 'Tap a species in the web' },
+  fwEats: { nb: 'Spiser (får energi fra)', en: 'Eats (gets energy from)' },
+  fwEatenBy: { nb: 'Blir spist av', en: 'Is eaten by' },
+  fwWhatIf: { nb: 'Hva skjer hvis …?', en: 'What happens if …?' },
+  fwRemoved: { nb: 'Fjernet', en: 'Removed' },
+  fwStartEnergy: { nb: 'Energi som produsentene binder', en: 'Energy captured by the producers' },
+  fwPassOn: { nb: 'Andel som går videre til neste nivå', en: 'Share passed on to the next level' },
+  fwPassOnHelp: { nb: 'Vanligvis regner vi med omtrent 10 %.', en: 'We usually assume about 10 %.' },
+  fwCalc: { nb: 'Slik regner du', en: 'How to calculate' },
+
+  /* Flere øvingstyper */
+  binsTitle: { nb: 'Sorter i grupper', en: 'Sort into groups' },
+  binsDesc: { nb: 'Plasser hvert kort i riktig gruppe.', en: 'Place each card in the right group.' },
+  binsHelp: { nb: 'Velg et kort, og trykk så på gruppen det hører til. Du kan også dra kortene.', en: 'Pick a card, then tap the group it belongs to. You can also drag the cards.' },
+  binsBank: { nb: 'Kort du skal sortere', en: 'Cards to sort' },
+  pairsTitle: { nb: 'Koble begrep og forklaring', en: 'Match term and explanation' },
+  pairsDesc: { nb: 'Finn forklaringen som passer til hvert begrep.', en: 'Find the explanation that fits each term.' },
+  pairsHelp: { nb: 'Velg et begrep til venstre, og trykk så på forklaringen som passer. Like farger betyr at de er koblet.', en: 'Pick a term on the left, then tap the explanation that fits. Matching colours mean they are paired.' },
+  webBuildTitle: { nb: 'Bygg næringsnettet', en: 'Build the food web' },
+  webBuildDesc: { nb: 'Tegn pilene selv: hvem spiser hvem?', en: 'Draw the arrows yourself: who eats whom?' },
+  webBuildHelp: { nb: 'Trykk først på den som **blir spist**, og så på den som **spiser** den. Da kommer det en pil. Trykk på samme par igjen for å fjerne pila.', en: 'First tap the one that **gets eaten**, then the one that **eats** it. An arrow appears. Tap the same pair again to remove the arrow.' },
+
+  /* Feltarbeid */
+  fsPrint: { nb: 'Skriv ut / lagre som PDF', en: 'Print / save as PDF' },
+  fsClear: { nb: 'Tøm skjemaet', en: 'Clear the form' },
+  fsPrivacy: { nb: 'Det du skriver her, lagres ikke. Skriv ut skjemaet eller lagre det som PDF før du lukker siden.', en: 'What you type here is not saved. Print the form or save it as a PDF before you close the page.' }
 };

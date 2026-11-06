@@ -107,21 +107,26 @@
   N.structurePanel = function (topicId, id, part) {
     const s = N.structure(topicId, id);
     if (!s) return '';
+    const T = N.topics[topicId];
+    const L = T.panelLabels || {};
+    const lab = function (k, def) { return L[k] ? N.esc(N.t(L[k])) : N.u(def); };
     const alt = N.otherLang(s.name);
+    const hasFound = s.foundIn && Object.keys(T.orgNames || {}).some(function (k) { return s.foundIn[k] !== undefined && s.foundIn[k] !== null; });
     return '<div class="sp-head" style="--c:' + s.color + '"><span class="sp-dot" aria-hidden="true"></span>' +
       '<h3 data-say>' + N.esc(N.t(s.name)) + '</h3>' +
       '<button type="button" class="read-btn" data-read="panel">' + N.icon('speaker') + N.u('readAloud') + '</button>' +
       (alt ? '<p class="alt-name"><span class="sr-only">' + N.esc(N.settings.lang === 'en' ? 'Norsk:' : 'Engelsk:') + '</span>' + N.esc(alt) + '</p>' : '') +
       '</div>' +
+      (s.tag ? '<p class="sp-tag" data-say>' + N.esc(N.t(s.tag)) + '</p>' : '') +
       (s.level === 'deeper' ? '<p class="level-note">' + N.u('deeperNote') + '</p>' : '') +
       '<dl>' +
-      '<div><dt>' + N.u('whatIsIt') + '</dt><dd data-say>' + N.fmt(s.what) + '</dd></div>' +
-      '<div><dt>' + N.u('whatDoes') + '</dt><dd data-say>' + N.fmt(s.does) + '</dd></div>' +
+      (s.what ? '<div><dt>' + lab('what', 'whatIsIt') + '</dt><dd data-say>' + N.fmt(s.what) + '</dd></div>' : '') +
+      (s.does ? '<div><dt>' + lab('does', 'whatDoes') + '</dt><dd data-say>' + N.fmt(s.does) + '</dd></div>' : '') +
       (part && part.note ? '<div><dt>' + N.u('inThisModel') + '</dt><dd data-say>' + N.fmt(part.note) + '</dd></div>' : '') +
-      '<div class="analogy"><dt>' + N.u('analogy') + '</dt><dd data-say>' + N.fmt(s.analogy) + '</dd></div>' +
-      '<div><dt>' + N.u('foundIn') + '</dt><dd><div class="found-in">' + foundInHtml(topicId, s) + '</div>' +
-      (s.foundNote ? '<p style="margin-top:.4rem;font-size:.92rem" data-say>' + N.fmt(s.foundNote) + '</p>' : '') + '</dd></div>' +
-      '<div><dt>' + N.u('didYouKnow') + '</dt><dd data-say>' + N.fmt(s.fact) + '</dd></div>' +
+      (s.analogy ? '<div class="analogy"><dt>' + lab('analogy', 'analogy') + '</dt><dd data-say>' + N.fmt(s.analogy) + '</dd></div>' : '') +
+      (hasFound ? '<div><dt>' + N.u('foundIn') + '</dt><dd><div class="found-in">' + foundInHtml(topicId, s) + '</div>' +
+        (s.foundNote ? '<p style="margin-top:.4rem;font-size:.92rem" data-say>' + N.fmt(s.foundNote) + '</p>' : '') + '</dd></div>' : '') +
+      (s.fact ? '<div><dt>' + lab('fact', 'didYouKnow') + '</dt><dd data-say>' + N.fmt(s.fact) + '</dd></div>' : '') +
       '</dl>' +
       (s.src && s.src.length ? '<p class="sp-src">' + N.u('source') + ': ' + N.sourceLinks(topicId, s.src) + '</p>' : '');
   };

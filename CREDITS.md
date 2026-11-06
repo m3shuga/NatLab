@@ -1,7 +1,7 @@
 # Kilder, bilder og lisenser (CREDITS)
 
 ## Tegninger
-Alle modellene av celler og virus, virussyklusen, størrelsesskalaen og logoen er tegnet for NatLab (som SVG-kode). De kan brukes fritt i undervisning.
+Alle modellene av celler og virus, virussyklusen, størrelsesskalaen, økosystem-scenene, ikonene av arter i næringsnettene og logoen er tegnet for NatLab (som SVG-kode). De kan brukes fritt i undervisning.
 
 ## Fotografier
 Alle bildene er hentet fra Wikimedia Commons, skalert ned og lagret som WebP i `content/celler/bilder/`.
@@ -16,7 +16,15 @@ Alle bildene er hentet fra Wikimedia Commons, skalert ned og lagret som WebP i `
 | phage.webp | Enterobacteria phage T2 transmission electron micrograph | SnaxMikn | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | [Commons](https://commons.wikimedia.org/wiki/File:Enterobacteria_phage_T2_transmission_electron_micrograph.jpg) |
 | measles.webp | Measles virus | Cynthia S. Goldsmith / CDC | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Measles_virus.JPG) |
 
-CC BY-SA 4.0-bildet (phage.webp) er bare skalert ned og konvertert. Hvis du endrer selve bildet, må endret versjon deles under samme lisens.
+**Økologi og økosystemer** (`content/okologi/bilder/`):
+
+| Fil | Tittel | Opphav | Lisens | Kilde |
+|---|---|---|---|---|
+| elg.webp | Elk (Alces alces alces) female Oppdal | Charles J. Sharp | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | [Commons](https://commons.wikimedia.org/wiki/File:Elk_(Alces_alces_alces)_female_Oppdal.jpg) |
+| gaupe.webp | Lynx in Norway | Michael Arvanitidis / Soldatnytt, Oslo | [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/) | [Commons](https://commons.wikimedia.org/wiki/File:Lynx_in_Norway.jpg) |
+| ekorn.webp | Sciurus vulgaris | Arnstein Rønning | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | [Commons](https://commons.wikimedia.org/wiki/File:Sciurus_vulgaris_AR.jpg) |
+
+CC BY-SA-bildene (phage.webp, elg.webp, ekorn.webp) er bare skalert ned og konvertert. Hvis du endrer selve bildet, må endret versjon deles under samme lisens.
 
 ## Skrifttyper
 Alle ligger i `assets/fonts/`, med lisensfiler i `assets/fonts/lisenser/`. Alle har SIL Open Font License 1.1.

@@ -50,3 +50,43 @@ Modellene sier selv hva de ikke viser (boksen «Hva modellen ikke viser»). Se s
 ## 5. Engelsk oversettelse av læreplanen
 
 Kompetansemålene på engelsk (i `maal.js`) er **vår egen oversettelse**. Den norske teksten er den offisielle. Udir har en offisiell engelsk versjon du kan bruke i stedet om du ønsker.
+
+---
+
+# Økologi og økosystemer
+
+De fleste faktaene er sjekket mot Store norske leksikon (artsartiklene, «næringspyramide», «energi», «økosystem», «truede arter», «bioakkumulering» m.fl.) og NDLA («Tradisjonell kunnskap») 6. november 2026. Se ekstra på dette:
+
+## 1. Begreper
+- [ ] Bruker Eureka! «primærkonsument/sekundærkonsument/toppredator» på samme måte? Toppredator er i NatLab satt som egen rolle (farge), selv om gaupa og ulven er på trofisk nivå 3.
+- [ ] «Trofisk nivå» og «næringsnivå» brukes som synonymer. «Habitat» og «leveområde» likeså.
+- [ ] De tre tilpasningstypene heter i NatLab «kropp og utseende», «kroppens funksjoner» og «atferd». Endre i `okologi/tema.js` (`adaptTypes`) hvis boka bruker andre ord (f.eks. «fysiologisk»/«morfologisk»).
+
+## 2. Næringsnettene (forenklet!)
+Pilene bygger på hva artene spiser ifølge SNL. Noen er forenklet eller ikke direkte nevnt i kilden:
+- [ ] Krill → sild (silda spiser også krill; ikke nevnt i SNL-artikkelen om sild).
+- [ ] Blåbærlyng → larver, rådyr, elg, hare (planteeternes meny er forenklet).
+- [ ] Rødrev har ingen fiende i modellen (gaupe kan ta rev, men det er ikke tatt med).
+- [ ] Taskekrabben har ingen fiende i modellen.
+- [ ] «Hva skjer hvis …?» er en enkel regelbasert modell (to steg). Den viser mulige følger, ikke sikre svar.
+
+## 3. Tall og fakta uten direkte kildehenvisning
+| Påstand | Hvor | Kommentar |
+|---|---|---|
+| Grana sin smale form gjør at snøen glir av | arter.js, del2 | Vanlig forklaring, ikke i SNL-artikkelen. |
+| Lauvtrær feller bladene for å tape mindre vann / tåle kulde | arter.js | Vanlig forklaring. |
+| Selens spekklag isolerer | arter.js, del2 | Allment kjent. |
+| Hønsehaukens vinger og hale gjør at den manøvrerer mellom trær | arter.js | Allment kjent. |
+| Dvale hos flaggermus som eksempel | del2 | SNL «dvale» nevner flaggermus. |
+| Næringskjeder har sjelden mer enn 4–5 nivåer | del4 | SNL sier at energitapet setter en øvre grense; tallet 4–5 er vanlig i lærebøker. |
+| Eksempelregning (10 000 kJ, 1 kg spekkhogger) | del4, quiz | Bruker 10 %-regelen slik SNL beskriver den. |
+| Reindriftsutøvere har erfaring med beite, vær og snø | del5 | Generell beskrivelse; NDLA nevner reindrift som en del av tradisjonell kunnskap. |
+| Attenborough har laget naturprogrammer i over 70 år | quiz | SNL: født 1926, BBC fra tidlig 1950-tall. |
+
+## 4. Ting som kan endre seg
+- [ ] Ulvesonen og rovviltpolitikken (Stortinget kan endre den).
+- [ ] Norsk rødliste for arter (ny utgave kommer etter 2021-utgaven).
+- [ ] Rødlistestatus for gaupe (SNL: EN – sterkt truet).
+
+## 5. Bilder
+Bare tre fotografier er lagt inn (elg, gaupe, ekorn) fordi Wikimedia Commons begrenset nedlastingene. Gaupebildet er tatt i en dyrepark. Flere bilder (skog, hare, sopp, spekkhogger, sild) kan legges til – se README del 8.

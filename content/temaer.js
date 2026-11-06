@@ -14,6 +14,13 @@ NatLab.registry = [
     art: 'dyrecelle'   // hvilken tegning som vises på kortet
   },
   {
+    id: 'okologi',
+    status: 'klar',
+    title: { nb: 'Økologi og økosystemer', en: 'Ecology and ecosystems' },
+    text: { nb: 'Skogen og havet, tilpasninger, næringsnett og energi – og hvordan mennesker påvirker naturen.', en: 'The forest and the sea, adaptations, food webs and energy – and how humans affect nature.' },
+    art: 'skognett'
+  },
+  {
     id: 'universet',
     status: 'snart',
     title: { nb: 'Universet', en: 'The Universe' },

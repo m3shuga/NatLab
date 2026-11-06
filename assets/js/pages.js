@@ -18,6 +18,22 @@
 
   function topicOf(id) { return N.topics[id]; }
 
+  /** Tegning til kort: en klikkbar modell (N.diagrams) eller en figur (N.figures) */
+  N.renderArt = function (id) {
+    if (N.diagrams[id]) return N.renderDiagram(id, { scale: false });
+    const f = N.figures[id];
+    if (f) return '<svg viewBox="' + f.viewBox + '" role="img" aria-hidden="true" focusable="false">' + f.draw('art' + id + '-', N.t) + '</svg>';
+    return N.icon('flask');
+  };
+  function defaultTools(tid) {
+    return [
+      { icon: 'compare', href: '#' + tid + '-sammenlign', title: N.ui.compareTitle, desc: N.ui.compareDesc },
+      { icon: 'ruler', href: '#' + tid + '-storrelse', title: N.ui.scaleTitle, desc: N.ui.scaleDesc },
+      { icon: 'puzzle', href: '#' + tid + '-ov', title: N.ui.practiceTitle, desc: N.ui.practiceDesc },
+      { icon: 'quiz', href: '#' + tid + '-quiz', title: N.ui.quizTitle, desc: N.ui.quizDesc }
+    ];
+  }
+
   /* ---------------- Dekorativ tegning på forsiden ---------------- */
   function eyepiece() {
     const D = N.diagrams;
@@ -46,13 +62,15 @@
 
   /* ---------------- Forside ---------------- */
   P.home = function () {
-    const cards = N.registry.map(function (r) {
-      const live = r.status === 'klar' && N.topics[r.id];
-      const art = live && r.art ? N.renderDiagram(r.art, { scale: false }) : N.icon(r.icon || 'flask');
-      const inner = '<div class="tc-art">' + art + '</div><span class="badge ' + (live ? 'live' : '') + '">' + N.u(live ? 'available' : 'comingSoon') + '</span>' +
-        '<h3>' + N.esc(N.t(r.title)) + '</h3><p>' + N.esc(N.t(r.text)) + '</p>';
-      return live ? '<a class="topic-card" href="#' + r.id + '">' + inner + '</a>' : '<div class="topic-card is-soon" aria-disabled="true">' + inner + '</div>';
-    }).join('');
+    const isLive = function (r) { return r.status === 'klar' && N.topics[r.id]; };
+    const cards = '<div class="topic-grid live-' + Math.min(4, N.registry.filter(isLive).length) + '">' + N.registry.filter(isLive).map(function (r) {
+      return '<a class="topic-card" href="#' + r.id + '"><div class="tc-art">' + (r.art ? N.renderArt(r.art) : N.icon(r.icon || 'flask')) + '</div>' +
+        '<span class="badge live">' + N.u('available') + '</span><h3>' + N.esc(N.t(r.title)) + '</h3><p>' + N.esc(N.t(r.text)) + '</p></a>';
+    }).join('') + '</div>';
+    const soonList = N.registry.filter(function (r) { return !isLive(r); });
+    const soon = soonList.length ? '<div class="soon-row"><p class="eyebrow">' + N.u('comingSoon') + '</p><ul>' + soonList.map(function (r) {
+      return '<li><span class="soon-icon">' + N.icon(r.icon || 'flask') + '</span><span><strong>' + N.esc(N.t(r.title)) + '</strong><small>' + N.esc(N.t(r.text)) + '</small></span></li>';
+    }).join('') + '</ul></div>' : '';
     const html = '<div class="wrap page">' +
       '<section class="hero"><div><p class="eyebrow">NatLab · ' + N.u('appTagline') + '</p><h1>' + N.t(N.ui.heroTitle) + '</h1>' +
       '<p class="lead">' + N.u('heroLead') + '</p>' +
@@ -61,10 +79,11 @@
       '<p style="margin-top:1rem;font-size:.92rem;color:var(--muted);display:flex;gap:.45rem;align-items:center">' + N.icon('lock') + N.u('privacyShort') + '</p></div>' +
       '<div class="eyepiece">' + eyepiece() + '</div></section>' +
       '<section style="display:grid;gap:1rem"><div class="section-title"><h2>' + N.u('topicsTitle') + '</h2><p style="color:var(--muted)">' + N.u('topicsLead') + '</p></div>' +
-      '<div class="topic-grid">' + cards + '</div></section>' +
+      cards + soon + '</section>' +
       '<section style="display:grid;gap:1rem"><h2>' + N.u('shortcuts') + '</h2><div class="quick-links">' +
-      '<a class="quick-link" href="#celler-quiz"><span class="qi">' + N.icon('quiz') + '</span><span>' + N.u('quizTitle') + '<small>' + N.u('quizDesc') + '</small></span></a>' +
-      '<a class="quick-link" href="#celler-ov"><span class="qi">' + N.icon('puzzle') + '</span><span>' + N.u('practiceTitle') + '<small>' + N.u('practiceDesc') + '</small></span></a>' +
+      N.registry.filter(isLive).map(function (r) {
+        return '<a class="quick-link" href="#' + r.id + '-quiz"><span class="qi">' + N.icon('quiz') + '</span><span>' + N.u('quizTitle') + '<small>' + N.esc(N.t(r.title)) + '</small></span></a>';
+      }).join('') +
       '<a class="quick-link" href="#ordliste"><span class="qi">' + N.icon('book') + '</span><span>' + N.u('navGlossary') + '<small>' + N.t({ nb: 'Fagord på norsk og engelsk', en: 'Key terms in Norwegian and English' }) + '</small></span></a>' +
       '<a class="quick-link" href="#mal"><span class="qi">' + N.icon('target') + '</span><span>' + N.u('navGoals') + '<small>' + N.t({ nb: 'Hva skal du kunne?', en: 'What should you know?' }) + '</small></span></a>' +
       '</div></section></div>';
@@ -76,8 +95,8 @@
     const T = topicOf(tid);
     const orgs = Object.keys(T.organisms || {}).map(function (k) {
       const o = T.organisms[k];
-      return '<a class="org-card" href="#' + tid + '-' + k + '"><div class="oc-art">' + N.renderDiagram(o.art || o.diagrams[0], { scale: false }) + '</div>' +
-        '<div class="oc-body"><span class="specimen">' + N.u('specimen') + ' <b>' + o.code + '</b><span class="nu">' + N.esc(N.t(o.size)) + '</span></span>' +
+      return '<a class="org-card" href="#' + tid + '-' + k + '"><div class="oc-art">' + N.renderArt(o.art || o.diagrams[0]) + '</div>' +
+        '<div class="oc-body"><span class="specimen">' + N.esc(T.cardLabel ? N.t(T.cardLabel) : N.u('specimen')) + ' <b>' + o.code + '</b>' + (o.size ? '<span class="nu">' + N.esc(N.t(o.size)) + '</span>' : '') + '</span>' +
         '<h3>' + N.esc(N.t(o.title)) + '</h3><p>' + N.esc(N.t(o.sub)) + '</p></div></a>';
     }).join('');
     const g = T.goals;
@@ -91,15 +110,14 @@
     }
     const html = '<div class="wrap page">' +
       '<header class="page-head">' + crumbs([[N.u('home'), '#'], [N.t(T.title)]]) +
-      '<span class="specimen">NAT · ' + N.esc(N.t(T.title)) + ' · <b>' + Object.keys(T.organisms).length + '</b> ' + N.t({ nb: 'prøver', en: 'specimens' }) + '</span>' +
+      '<span class="specimen">NAT · ' + N.esc(N.t(T.title)) + ' · <b>' + Object.keys(T.organisms).length + '</b> ' + N.t(T.cardCount || { nb: 'prøver', en: 'specimens' }) + '</span>' +
       '<h1>' + N.esc(N.t(T.title)) + '</h1><p class="lead">' + N.fmt(T.lead) + '</p></header>' +
       goals +
-      '<section style="display:grid;gap:1rem"><div><h2>' + N.u('organisms') + '</h2><p style="color:var(--muted);margin-top:.3rem">' + N.u('organismsLead') + '</p></div><div class="org-grid">' + orgs + '</div></section>' +
+      '<section style="display:grid;gap:1rem"><div><h2>' + N.esc(N.t(T.cardsTitle || N.ui.organisms)) + '</h2><p style="color:var(--muted);margin-top:.3rem">' + N.fmt(T.cardsLead || N.ui.organismsLead) + '</p></div><div class="org-grid">' + orgs + '</div></section>' +
       '<section style="display:grid;gap:1rem"><h2>' + N.u('tools') + '</h2><div class="tool-row">' +
-      '<a class="quick-link" href="#' + tid + '-sammenlign"><span class="qi">' + N.icon('compare') + '</span><span>' + N.u('compareTitle') + '<small>' + N.u('compareDesc') + '</small></span></a>' +
-      '<a class="quick-link" href="#' + tid + '-storrelse"><span class="qi">' + N.icon('ruler') + '</span><span>' + N.u('scaleTitle') + '<small>' + N.u('scaleDesc') + '</small></span></a>' +
-      '<a class="quick-link" href="#' + tid + '-ov"><span class="qi">' + N.icon('puzzle') + '</span><span>' + N.u('practiceTitle') + '<small>' + N.u('practiceDesc') + '</small></span></a>' +
-      '<a class="quick-link" href="#' + tid + '-quiz"><span class="qi">' + N.icon('quiz') + '</span><span>' + N.u('quizTitle') + '<small>' + N.u('quizDesc') + '</small></span></a>' +
+      (T.tools || defaultTools(tid)).map(function (x) {
+        return '<a class="quick-link" href="' + x.href + '"><span class="qi">' + N.icon(x.icon) + '</span><span>' + N.esc(N.t(x.title)) + '<small>' + N.esc(N.t(x.desc)) + '</small></span></a>';
+      }).join('') +
       '</div></section>' +
       (T.featured ? '<section style="display:grid;gap:1rem"><div><h2>' + N.u('learnMore') + '</h2><p style="color:var(--muted);margin-top:.3rem">' + N.u('learnMoreLead') + '</p></div>' + N.resourceCards(tid, T.featured) + '</section>' : '') +
       '</div>';
@@ -111,13 +129,17 @@
     const T = topicOf(tid);
     const o = T.organisms[oid];
     const base = '#' + tid + '-' + oid;
+    const hasModel = !!(o.diagrams && o.diagrams.length);
+    if (!hasModel) mode = 'les';
+    const practiceHref = o.practiceHref || (hasModel ? '#' + tid + '-ov-merk-' + o.diagrams[0] : '#' + tid + '-ov');
     const head = '<header class="page-head">' + crumbs([[N.u('home'), '#'], [N.t(T.title), '#' + tid], [N.t(o.title)]]) +
-      '<span class="specimen">' + N.u('specimen') + ' <b>' + o.code + '</b><span>' + N.esc(N.t(o.title)) + '</span><span>' + N.u('sizeLabel') + ': <span class="nu">' + N.esc(N.t(o.size)) + '</span></span></span>' +
+      '<span class="specimen">' + N.esc(T.cardLabel ? N.t(T.cardLabel) : N.u('specimen')) + ' <b>' + o.code + '</b><span>' + N.esc(N.t(o.title)) + '</span>' + (o.size ? '<span>' + N.u('sizeLabel') + ': <span class="nu">' + N.esc(N.t(o.size)) + '</span></span>' : '') + '</span>' +
       '<h1>' + N.esc(N.t(o.title)) + '</h1><p class="lead">' + N.fmt(o.lead) + '</p></header>' +
       '<nav class="tabs" aria-label="' + N.esc(N.t(o.title)) + '">' +
-      '<a href="' + base + '"' + (mode === 'utforsk' ? ' aria-current="page"' : '') + '>' + N.icon('target') + N.u('explore') + '</a>' +
+      (hasModel ? '<a href="' + base + '"' + (mode === 'utforsk' ? ' aria-current="page"' : '') + '>' + N.icon('target') + N.u('explore') + '</a>' : '') +
       '<a href="' + base + '-les"' + (mode === 'les' ? ' aria-current="page"' : '') + '>' + N.icon('book') + N.u('read') + '</a>' +
-      '<a href="#' + tid + '-ov-merk-' + o.diagrams[0] + '">' + N.icon('puzzle') + N.u('practiceThis') + '</a></nav>';
+      (o.extraTabs || []).map(function (x) { return '<a href="' + x.href + '">' + N.icon(x.icon || 'arrow') + N.esc(N.t(x.label)) + '</a>'; }).join('') +
+      '<a href="' + practiceHref + '">' + N.icon('puzzle') + N.u('practiceThis') + '</a></nav>';
     const html = '<div class="wrap page">' + head + '<div id="org-body"></div></div>';
     return {
       title: N.t(o.title),
@@ -128,16 +150,52 @@
           body.innerHTML = N.renderArticle(tid, o.page);
           N.wireArticle(body);
         } else {
-          N.explorer(body, { topic: tid, diagrams: o.diagrams, modelNames: o.modelNames || {}, compareWith: o.compareWith, compareLabel: o.compareLabel, intro: o.intro, select: selectPart });
+          N.explorer(body, { topic: tid, diagrams: o.diagrams, modelNames: o.modelNames || {}, compareWith: o.compareWith, compareLabel: o.compareLabel, intro: o.intro, select: selectPart, legendTitle: o.legendTitle });
         }
       }
     };
   };
 
-  /* ---------------- Sammenligning ---------------- */
-  P.compare = function (tid) {
+  /* ---------------- Egne sider (artikkel, næringsnett, feltarbeid) ---------------- */
+  P.custom = function (tid, pid, sub) {
     const T = topicOf(tid);
-    const c = T.pages.sammenlign;
+    const c = T.pages[pid];
+    if (c.type === 'foodweb') return P.foodweb(tid, pid, sub);
+    if (c.type === 'fieldwork') return P.fieldwork(tid, pid);
+    return P.compare(tid, pid);
+  };
+  P.foodweb = function (tid, pid, sub) {
+    const T = topicOf(tid);
+    const c = T.pages[pid];
+    return {
+      title: N.t(c.title),
+      html: '<div class="wrap page"><header class="page-head">' + crumbs([[N.u('home'), '#'], [N.t(T.title), '#' + tid], [N.t(c.title)]]) +
+        '<h1>' + N.esc(N.t(c.title)) + '</h1><p class="lead">' + N.fmt(c.lead) + '</p></header><div id="fw-body"></div>' +
+        (c.page ? '<div id="fw-article"></div>' : '') + '</div>',
+      mount: function (main) {
+        N.foodweb(N.$('#fw-body', main), { topic: tid, page: pid, mode: sub || 'utforsk', web: c.defaultWeb });
+        if (c.page) { const a = N.$('#fw-article', main); a.innerHTML = N.renderArticle(tid, c.page); N.wireArticle(a); }
+      }
+    };
+  };
+  P.fieldwork = function (tid, pid) {
+    const T = topicOf(tid);
+    const c = T.pages[pid];
+    return {
+      title: N.t(c.title),
+      html: '<div class="wrap page"><header class="page-head">' + crumbs([[N.u('home'), '#'], [N.t(T.title), '#' + tid], [N.t(c.title)]]) +
+        '<h1>' + N.esc(N.t(c.title)) + '</h1><p class="lead">' + N.fmt(c.lead) + '</p></header><div id="fwk-intro"></div><div id="fwk-sheet"></div></div>',
+      mount: function (main) {
+        const a = N.$('#fwk-intro', main); a.innerHTML = N.renderArticle(tid, c.page); N.wireArticle(a);
+        N.fieldSheet(N.$('#fwk-sheet', main), c.sheet);
+      }
+    };
+  };
+
+  /* ---------------- Sammenligning / artikkelside ---------------- */
+  P.compare = function (tid, pid) {
+    const T = topicOf(tid);
+    const c = T.pages[pid || 'sammenlign'];
     return {
       title: N.t(c.title),
       html: '<div class="wrap page"><header class="page-head">' + crumbs([[N.u('home'), '#'], [N.t(T.title), '#' + tid], [N.t(c.title)]]) +
@@ -165,6 +223,9 @@
     const list = function (kind) {
       return '<div class="scale-stops">' + pr[kind].map(function (d) { return '<a class="btn btn-sm" href="#' + tid + '-ov-' + kind + '-' + d + '">' + N.esc(modelName(d)) + '</a>'; }).join('') + '</div>';
     };
+    const named = function (route, key) {
+      return '<div class="scale-stops">' + pr[key || route].map(function (o) { return '<a class="btn btn-sm" href="#' + tid + '-ov-' + route + '-' + o.id + '">' + N.esc(N.t(o.title)) + '</a>'; }).join('') + '</div>';
+    };
     const card = function (icon, title, desc, inner) {
       return '<section class="card-plain"><div style="display:flex;gap:.8rem;align-items:center"><span class="qi" style="width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:var(--brand-soft);color:var(--brand)">' + N.icon(icon) + '</span>' +
         '<div><h2 style="font-size:1.25rem">' + title + '</h2><p style="color:var(--muted)">' + desc + '</p></div></div>' + inner + '</section>';
@@ -172,10 +233,13 @@
     const html = '<div class="wrap page"><header class="page-head">' + crumbs([[N.u('home'), '#'], [N.t(T.title), '#' + tid], [N.u('practiceTitle')]]) +
       '<h1>' + N.u('practiceTitle') + '</h1><p class="lead">' + N.u('practiceLead') + '</p></header>' +
       '<div style="display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr))">' +
-      card('target', N.u('labelTitle'), N.u('labelDesc'), list('merk')) +
-      card('puzzle', N.u('matchTitle'), N.u('matchDesc'), list('koble')) +
-      card('compare', N.u('sortTitle'), N.u('sortDesc'), '<div><a class="btn btn-sm" href="#' + tid + '-ov-sorter">' + N.icon('arrow') + N.u('open') + '</a></div>') +
-      card('layers', N.u('orderTitle'), N.u('orderHelp'), '<div class="scale-stops">' + pr.order.map(function (o) { return '<a class="btn btn-sm" href="#' + tid + '-ov-rekkefolge-' + o.id + '">' + N.esc(N.t(o.title)) + '</a>'; }).join('') + '</div>') +
+      (pr.merk ? card('target', N.u('labelTitle'), N.u('labelDesc'), list('merk')) : '') +
+      (pr.koble ? card('puzzle', N.u('matchTitle'), N.u('matchDesc'), list('koble')) : '') +
+      (pr.grupper ? card('layers', N.u('binsTitle'), N.u('binsDesc'), named('grupper')) : '') +
+      (pr.par ? card('puzzle', N.u('pairsTitle'), N.u('pairsDesc'), named('par')) : '') +
+      (pr.nett ? card('compare', N.u('webBuildTitle'), N.u('webBuildDesc'), named('nett')) : '') +
+      (pr.sort ? card('compare', N.u('sortTitle'), N.u('sortDesc'), '<div><a class="btn btn-sm" href="#' + tid + '-ov-sorter">' + N.icon('arrow') + N.u('open') + '</a></div>') : '') +
+      (pr.order ? card('layers', N.u('orderTitle'), N.u('orderHelp'), named('rekkefolge', 'order')) : '') +
       '</div>' +
       '<p><a class="btn btn-primary" href="#' + tid + '-quiz">' + N.icon('quiz') + N.u('quizTitle') + '</a></p></div>';
     return { title: N.u('practiceTitle'), html: html };
@@ -212,6 +276,17 @@
     } else if (kind === 'sorter') {
       title = N.u('sortTitle');
       mount = function (main) { N.$('#act-level', main).remove(); N.activity.sort(N.$('#act-body', main), { topic: tid, rows: T.practice.sort.rows, cols: T.practice.sort.cols }); };
+    } else if (kind === 'grupper' || kind === 'par' || kind === 'nett') {
+      const o = (T.practice[kind] || []).filter(function (x) { return x.id === arg; })[0];
+      if (!o) return null;
+      title = N.u({ grupper: 'binsTitle', par: 'pairsTitle', nett: 'webBuildTitle' }[kind]); sub = N.t(o.title);
+      mount = function (main) {
+        N.$('#act-level', main).remove();
+        const el = N.$('#act-body', main);
+        if (kind === 'grupper') N.activity.bins(el, o);
+        else if (kind === 'par') N.activity.pairs(el, o);
+        else N.activity.webbuild(el, Object.assign({ topic: tid }, o));
+      };
     } else if (kind === 'rekkefolge') {
       const o = T.practice.order.filter(function (x) { return x.id === arg; })[0];
       if (!o) return null;
@@ -250,6 +325,7 @@
     let n = 0;
     const blocks = N.registry.filter(function (r) { return r.status === 'klar' && N.topics[r.id] && N.topics[r.id].goals; }).map(function (r) {
       const T = N.topics[r.id], g = T.goals;
+      n = 0;
       return '<section class="goal-topic" id="mal-' + r.id + '" data-read-scope><div class="section-title"><h2 data-say>' + N.esc(N.t(T.title)) + '</h2>' +
         '<button type="button" class="read-btn" data-read="section">' + N.icon('speaker') + N.u('readAloud') + '</button></div>' +
         (g.intro ? '<p data-say>' + N.fmt(g.intro) + '</p>' : '') +

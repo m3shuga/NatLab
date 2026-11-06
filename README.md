@@ -1,6 +1,9 @@
 # NatLab
 
-NatLab er et interaktivt oppslagsverk i naturfag for 8.–10. trinn. Det første temaet er **Celler og virus**: dyrecellen, plantecellen, bakterien og virus (influensavirus, bakteriofag og meslingvirus).
+NatLab er et interaktivt oppslagsverk i naturfag for 8.–10. trinn. Foreløpig finnes to temaer:
+
+- **Celler og virus**: dyrecellen, plantecellen, bakterien og virus (influensavirus, bakteriofag og meslingvirus).
+- **Økologi og økosystemer**: skogen på Østlandet og Norskehavet, tilpasninger og roller, næringskjeder og -nett (interaktivt), energi i økosystemet, mennesket og naturen – og et feltarbeid med observasjonsskjema.
 
 Elevene kan
 
@@ -12,9 +15,6 @@ Elevene kan
 - bytte mellom bokmål og engelsk, få teksten lest opp, velge skrift for dyslektikere og større tekst
 
 **Personvern:** Ingen innlogging, ingen sporing, ingen informasjonskapsler. Ingenting hentes fra andre nettsteder når siden åpnes. Bare innstillingene (språk, skrift osv.) lagres i elevens egen nettleser.
-
-<img width="1347" height="745" alt="image" src="https://github.com/user-attachments/assets/7a47dce2-db44-4655-af9b-15dd1762dcfc" />
-
 
 ---
 
@@ -82,6 +82,15 @@ natlab/
 │       ├── quiz.js         ← quizspørsmålene
 │       ├── diagrammer.js   ← tegningene (kode – trenger sjelden endring)
 │       └── bilder/         ← fotografier (.webp)
+│   └── okologi/            ← temaet «Økologi og økosystemer»
+│       ├── tema.js         ← tittel, roller/farger, verktøy, øvingsoppgaver, quizkategorier
+│       ├── maal.js         ← LÆRINGSMÅLENE
+│       ├── del1-…del5-*.js ← de fem delene (artiklene)
+│       ├── arter.js        ← alle arter og faktorer (tekst i infopanelet)
+│       ├── naeringsnett.js ← hvem spiser hvem + «Hva skjer hvis …?»-scenarier
+│       ├── feltarbeid.js   ← feltarbeidssiden og observasjonsskjemaet
+│       ├── tegninger.js    ← ikoner av artene og scenene skog/hav (kode)
+│       ├── kilder.js, bilder.js, ordliste.js, quiz.js
 ├── assets/                 ← selve appen (kode, utseende, skrift, logo)
 │   ├── css/natlab.css      ← farger og utseende
 │   ├── js/                 ← programkoden
@@ -136,6 +145,11 @@ Hvis appen blir helt tom etter en endring, er det nesten alltid et komma eller e
 | Størrelser | `#celler-storrelse` |
 | Øving / quiz | `#celler-ov` / `#celler-quiz` |
 | En bestemt del i modellen | `#celler-dyrecelle-del-mitokondrie` |
+| Økologi: temasiden / del 1–5 | `#okologi` / `#okologi-okosystemet-les`, `#okologi-tilpasning-les`, `#okologi-kjeder-les`, `#okologi-energi-les`, `#okologi-mennesket-les` |
+| Økologi: næringsnettet | `#okologi-naeringsnett` (· `-hvis` · `-pyramide`) |
+| Økologi: feltarbeid | `#okologi-feltarbeid` |
+
+**Viktig:** Id-er (navn på sider, oppgaver osv.) kan ikke inneholde bindestrek `-`, fordi bindestreken skiller delene i adressen. Skriv `kjedehav`, ikke `kjede-hav`.
 
 ## 6. Legge til et quizspørsmål
 
@@ -222,6 +236,8 @@ Artiklene (f.eks. `plantecelle.js`) består av `sections`, og hver seksjon har e
 | `{ grid: ['cellemembran', …] }` | «Hvem har hva?»-tabell laget fra `strukturer.js` | |
 | `{ steps: { figure, steps: [...] } }` | Trinnvis figur (brukes for virussyklusen) | |
 | `{ diagram: 'plantecelle' }` | Liten tegning (ikke klikkbar) | |
+| `{ link: { href, title, text, icon } }` | Stort lenkekort (til en side i NatLab eller en nettside) | `{ link: { href: '#okologi-naeringsnett', title: {…}, text: {…} } }` |
+| `{ adapt: [ { icon, type, title, text } ] }` | Kort med tilpasninger (type: `struktur`, `funksjon` eller `atferd`) | Se `del2-tilpasning.js` |
 
 I tillegg har hver artikkel `goals` (vises øverst), `keypoints` («Viktigst å huske») og `resources` («Lær mer»).
 
@@ -237,6 +253,24 @@ Eksempel: temaet «Universet».
 6. **Vis temaet på forsiden:** I `content/temaer.js`, endre temaet til `status: 'klar'` og legg til `art: 'id-til-en-tegning'`.
 
 Selve appen (`assets/js`) trenger du ikke endre. Utforskeren, artiklene, øvingsoppgavene, quizen, ordlisten og læringsmålene fungerer automatisk for nye temaer.
+
+### Øvingsoppgaver du kan lage selv (i `tema.js`, under `T.practice`)
+
+| Type | Hva eleven gjør | Eksempel i |
+|---|---|---|
+| `merk` | Setter navn på delene i en tegning | celler/tema.js |
+| `koble` | Kobler del og oppgave (fra en tegning) | celler/tema.js |
+| `sort` | Krysser av i en tabell (hvem har hva?) | celler/tema.js |
+| `order` | Setter kort i riktig rekkefølge (adresse: `-ov-rekkefolge-<id>`) | begge |
+| `grupper` | Sorterer kort i grupper, f.eks. biotisk/abiotisk | okologi/tema.js |
+| `par` | Kobler begrep og forklaring | okologi/tema.js |
+| `nett` | Tegner pilene i et næringsnett selv | okologi/tema.js |
+
+### Endre næringsnettet
+Åpne `content/okologi/naeringsnett.js`. Hver pil er en linje som `['sild', 'torsk']` (sild blir spist av torsk). Plasseringen av hver art står i `nodes` som `['torsk', x, y]`. Scenariene i «Hva skjer hvis …?» står nederst – kopier ett og endre teksten og hvilke arter som fjernes (`remove`).
+
+### Endre feltarbeidsskjemaet
+Åpne `content/okologi/feltarbeid.js`. Skjemaet (`sheet`) består av seksjoner med felter: `text` (én linje), `area` (flere linjer) og `table` (tabell med `cols` og antall `rows`). Ingenting eleven skriver, blir lagret.
 
 ## 11. Slik fungerer appen
 

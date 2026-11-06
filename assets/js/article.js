@@ -90,6 +90,20 @@
     if (b.diagram) {
       return '<figure class="slide" style="max-width:520px">' + N.renderDiagram(b.diagram, { level: 'basic', scale: true }) + '<figcaption>' + N.esc(N.t(N.diagrams[b.diagram].title)) + '</figcaption></figure>';
     }
+    if (b.link) {
+      const L = b.link;
+      const ext = /^https?:/.test(L.href);
+      return '<a class="link-card" href="' + N.esc(L.href) + '"' + (ext ? ' target="_blank" rel="noopener"' : '') + '><span class="lc-icon">' + N.icon(L.icon || 'arrow') + '</span><span><strong>' + N.esc(N.t(L.title)) + '</strong><span>' + N.fmt(L.text) + '</span></span></a>';
+    }
+    if (b.adapt) {
+      const types = (c.T.adaptTypes || {});
+      return '<div class="adapt-grid">' + b.adapt.map(function (a) {
+        const ty = types[a.type];
+        return '<div class="adapt-card"><svg viewBox="-45 -45 90 90" aria-hidden="true" focusable="false">' + (N.ecoIcons && N.ecoIcons[a.icon] ? N.ecoIcons[a.icon] : '') + '</svg>' +
+          '<div><h4 data-say>' + N.esc(N.t(a.title)) + '</h4><p data-say>' + N.fmt(a.text) + c.cite(a.src) + '</p>' +
+          (ty ? '<span class="badge t-' + a.type + '">' + N.esc(N.t(ty.name)) + '</span>' : '') + '</div></div>';
+      }).join('') + '</div>';
+    }
     console.warn('Ukjent byggekloss', b);
     return '';
   }

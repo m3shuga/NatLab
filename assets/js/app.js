@@ -23,7 +23,7 @@
       if (b === 'del' && c) return { page: P.organism(tid, a, 'utforsk', c), nav: 'home' };
       return { page: P.organism(tid, a, 'utforsk'), nav: 'home' };
     }
-    if (a === 'sammenlign') return { page: P.compare(tid), nav: 'home' };
+    if (T.pages && T.pages[a]) return { page: P.custom(tid, a, b), nav: 'home' };
     if (a === 'storrelse') return { page: P.scale(tid), nav: 'home' };
     if (a === 'quiz') return { page: P.quiz(tid, b), nav: 'home' };
     if (a === 'ov' && !b) return { page: P.practice(tid), nav: 'home' };

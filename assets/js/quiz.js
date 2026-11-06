@@ -69,7 +69,8 @@
           return '<button type="button" class="opt" data-v="' + v + '"><span class="letter">' + 'AB'[i] + '</span>' + N.u(v ? 'trueLabel' : 'falseLabel') + '</button>';
         }).join('') + '</div>';
       } else if (q.type === 'hotspot') {
-        const lvl = N.structure(topicId, q.answer).level === 'deeper' ? 'deeper' : 'basic';
+        const ans0 = Array.isArray(q.answer) ? q.answer[0] : q.answer;
+        const lvl = (N.structure(topicId, ans0) || {}).level === 'deeper' ? 'deeper' : 'basic';
         body = '<p class="act-help">' + N.u('clickOnModel') + '</p><div class="quiz-hotspot"><figure class="slide">' + N.renderDiagram(q.diagram, { interactive: true, level: lvl, scale: false }) + '</figure></div>';
       } else {
         const multi = q.type === 'multi';
@@ -83,7 +84,7 @@
         body + '<div class="fb" hidden></div><div class="act-bar" data-next hidden></div></div>';
       if (q.type === 'hotspot') {
         const svg = N.$('svg.diagram', root);
-        N.wireDiagram(svg, { interactive: true, onSelect: function (id) { if (!state.answered) finish(id === q.answer, id, svg); } });
+        N.wireDiagram(svg, { interactive: true, onSelect: function (id) { if (!state.answered) finish(Array.isArray(q.answer) ? q.answer.indexOf(id) >= 0 : id === q.answer, id, svg); } });
       }
       const first = N.$('.opt, svg [tabindex]', root);
       N.$('.quiz-q', root).setAttribute('tabindex', '-1');
@@ -96,15 +97,20 @@
       state.answered = true;
       state.answers.push({ q: q, correct: correct, given: given });
       if (q.type === 'hotspot' && svg) {
-        N.highlight(svg, q.answer);
-        N.$$('[data-part]', svg).forEach(function (g) { g.removeAttribute('tabindex'); g.style.pointerEvents = 'none'; });
-        const g = N.$('[data-part="' + q.answer + '"]', svg); g && g.classList.add('is-flash');
+        const answers = Array.isArray(q.answer) ? q.answer : [q.answer];
+        svg.classList.add('has-selection');
+        N.$$('[data-part]', svg).forEach(function (g) {
+          g.removeAttribute('tabindex'); g.style.pointerEvents = 'none';
+          const hit = answers.indexOf(g.dataset.part) >= 0;
+          g.classList.toggle('is-selected', hit);
+          if (hit) g.classList.add('is-flash');
+        });
       }
       N.$$('.opt', root).forEach(function (b) { b.disabled = true; });
       const fb = N.$('.fb', root);
       fb.className = 'feedback ' + (correct ? 'good' : 'bad');
       let extra = '';
-      if (!correct && q.type === 'hotspot') extra = '<p><strong>' + N.u('rightAnswer') + ':</strong> ' + N.esc(N.t(N.structure(topicId, q.answer).name)) + '</p>';
+      if (!correct && q.type === 'hotspot') extra = '<p><strong>' + N.u('rightAnswer') + ':</strong> ' + N.esc((Array.isArray(q.answer) ? q.answer : [q.answer]).map(function (a) { return N.t(N.structure(topicId, a).name); }).join(', ')) + '</p>';
       fb.innerHTML = '<p class="fb-title">' + N.icon(correct ? 'check' : 'cross') + N.u(correct ? 'correct' : 'notQuite') + '</p>' + extra + '<p data-say>' + N.fmt(q.explain) + '</p>';
       fb.hidden = false;
       const nx = N.$('[data-next]', root);
@@ -128,7 +134,7 @@
           const q = a.q;
           let right = '';
           if (q.type === 'tf') right = N.u(q.answer ? 'trueLabel' : 'falseLabel');
-          else if (q.type === 'hotspot') right = N.t(N.structure(topicId, q.answer).name);
+          else if (q.type === 'hotspot') right = (Array.isArray(q.answer) ? q.answer : [q.answer]).map(function (a) { return N.t(N.structure(topicId, a).name); }).join(', ');
           else if (q.type === 'multi') right = q.answer.map(function (i) { return N.plain(q.options[i]); }).join(', ');
           else right = N.plain(q.options[q.answer]);
           return '<li><strong>' + N.fmt(q.q) + '</strong><span><span style="color:var(--good);font-weight:700">' + N.u('rightAnswer') + ':</span> ' + N.esc(right) + '</span>' +

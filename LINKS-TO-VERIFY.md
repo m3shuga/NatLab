@@ -107,3 +107,125 @@ Merk:
 | [ ] | `media-influenza` | (lisens hentet ved nedlasting) | <https://commons.wikimedia.org/wiki/File:Influenza_virus_particle_color.jpg> |
 | [ ] | `media-phage` | (lisens hentet ved nedlasting) | <https://commons.wikimedia.org/wiki/File:Enterobacteria_phage_T2_transmission_electron_micrograph.jpg> |
 | [ ] | `media-measles` | (lisens hentet ved nedlasting) | <https://commons.wikimedia.org/wiki/File:Measles_virus.JPG> |
+
+---
+
+# Økologi og økosystemer
+
+Lenkene ligger i `content/okologi/kilder.js` og `content/okologi/bilder.js`. Sjekket automatisk 6. november 2026 – alle svarte OK.
+
+Merk: «Our Planet»-episodene er lagt ut gratis på YouTube av Netflix. Sjekk at de fortsatt ligger ute før du bruker dem i undervisningen.
+
+## Store norske leksikon
+
+| Sjekket | Id | Tittel funnet på siden | Lenke |
+|---|---|---|---|
+| [ ] | `snl-okosystem` | økosystem – Store norske leksikon | <https://snl.no/%C3%B8kosystem> |
+| [ ] | `snl-okologi` | økologi – Store norske leksikon | <https://snl.no/%C3%B8kologi> |
+| [ ] | `snl-biotiske` | biotiske faktorar – Store norske leksikon | <https://snl.no/biotiske_faktorar> |
+| [ ] | `snl-abiotiske` | abiotiske faktorar – Store norske leksikon | <https://snl.no/abiotiske_faktorar> |
+| [ ] | `snl-naeringskjede` | næringskjede – Store norske leksikon | <https://snl.no/n%C3%A6ringskjede> |
+| [ ] | `snl-naeringsnett` | næringsnett – Store norske leksikon | <https://snl.no/n%C3%A6ringsnett> |
+| [ ] | `snl-naeringspyramide` | næringspyramide – Store norske leksikon | <https://snl.no/n%C3%A6ringspyramide> |
+| [ ] | `snl-samfunn` | økologisk samfunn – Store norske leksikon | <https://snl.no/%C3%B8kologisk_samfunn> |
+| [ ] | `snl-produsent` | produsent – biologi – Store norske leksikon | <https://snl.no/produsent_-_biologi> |
+| [ ] | `snl-konsument` | konsument – organisme – Store norske leksikon | <https://snl.no/konsument_-_organisme> |
+| [ ] | `snl-nedbrytere` | nedbrytarar – Store norske leksikon | <https://snl.no/nedbrytarar> |
+| [ ] | `snl-populasjon` | populasjon – Store norske leksikon | <https://snl.no/populasjon> |
+| [ ] | `snl-nisje` | nisje – biologi – Store norske leksikon | <https://snl.no/nisje_-_biologi> |
+| [ ] | `snl-konkurranse` | konkurranse – økologi – Store norske leksikon | <https://snl.no/konkurranse_-_%C3%B8kologi> |
+| [ ] | `snl-habitat` | habitat – Store norske leksikon | <https://snl.no/habitat> |
+| [ ] | `snl-interspesifikk` | interspesifikk konkurranse – Store norske leksikon | <https://snl.no/interspesifikk_konkurranse> |
+| [ ] | `snl-truede-arter` | truede arter – Store norske leksikon | <https://snl.no/truede_arter> |
+| [ ] | `snl-tilpasning` | tilpasning – biologi – Store norske leksikon | <https://snl.no/tilpasning_-_biologi> |
+| [ ] | `snl-energi` | energi – Store norske leksikon | <https://snl.no/energi> |
+| [ ] | `snl-termodynamikk` | termodynamikk – Store norske leksikon | <https://snl.no/termodynamikk> |
+| [ ] | `snl-raudate` | raudåte – Store norske leksikon | <https://snl.no/raud%C3%A5te> |
+| [ ] | `snl-norskehavet` | Norskehavet – Store norske leksikon | <https://snl.no/Norskehavet> |
+| [ ] | `snl-atlanterhavsstrommen` | Den norske atlanterhavsstrømmen – Store norske leksikon | <https://snl.no/Den_norske_atlanterhavsstr%C3%B8mmen> |
+| [ ] | `snl-sild` | sild – Store norske leksikon | <https://snl.no/sild> |
+| [ ] | `snl-torsk` | torsk – Store norske leksikon | <https://snl.no/torsk> |
+| [ ] | `snl-spekkhogger` | spekkhogger – Store norske leksikon | <https://snl.no/spekkhogger> |
+| [ ] | `snl-lunde` | lunde (fugl) | <https://snl.no/lunde> |
+| [ ] | `snl-havorn` | havørn – Store norske leksikon | <https://snl.no/hav%C3%B8rn> |
+| [ ] | `snl-steinkobbe` | steinkobbe – Store norske leksikon | <https://snl.no/steinkobbe> |
+| [ ] | `snl-taskekrabbe` | taskekrabbe – Store norske leksikon | <https://snl.no/taskekrabbe> |
+| [ ] | `snl-krakeboller` | kråkeboller – Store norske leksikon | <https://snl.no/kr%C3%A5keboller> |
+| [ ] | `snl-tareskog` | tareskog – Store norske leksikon | <https://snl.no/tareskog> |
+| [ ] | `snl-krill` | krill – Store norske leksikon | <https://snl.no/krill> |
+| [ ] | `snl-planteplankton` | planteplankton – Store norske leksikon | <https://snl.no/planteplankton> |
+| [ ] | `snl-dyreplankton` | dyreplankton – Store norske leksikon | <https://snl.no/dyreplankton> |
+| [ ] | `snl-gaupe` | gaupe – Store norske leksikon | <https://snl.no/gaupe> |
+| [ ] | `snl-ulv` | ulv – Store norske leksikon | <https://snl.no/ulv> |
+| [ ] | `snl-elg` | elg – Store norske leksikon | <https://snl.no/elg> |
+| [ ] | `snl-raadyr` | rådyr – Store norske leksikon | <https://snl.no/r%C3%A5dyr> |
+| [ ] | `snl-ekorn` | ekorn – Store norske leksikon | <https://snl.no/ekorn> |
+| [ ] | `snl-hare` | hare – Store norske leksikon | <https://snl.no/hare> |
+| [ ] | `snl-rodrev` | rødrev – Store norske leksikon | <https://snl.no/r%C3%B8drev> |
+| [ ] | `snl-kattugle` | kattugle – Store norske leksikon | <https://snl.no/kattugle> |
+| [ ] | `snl-kjottmeis` | kjøttmeis – Store norske leksikon | <https://snl.no/kj%C3%B8ttmeis> |
+| [ ] | `snl-honsehauk` | hønsehauk – Store norske leksikon | <https://snl.no/h%C3%B8nsehauk> |
+| [ ] | `snl-skogmus` | småskogmus – Store norske leksikon | <https://snl.no/sm%C3%A5skogmus> |
+| [ ] | `snl-gran` | gran – Store norske leksikon | <https://snl.no/gran> |
+| [ ] | `snl-blaabaer` | blåbær – Store norske leksikon | <https://snl.no/bl%C3%A5b%C3%A6r> |
+| [ ] | `snl-meitemark` | meitemark – Store norske leksikon | <https://snl.no/meitemark> |
+| [ ] | `snl-sopp` | sopp – Store norske leksikon | <https://snl.no/sopp> |
+| [ ] | `snl-barskog` | barskog – Store norske leksikon | <https://snl.no/barskog> |
+| [ ] | `snl-altetende` | altetende dyr – Store norske leksikon | <https://snl.no/altetende_dyr> |
+| [ ] | `snl-predator` | predator – Store norske leksikon | <https://snl.no/predator> |
+| [ ] | `snl-kamuflasje` | kamuflasje hos dyr – Store norske leksikon | <https://snl.no/kamuflasje_hos_dyr> |
+| [ ] | `snl-dvale` | dvale – Store norske leksikon | <https://snl.no/dvale> |
+| [ ] | `snl-trekkfugler` | trekkfugler – Store norske leksikon | <https://snl.no/trekkfugler> |
+| [ ] | `snl-biologisk-mangfold` | biologisk mangfold – Store norske leksikon | <https://snl.no/biologisk_mangfold> |
+| [ ] | `snl-naturkrisen` | naturkrisen – Store norske leksikon | <https://snl.no/naturkrisen> |
+| [ ] | `snl-habitatodeleggelse` | habitatødeleggelse – Store norske leksikon | <https://snl.no/habitat%C3%B8deleggelse> |
+| [ ] | `snl-rodliste` | rødliste – Store norske leksikon | <https://snl.no/r%C3%B8dliste> |
+| [ ] | `snl-fremmedarter` | Fremmedartslista – Store norske leksikon | <https://snl.no/Fremmedartslista> |
+| [ ] | `snl-brunskogsnegl` | brunsnegl (brunskogsnegl) – Store norske leksikon | <https://snl.no/brunskogsnegl> |
+| [ ] | `snl-miljogift` | miljøgift – Store norske leksikon | <https://snl.no/milj%C3%B8gift> |
+| [ ] | `snl-bioakkumulering` | bioakkumulering – Store norske leksikon | <https://snl.no/bioakkumulering> |
+| [ ] | `snl-overfiske` | overfiske – Store norske leksikon | <https://snl.no/overfiske> |
+| [ ] | `snl-klimaendringer` | klimaendringer – Store norske leksikon | <https://snl.no/klimaendringer> |
+| [ ] | `snl-rovviltforvaltning` | rovviltforvaltning – Store norske leksikon | <https://snl.no/rovviltforvaltning> |
+| [ ] | `snl-reindrift` | reindrift – Store norske leksikon | <https://snl.no/reindrift> |
+| [ ] | `snl-naturforvaltning` | naturforvaltning – Store norske leksikon | <https://snl.no/naturforvaltning> |
+| [ ] | `snl-attenborough` | David Attenborough – Store norske leksikon | <https://snl.no/David_Attenborough> |
+| [ ] | `snl-vippepunkt` | vippepunkter i natur, klima og økosystemer | <https://snl.no/vippepunkt_-_%C3%B8kologi> |
+
+## NDLA
+
+| Sjekket | Id | Tittel funnet på siden | Lenke |
+|---|---|---|---|
+| [ ] | `ndla-okologi` | Økologi og økosystemer - Naturfag (SF) - NDLA | <https://ndla.no/r/naturfag-sf/okologi-og-okosystemer/4d3fbaa1ba> |
+| [ ] | `ndla-naeringskjeder` | Næringskjeder, næringsnett og stoffkretsløp - Naturfag (SF) - NDLA | <https://ndla.no/r/naturfag-sf/naringskjeder-naringsnett-og-stoffkretslop/e1bb5fefc1> |
+| [ ] | `ndla-abiotisk` | Abiotiske og biotiske faktorer - Forvaltning og drift (NA-LGA vg2) - NDLA | <https://ndla.no/r/forvaltning-og-drift-na-lga-vg2/abiotiske-og-biotiske-faktorer/fdaaa5acbd> |
+| [ ] | `ndla-havmiljo` | Havmiljøet – abiotiske faktorer - Naturbasert produksjon og tjenesteyting (NA-NAB vg1) - NDLA | <https://ndla.no/r/naturbasert-produksjon-og-tjenesteyting-na-nab-vg1/havmiljoet---abiotiske-faktorer/fb9cbb5ddb> |
+| [ ] | `ndla-tilpasning` | Tilpasning og evolusjon - Naturfag (SF) - NDLA | <https://ndla.no/r/naturfag-sf/tilpasning-og-evolusjon/3f20d0c21b> |
+| [ ] | `ndla-konkurranse` | Konkurranse og nisjefordeling - Forvaltning og drift (NA-LGA vg2) - NDLA | <https://ndla.no/r/forvaltning-og-drift-na-lga-vg2/konkurranse-og-nisjefordeling/6cc1c216f5> |
+| [ ] | `ndla-biomangfold` | Biologisk mangfold - Naturfag (SF) - NDLA | <https://ndla.no/r/naturfag-sf/biologisk-mangfold/db1f76017b> |
+| [ ] | `ndla-feltarbeid` | Planlegging av feltarbeid - Biologi 1 - NDLA | <https://ndla.no/r/biologi-1/planlegging-av-feltarbeid/c8e9b76126> |
+| [ ] | `ndla-tradisjonell` | Tradisjonell kunnskap - Naturfag (SF) - NDLA | <https://ndla.no/r/naturfag-sf/tradisjonell-kunnskap/ed76e41d5d> |
+| [ ] | `ndla-oppgaver` | Øvingsoppgaver om økologi - Naturfag (SF) - NDLA | <https://ndla.no/r/naturfag-sf/ovingsoppgaver-om-okologi/dbebc4b92a> |
+
+## Videoer (YouTube)
+
+| Sjekket | Id | Tittel funnet på siden | Lenke |
+|---|---|---|---|
+| [ ] | `yt-naeringsnett` | Food Webs and Energy Pyramids: Bedrocks of Biodiversity / Amoeba Sisters | <https://www.youtube.com/watch?v=-oVavgmveyY> |
+| [ ] | `yt-relasjoner` | Ecological Relationships / Amoeba Sisters | <https://www.youtube.com/watch?v=rNjPI84sApQ> |
+| [ ] | `yt-kretslop` | Carbon and Nitrogen Cycles / Amoeba Sisters | <https://www.youtube.com/watch?v=NHqEthRCqQ4> |
+| [ ] | `yt-autotrof` | Autotrophs and Heterotrophs / Amoeba Sisters | <https://www.youtube.com/watch?v=f8G7IulYxiA> |
+| [ ] | `yt-okologi-repetisjon` | Ecology Review: Food Chains & Webs, Relationships, Nitrogen & Carbon Cycles, Effects on Biodiversity / Amoeba Sisters | <https://www.youtube.com/watch?v=srpl5YRw-_U> |
+| [ ] | `yt-plantetilpasning` | Plants: Diversity, Structure, & Adaptations / Amoeba Sisters | <https://www.youtube.com/watch?v=A_DF246uVlU> |
+| [ ] | `yt-our-planet-skog` | Our Planet / Forests / FULL EPISODE / Netflix / Netflix | <https://www.youtube.com/watch?v=JkaxUblCGz0> |
+| [ ] | `yt-our-planet-en` | Our Planet / One Planet / FULL EPISODE / Netflix / Netflix | <https://www.youtube.com/watch?v=GfO-3Oir-qM> |
+| [ ] | `yt-attenborough-life` | David Attenborough: A Life on Our Planet / Official Trailer / Netflix / Netflix | <https://www.youtube.com/watch?v=64R2MYUt394> |
+| [ ] | `yt-spekkhogger-sild` | Humpback Whales and Orcas Feed Together / North Atlantic / 4K UHD / BBC Earth / BBC Earth | <https://www.youtube.com/watch?v=MGwEXjv3fYw> |
+
+## Bilder (Wikimedia Commons)
+
+| Sjekket | Id | Tittel funnet på siden | Lenke |
+|---|---|---|---|
+| [ ] | `media-elg` | (lisens hentet ved søk) | <https://commons.wikimedia.org/wiki/File:Elk_(Alces_alces_alces)_female_Oppdal.jpg> |
+| [ ] | `media-gaupe` | (lisens hentet ved søk) | <https://commons.wikimedia.org/wiki/File:Lynx_in_Norway.jpg> |
+| [ ] | `media-ekorn` | (lisens hentet ved søk) | <https://commons.wikimedia.org/wiki/File:Sciurus_vulgaris_AR.jpg> |
