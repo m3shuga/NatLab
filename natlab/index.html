@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="nb">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>NatLab</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="NatLab – et interaktivt oppslagsverk i naturfag for 8.–10. trinn. Utforsk celler og virus, les, øv og test deg selv.">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/natlab.css">
+</head>
+<body>
+<a class="skip" href="#main">Hopp til innholdet</a>
+<div id="dev-banner" class="dev-banner" hidden></div>
+<header class="site-header" id="site-header"></header>
+<main id="main" tabindex="-1"></main>
+<footer class="site-footer" id="site-footer"></footer>
+<div id="player" class="player" hidden role="region" aria-label="Opplesing"></div>
+<div id="toast" class="toast" hidden role="status" aria-live="polite"></div>
+<dialog id="settings" class="settings" aria-labelledby="settings-title"></dialog>
+<noscript><p style="padding:2rem">NatLab trenger JavaScript for å fungere. / NatLab needs JavaScript to work.</p></noscript>
+
+<!-- 1) Kjernen -->
+<script src="assets/js/core.js"></script>
+
+<!-- 2) Innhold: faste tekster og temaliste -->
+<script src="content/ui.js"></script>
+<script src="content/temaer.js"></script>
+<script src="content/personvern.js"></script>
+
+<!-- 3) Innhold: tema «Celler og virus» -->
+<script src="content/celler/tema.js"></script>
+<script src="content/celler/kilder.js"></script>
+<script src="content/celler/strukturer.js"></script>
+<script src="content/celler/diagrammer.js"></script>
+<script src="content/celler/dyrecelle.js"></script>
+<script src="content/celler/plantecelle.js"></script>
+<script src="content/celler/bakterie.js"></script>
+<script src="content/celler/virus.js"></script>
+<script src="content/celler/sammenligning.js"></script>
+<script src="content/celler/maal.js"></script>
+<script src="content/celler/ordliste.js"></script>
+<script src="content/celler/quiz.js"></script>
+<!-- Nytt tema? Legg til filene her (se README.md). -->
+
+<!-- 4) Appen -->
+<script src="assets/js/readaloud.js"></script>
+<script src="assets/js/diagram.js"></script>
+<script src="assets/js/article.js"></script>
+<script src="assets/js/activities.js"></script>
+<script src="assets/js/quiz.js"></script>
+<script src="assets/js/scale.js"></script>
+<script src="assets/js/pages.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
