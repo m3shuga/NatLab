@@ -1,3 +1,5 @@
 tools/tests/skjermbilder/
 natlab.zip
 .DS_Store
+tools/kart/node_modules/
+tools/kart/*.json
