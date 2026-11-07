@@ -229,3 +229,132 @@ Merk: «Our Planet»-episodene er lagt ut gratis på YouTube av Netflix. Sjekk a
 | [ ] | `media-elg` | (lisens hentet ved søk) | <https://commons.wikimedia.org/wiki/File:Elk_(Alces_alces_alces)_female_Oppdal.jpg> |
 | [ ] | `media-gaupe` | (lisens hentet ved søk) | <https://commons.wikimedia.org/wiki/File:Lynx_in_Norway.jpg> |
 | [ ] | `media-ekorn` | (lisens hentet ved søk) | <https://commons.wikimedia.org/wiki/File:Sciurus_vulgaris_AR.jpg> |
+| [ ] | `media-skog` | CC BY-SA 2.5 (sjekket på filsiden 6.11.2026) | <https://commons.wikimedia.org/wiki/File:Mixed_Picea_(Spruce)_forest_from_Vestfold_county_in_Norway.jpg> |
+| [ ] | `media-tareskog` | CC BY 4.0 (sjekket på filsiden 6.11.2026) | <https://commons.wikimedia.org/wiki/File:For%C3%AAt_sous-marine_%C3%A0_Mol%C3%A8ne_(Ifremer_00675-78700_-_31609).jpg> |
+| [ ] | `media-hare` | CC BY 2.0 (sjekket på filsiden 6.11.2026) | <https://commons.wikimedia.org/wiki/File:Hare_(Lepus_timidus),_B%C3%A6reia,_Hedmark,_Norway_(4682773200).jpg> |
+| [ ] | `media-spekkhogger` | Public domain (sjekket på filsiden 6.11.2026) | <https://commons.wikimedia.org/wiki/File:Orca_lofoten_male_female.jpg> |
+| [ ] | `media-sild` | CC BY 4.0 (sjekket på filsiden 6.11.2026) | <https://commons.wikimedia.org/wiki/File:Clupea_harengus_Atlantic.jpg> |
+| [ ] | `media-knuskkjuke` | CC BY-SA 2.0 (sjekket på filsiden 6.11.2026) | <https://commons.wikimedia.org/wiki/File:Fomes_fomentarius_(46906865784).jpg> |
+| [ ] | `media-raudate` | CC BY 4.0 (sjekket på filsiden 6.11.2026) | <https://commons.wikimedia.org/wiki/File:Calanus_finmarchicus_198195756.png> |
+| [ ] | `media-lunde` | CC BY 2.0 (sjekket på filsiden 6.11.2026) | <https://commons.wikimedia.org/wiki/File:Fratercula_arctica_-_9650189685_Atlantic_Puffin_Horn%C3%B8ya,_Vard%C3%B8,_Norway_2013-07-05_Flickr_Photo_by_Teo_Laakso.jpg> |
+
+# Historien om Jorda
+
+Lenkene ligger i `content/jorda/kilder.js`. Alle ble åpnet 7. november 2026 (SNL-artiklene ble hentet og lest, YouTube-lenkene sjekket med oEmbed).
+
+## Store norske leksikon
+
+| Sjekket | Id | Tittel | Lenke |
+|---|---|---|---|
+| [ ] | `snl-geologi` | geologi – Store norske leksikon | <https://snl.no/geologi> |
+| [ ] | `snl-geolog` | geolog – Store norske leksikon | <https://snl.no/geolog> |
+| [ ] | `snl-jorden` | Jorden – Store norske leksikon | <https://snl.no/Jorden> |
+| [ ] | `snl-jordens-geologi` | Jordens geologi – Store norske leksikon | <https://snl.no/Jordens_geologi> |
+| [ ] | `snl-jordskorpen` | jordskorpen – Store norske leksikon | <https://snl.no/jordskorpen> |
+| [ ] | `snl-mantelen` | mantelen – Store norske leksikon | <https://snl.no/mantelen> |
+| [ ] | `snl-kjerne` | Jordens kjerne – Store norske leksikon | <https://snl.no/Jordens_kjerne> |
+| [ ] | `snl-litosfaren` | litosfæren – Store norske leksikon | <https://snl.no/litosf%C3%A6ren> |
+| [ ] | `snl-astenosfaren` | astenosfæren – Store norske leksikon | <https://snl.no/astenosf%C3%A6ren> |
+| [ ] | `snl-seismisk-bolge` | seismisk bølge – Store norske leksikon | <https://snl.no/seismisk_b%C3%B8lge> |
+| [ ] | `snl-paleomagnetisme` | paleomagnetisme – Store norske leksikon | <https://snl.no/paleomagnetisme> |
+| [ ] | `snl-radiometrisk` | radiometrisk datering – Store norske leksikon | <https://snl.no/radiometrisk_datering> |
+| [ ] | `snl-fossiler` | fossiler – Store norske leksikon | <https://snl.no/fossiler> |
+| [ ] | `snl-solsystemet` | solsystemet – Store norske leksikon | <https://snl.no/solsystemet> |
+| [ ] | `snl-platetektonikk` | platetektonikk – Store norske leksikon | <https://snl.no/platetektonikk> |
+| [ ] | `snl-plategrense` | plategrense – Store norske leksikon | <https://snl.no/plategrense> |
+| [ ] | `snl-kontinentaldrift` | kontinentaldrift – Store norske leksikon | <https://snl.no/kontinentaldrift> |
+| [ ] | `snl-wegener` | Alfred Wegener – Store norske leksikon | <https://snl.no/Alfred_Wegener> |
+| [ ] | `snl-pangea` | Pangea – Store norske leksikon | <https://snl.no/Pangea> |
+| [ ] | `snl-gondwana` | Gondwanaland – Store norske leksikon | <https://snl.no/Gondwanaland> |
+| [ ] | `snl-laurasia` | Laurasia – Store norske leksikon | <https://snl.no/Laurasia> |
+| [ ] | `snl-tethys` | Tethyshavet – Store norske leksikon | <https://snl.no/Tethyshavet> |
+| [ ] | `snl-midthavsrygg` | midthavsrygg – Store norske leksikon | <https://snl.no/midthavsrygg> |
+| [ ] | `snl-havbunnsspredning` | havbunnsspredning – Store norske leksikon | <https://snl.no/havbunnsspredning> |
+| [ ] | `snl-transform` | transformforkastning – Store norske leksikon | <https://snl.no/transformforkastning> |
+| [ ] | `snl-dyphavsgrop` | dyphavsgrop – Store norske leksikon | <https://snl.no/dyphavsgrop> |
+| [ ] | `snl-konveksjon` | konveksjon (fysikk) – Store norske leksikon | <https://snl.no/konveksjon_-_fysikk> |
+| [ ] | `snl-vulkan` | vulkan – Store norske leksikon | <https://snl.no/vulkan> |
+| [ ] | `snl-magma` | magma – Store norske leksikon | <https://snl.no/magma> |
+| [ ] | `snl-lava` | lava – Store norske leksikon | <https://snl.no/lava> |
+| [ ] | `snl-jordskjelv` | jordskjelv – Store norske leksikon | <https://snl.no/jordskjelv> |
+| [ ] | `snl-jordskjelv-norge` | jordskjelv i Norge – Store norske leksikon | <https://snl.no/jordskjelv_i_Norge> |
+| [ ] | `snl-store-jordskjelv` | store og kjente jordskjelv – Store norske leksikon | <https://snl.no/store_og_kjente_jordskjelv> |
+| [ ] | `snl-tsunami` | tsunami – Store norske leksikon | <https://snl.no/tsunami> |
+| [ ] | `snl-himalaya-geologi` | Himalayas geologi – Store norske leksikon | <https://snl.no/Himalayas_geologi> |
+| [ ] | `snl-andes` | Andesfjellene – Store norske leksikon | <https://snl.no/Andesfjellene> |
+| [ ] | `snl-riftdalen` | Riftdalen – Store norske leksikon | <https://snl.no/Riftdalen> |
+| [ ] | `snl-san-andreas` | San Andreas-forkastningen – Store norske leksikon | <https://snl.no/San_Andreas-forkastningen> |
+| [ ] | `snl-atlanterhavet` | Atlanterhavet – Store norske leksikon | <https://snl.no/Atlanterhavet> |
+| [ ] | `snl-island` | Island – Store norske leksikon | <https://snl.no/Island> |
+| [ ] | `snl-jan-mayen` | Jan Mayen – Store norske leksikon | <https://snl.no/Jan_Mayen> |
+| [ ] | `snl-hawaii` | Hawaii – Store norske leksikon | <https://snl.no/Hawaii> |
+| [ ] | `snl-eyjafjalla` | Eyjafjallajökull – Store norske leksikon | <https://snl.no/Eyjafjallaj%C3%B6kull> |
+| [ ] | `snl-etna` | Etna – Store norske leksikon | <https://snl.no/Etna_-_vulkan_i_Italia> |
+| [ ] | `snl-vesuv` | Vesuv – Store norske leksikon | <https://snl.no/Vesuv> |
+| [ ] | `snl-oslofeltet` | Oslofeltet – Store norske leksikon | <https://snl.no/Oslofeltet> |
+| [ ] | `snl-norges-geologi` | Norges geologi – Store norske leksikon | <https://snl.no/Norges_geologi> |
+| [ ] | `snl-kaledonsk` | Den kaledonske orogenese – Store norske leksikon | <https://snl.no/Den_kaledonske_orogenese> |
+| [ ] | `snl-glossopteris` | glossopteris – Store norske leksikon | <https://snl.no/glossopteris> |
+| [ ] | `snl-lystrosaurus` | Lystrosaurus – Store norske leksikon | <https://snl.no/Lystrosaurus> |
+| [ ] | `snl-mesosaurer` | mesosaurer – Store norske leksikon | <https://snl.no/mesosaurer> |
+| [ ] | `snl-mineraler` | mineraler – Store norske leksikon | <https://snl.no/mineraler> |
+| [ ] | `snl-krystall` | krystall (geologi) – Store norske leksikon | <https://snl.no/krystall_-_geologi> |
+| [ ] | `snl-bergarter` | bergarter – Store norske leksikon | <https://snl.no/bergarter> |
+| [ ] | `snl-magmatiske` | magmatiske bergarter – Store norske leksikon | <https://snl.no/magmatiske_bergarter> |
+| [ ] | `snl-dypbergarter` | dypbergarter – Store norske leksikon | <https://snl.no/dypbergarter> |
+| [ ] | `snl-sedimentare` | sedimentære bergarter – Store norske leksikon | <https://snl.no/sediment%C3%A6re_bergarter> |
+| [ ] | `snl-metamorfe` | metamorfe bergarter – Store norske leksikon | <https://snl.no/metamorfe_bergarter> |
+| [ ] | `snl-kvarts` | kvarts – Store norske leksikon | <https://snl.no/kvarts> |
+| [ ] | `snl-feltspat` | feltspat – Store norske leksikon | <https://snl.no/feltspat> |
+| [ ] | `snl-glimmer` | glimmer – Store norske leksikon | <https://snl.no/glimmer> |
+| [ ] | `snl-granitt` | granitt – Store norske leksikon | <https://snl.no/granitt> |
+| [ ] | `snl-basalt` | basalt – Store norske leksikon | <https://snl.no/basalt> |
+| [ ] | `snl-larvikitt` | larvikitt – Store norske leksikon | <https://snl.no/larvikitt> |
+| [ ] | `snl-sandstein` | sandstein – Store norske leksikon | <https://snl.no/sandstein> |
+| [ ] | `snl-kalkstein` | kalkstein – Store norske leksikon | <https://snl.no/kalkstein> |
+| [ ] | `snl-gneis` | gneis – Store norske leksikon | <https://snl.no/gneis> |
+| [ ] | `snl-marmor` | marmor – Store norske leksikon | <https://snl.no/marmor> |
+| [ ] | `snl-forvitring` | forvitring – Store norske leksikon | <https://snl.no/forvitring> |
+| [ ] | `snl-erosjon` | erosjon – Store norske leksikon | <https://snl.no/erosjon> |
+
+## NDLA
+
+| Sjekket | Id | Tittel | Lenke |
+|---|---|---|---|
+| [ ] | `ndla-jordskorpa` | Jordskorpa i bevegelse – NDLA | <https://ndla.no/r/geografi/jordskorpa-i-bevegelse/c8d0e91a24> |
+| [ ] | `ndla-bergarter` | Hvordan bergarter blir dannet – NDLA | <https://ndla.no/r/geografi/hvordan-bergarter-blir-dannet/978417980b> |
+| [ ] | `ndla-jordskjelv` | Jordskjelv – NDLA | <https://ndla.no/r/geografi/jordskjelv/5ae1b6a21d> |
+| [ ] | `ndla-tegn-plater` | Tegn og forklar platetektonikk – NDLA | <https://ndla.no/r/geografi/tegn-og-forklar-platetektonikk/2fcfaf92ea> |
+| [ ] | `ndla-filmer` | Filmer og figurer i Indre krefter – NDLA | <https://ndla.no/r/geografi/filmer-og-figurer-i-indre-krefter/aa58bc7487> |
+
+## Videoer (YouTube)
+
+| Sjekket | Id | Tittel | Lenke |
+|---|---|---|---|
+| [ ] | `yt-indre-krefter` | Introduksjon til Indre krefter – NDLA (YouTube) | <https://www.youtube.com/watch?v=MeYq-luhgHU> |
+| [ ] | `yt-bergartstyper` | De tre bergartstypene – NDLA (YouTube) | <https://www.youtube.com/watch?v=QC2Cd9waK9c> |
+| [ ] | `yt-platetektonikk` | Indre krefter: Platetektonikk – Det digitale klasserommet (YouTube) | <https://www.youtube.com/watch?v=r8X-OUvobJk> |
+| [ ] | `yt-kretslop` | Indre krefter: Bergartenes kretsløp – Det digitale klasserommet (YouTube) | <https://www.youtube.com/watch?v=XUy699ucr5w> |
+| [ ] | `yt-sentrum` | Three minutes to the centre of the Earth – BBC (YouTube) | <https://www.youtube.com/watch?v=SeFT0ewzM6g> |
+| [ ] | `yt-drift` | Continental Drift 101 – National Geographic (YouTube) | <https://www.youtube.com/watch?v=Wq9kLzm36h0> |
+| [ ] | `yt-minuteearth` | Plate Tectonics Explained – MinuteEarth (YouTube) | <https://www.youtube.com/watch?v=kwfNGatxUJI> |
+
+## Kartdata
+
+| Sjekket | Id | Tittel | Lenke |
+|---|---|---|---|
+| [ ] | `pb2002` | An updated digital model of plate boundaries (PB2002), Peter Bird 2003 – GeoJSON ved Hugo Ahlenius/Nordpil – GitHub: fraxen/tectonicplates (ODC-By 1.0) | <https://github.com/fraxen/tectonicplates> |
+
+## Bilder (Wikimedia Commons)
+
+| Sjekket | Id | Lisens | Lenke |
+|---|---|---|---|
+| [ ] | `media-kvarts` | CC BY-SA 4.0 (sjekket på filsiden 7.11.2026) | <https://commons.wikimedia.org/wiki/File:Quartz_Br%C3%A9sil.jpg> |
+| [ ] | `media-feltspat` | Fri bruk (Public domain) (sjekket på filsiden 7.11.2026) | <https://commons.wikimedia.org/wiki/File:Feldspar(Microcline)USGOV.jpg> |
+| [ ] | `media-larvikitt` | CC BY 2.0 (sjekket på filsiden 7.11.2026) | <https://commons.wikimedia.org/wiki/File:Blue_Pearl_Granite_(larvikite)_(Larvik_Batholith,_292-298_Ma,_Early_Permian;_near_Larvik,_Norway)_1_(14620330099).jpg> |
+| [ ] | `media-basalt` | CC BY 2.0 (sjekket på filsiden 7.11.2026) | <https://commons.wikimedia.org/wiki/File:Basaltic_lava_(late_March_2021_eruption_in_Geldingadalur_Valley,_Rekjanes_Peninsula,_Iceland)_1.jpg> |
+| [ ] | `media-lagdeling` | CC0 (sjekket på filsiden 7.11.2026) | <https://commons.wikimedia.org/wiki/File:Grand_Canyon_layers_(cropped).jpg> |
+| [ ] | `media-gneis` | Fri bruk (Public domain) (sjekket på filsiden 7.11.2026) | <https://commons.wikimedia.org/wiki/File:Akskoygneiss-norway.jpg> |
+| [ ] | `media-wegener` | Fri bruk (Public domain) (sjekket på filsiden 7.11.2026) | <https://commons.wikimedia.org/wiki/File:Alfred_Wegener_ca.1924-30.jpg> |
+| [ ] | `media-thingvellir` | CC BY-SA 4.0 (sjekket på filsiden 7.11.2026) | <https://commons.wikimedia.org/wiki/File:Almannagj%C3%A1_rift_at_%C3%9Eingvellir_National_Park.jpg> |
+| [ ] | `media-everest` | CC BY-SA 4.0 (sjekket på filsiden 7.11.2026) | <https://commons.wikimedia.org/wiki/File:Golden_Everest_from_Kala_Patthar.jpg> |

@@ -1,9 +1,10 @@
 # NatLab
 
-NatLab er et interaktivt oppslagsverk i naturfag for 8.–10. trinn. Foreløpig finnes to temaer:
+NatLab er et interaktivt oppslagsverk i naturfag for 8.–10. trinn. Foreløpig finnes tre temaer:
 
 - **Celler og virus**: dyrecellen, plantecellen, bakterien og virus (influensavirus, bakteriofag og meslingvirus).
 - **Økologi og økosystemer**: skogen på Østlandet og Norskehavet, tilpasninger og roller, næringskjeder og -nett (interaktivt), energi i økosystemet, mennesket og naturen – og et feltarbeid med observasjonsskjema.
+- **Historien om Jorda**: hva geologi er, hvordan Jorda ble til og er bygd opp, platetektonikk (seks klikkbare tverrsnitt og et interaktivt kart over plategrenser, vulkaner og jordskjelv), verdenskartet i endring (animert mantel og «Kartet gjennom tid» fra Pangea til i dag), mineraler og bergarter – og Alfred Wegener.
 
 Elevene kan
 
@@ -91,6 +92,16 @@ natlab/
 │       ├── feltarbeid.js   ← feltarbeidssiden og observasjonsskjemaet
 │       ├── tegninger.js    ← ikoner av artene og scenene skog/hav (kode)
 │       ├── kilder.js, bilder.js, ordliste.js, quiz.js
+│   └── jorda/              ← temaet «Historien om Jorda»
+│       ├── tema.js         ← tittel, verktøy, øving, quiz – OG innholdet i de to kartene
+│       │                     (vulkaner, jordskjelv, «Oppdag sammenhengen», hendelser i tidskartet)
+│       ├── maal.js         ← LÆRINGSMÅLENE
+│       ├── del1-…del6-*.js ← de seks delene (artiklene)
+│       ├── strukturer.js   ← alt som kan klikkes på i tegningene (tekst i infopanelet)
+│       ├── tegninger.js    ← tegningene (kode)
+│       ├── kartdata.js     ← verdenskart og plategrenser (generert – ikke rediger, se tools/kart)
+│       ├── kilder.js, ordliste.js, quiz.js
+│       └── bilder/         ← fotografier (.webp)
 ├── assets/                 ← selve appen (kode, utseende, skrift, logo)
 │   ├── css/natlab.css      ← farger og utseende
 │   ├── js/                 ← programkoden
@@ -148,6 +159,9 @@ Hvis appen blir helt tom etter en endring, er det nesten alltid et komma eller e
 | Økologi: temasiden / del 1–5 | `#okologi` / `#okologi-okosystemet-les`, `#okologi-tilpasning-les`, `#okologi-kjeder-les`, `#okologi-energi-les`, `#okologi-mennesket-les` |
 | Økologi: næringsnettet | `#okologi-naeringsnett` (· `-hvis` · `-pyramide`) |
 | Økologi: feltarbeid | `#okologi-feltarbeid` |
+| Jorda: temasiden / del 1–6 | `#jorda` / `#jorda-geologi`, `#jorda-oppbygning`, `#jorda-platetektonikk`, `#jorda-verdenskart`, `#jorda-bergarter`, `#jorda-wegener` (legg til `-les` for artikkelen) |
+| Jorda: plategrensekartet | `#jorda-kart` |
+| Jorda: kartet gjennom tid | `#jorda-tidskart` |
 
 **Viktig:** Id-er (navn på sider, oppgaver osv.) kan ikke inneholde bindestrek `-`, fordi bindestreken skiller delene i adressen. Skriv `kjedehav`, ikke `kjede-hav`.
 
@@ -268,6 +282,13 @@ Selve appen (`assets/js`) trenger du ikke endre. Utforskeren, artiklene, øvings
 
 ### Endre næringsnettet
 Åpne `content/okologi/naeringsnett.js`. Hver pil er en linje som `['sild', 'torsk']` (sild blir spist av torsk). Plasseringen av hver art står i `nodes` som `['torsk', x, y]`. Scenariene i «Hva skjer hvis …?» står nederst – kopier ett og endre teksten og hvilke arter som fjernes (`remove`).
+
+### Endre kartene i «Historien om Jorda»
+Alt innholdet i kartene står i `content/jorda/tema.js`:
+- **Plategrensekartet** (`T.pages.kart`): `volcanoes` og `quakes` (navn, lengde- og breddegrad, forklaring), `examples` (knappene «Hopp til et eksempel»), `steps` («Oppdag sammenhengen») og `kinds` (tekstene for hver type plategrense).
+- **Kartet gjennom tid** (`T.pages.tidskart`): `events` (tekstene som vises på ulike tidspunkter), `info` (tekst når man klikker på et kontinent) og `oceans` (navn på hav).
+- **Fossiler og andre bevis** (`T.zones`) brukes både i tidskartet og i del 6.
+Selve kartdataene (`kartdata.js`) lages av skriptene i `tools/kart/`.
 
 ### Endre feltarbeidsskjemaet
 Åpne `content/okologi/feltarbeid.js`. Skjemaet (`sheet`) består av seksjoner med felter: `text` (én linje), `area` (flere linjer) og `table` (tabell med `cols` og antall `rows`). Ingenting eleven skriver, blir lagret.
