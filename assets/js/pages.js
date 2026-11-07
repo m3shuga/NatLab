@@ -162,7 +162,24 @@
     const c = T.pages[pid];
     if (c.type === 'foodweb') return P.foodweb(tid, pid, sub);
     if (c.type === 'fieldwork') return P.fieldwork(tid, pid);
+    if (c.type === 'geomap' || c.type === 'drift') return P.mapPage(tid, pid);
     return P.compare(tid, pid);
+  };
+  /* Kart: plategrenser (geomap) og kartet gjennom tid (drift) – se assets/js/geo.js */
+  P.mapPage = function (tid, pid) {
+    const T = topicOf(tid);
+    const c = T.pages[pid];
+    return {
+      title: N.t(c.title),
+      html: '<div class="wrap page"><header class="page-head">' + crumbs([[N.u('home'), '#'], [N.t(T.title), '#' + tid], [N.t(c.title)]]) +
+        '<h1>' + N.esc(N.t(c.title)) + '</h1><p class="lead">' + N.fmt(c.lead) + '</p>' +
+        (c.tabs ? '<nav class="tabs" aria-label="' + N.esc(N.t(c.title)) + '">' + c.tabs.map(function (x) { return '<a href="' + x.href + '"' + (x.href === '#' + tid + '-' + pid ? ' aria-current="page"' : '') + '>' + N.icon(x.icon || 'arrow') + N.esc(N.t(x.label)) + '</a>'; }).join('') + '</nav>' : '') +
+        '</header><div id="map-body"></div>' + (c.page ? '<div id="map-article"></div>' : '') + '</div>',
+      mount: function (main) {
+        (c.type === 'geomap' ? N.geomap : N.drift)(N.$('#map-body', main), { topic: tid, page: c });
+        if (c.page) { const a = N.$('#map-article', main); a.innerHTML = N.renderArticle(tid, c.page); N.wireArticle(a); }
+      }
+    };
   };
   P.foodweb = function (tid, pid, sub) {
     const T = topicOf(tid);
@@ -360,7 +377,7 @@
     const where = function (e) {
       const T = N.topics[e.topic];
       if (!T.structures || !T.structures[e.id]) return '';
-      const org = Object.keys(T.organisms).filter(function (k) { return T.organisms[k].diagrams.some(function (d) { return N.diagrams[d].parts.some(function (p) { return p.id === e.id; }); }); })[0];
+      const org = Object.keys(T.organisms).filter(function (k) { return (T.organisms[k].diagrams || []).some(function (d) { return N.diagrams[d].parts.some(function (p) { return p.id === e.id; }); }); })[0];
       return org ? '<a href="#' + e.topic + '-' + org + '-del-' + e.id + '">' + N.u('seeInModel') + ' →</a>' : '';
     };
     const html = '<div class="wrap page"><header class="page-head">' + crumbs([[N.u('home'), '#'], [N.u('navGlossary')]]) + '<h1>' + N.u('navGlossary') + '</h1><p class="lead">' + N.u('glossaryLead') + '</p>' +

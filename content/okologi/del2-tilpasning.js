@@ -45,6 +45,7 @@ NatLab.topic('okologi').organisms.tilpasning = {
             { icon: 'gran', type: 'struktur', title: { nb: 'Grana: smal og spiss', en: 'Spruce: narrow and pointed' }, text: { nb: 'Formen gjør at tung snø lettere glir av, så greinene ikke knekker.', en: 'The shape helps heavy snow slide off, so the branches don’t break.' } },
             { icon: 'steinkobbe', type: 'struktur', title: { nb: 'Selen: tykt spekklag', en: 'Seal: thick blubber' }, text: { nb: 'Spekket isolerer mot det kalde vannet og er et energilager.', en: 'The blubber insulates against the cold water and is an energy store.' } }
           ] },
+          { photo: 'hare', caption: { nb: 'Haren på bildet har gråbrun pels. Om høsten skifter haren til hvit vinterpels, som gir kamuflasje i snøen. Bildet er tatt i Kongsvinger.', en: 'The hare in the photo has grey-brown fur. In autumn the hare changes to a white winter coat, which gives camouflage in the snow. The photo was taken in Kongsvinger.' } },
           { h3: { nb: 'Kroppens funksjoner', en: 'Body functions' } },
           { adapt: [
             { icon: 'raudate', type: 'funksjon', title: { nb: 'Raudåta: vinterhvile', en: 'Calanus: winter rest' }, text: { nb: 'Om høsten går raudåta ned på dypt vann og hviler (diapause) på lagret fett til våren.', en: 'In autumn the calanus goes down to deep water and rests (diapause) on stored fat until spring.' }, src: ['snl-raudate'] },
@@ -57,6 +58,10 @@ NatLab.topic('okologi').organisms.tilpasning = {
             { icon: 'spekkhogger', type: 'atferd', title: { nb: 'Spekkhoggeren: jakter i flokk', en: 'Orca: hunts in groups' }, text: { nb: 'Spekkhoggerne samarbeider om å samle silda i en tett ball og bedøve den med halen.', en: 'Orcas work together to herd herring into a tight ball and stun it with their tails.' }, src: ['snl-spekkhogger'] },
             { icon: 'sild', type: 'atferd', title: { nb: 'Silda: svømmer i stim', en: 'Herring: swims in schools' }, text: { nb: 'I en stor stim er det vanskelig for et rovdyr å velge ut én fisk.', en: 'In a large school it is hard for a predator to pick out one fish.' }, src: ['snl-sild'] },
             { icon: 'kjottmeis', type: 'atferd', title: { nb: 'Trekkfugler: flyr sørover', en: 'Migratory birds: fly south' }, text: { nb: 'Mange fugler trekker sørover om høsten, når det blir lite insekter her. Kjøttmeisa blir derimot i Norge og spiser frø om vinteren.', en: 'Many birds migrate south in autumn, when there are few insects here. The great tit, however, stays in Norway and eats seeds in winter.' }, src: ['snl-trekkfugler', 'snl-kjottmeis'] }
+          ] },
+          { photos: [
+            { photo: 'spekkhogger', caption: { nb: 'Spekkhoggere i Lofoten. Hannen (til venstre) har mye høyere ryggfinne enn hunnen. Langs norskekysten er silda spekkhoggerens livrett.', en: 'Orcas in Lofoten. The male (left) has a much taller dorsal fin than the female. Along the Norwegian coast, herring is the orca’s favourite food.' } },
+            { photo: 'sild', caption: { nb: 'Silda svømmer i store stimer og spiser dyreplankton som raudåte. Den er mat for blant annet spekkhogger, sel, torsk og lunde.', en: 'Herring swim in large schools and eat zooplankton such as calanus. They are food for orcas, seals, cod and puffins, among others.' } }
           ] },
           { check: {
             q: { nb: 'Ekornet gjemmer nøtter til vinteren. Hvilken type tilpasning er det?', en: 'The squirrel hides nuts for the winter. Which type of adaptation is that?' },
@@ -94,6 +99,7 @@ NatLab.topic('okologi').organisms.tilpasning = {
           } },
           { p: { nb: 'Noen dyr er **[[altetende]]**: De spiser både planter og dyr. Rødreven spiser mus, hare og fugler, men også bær. Da hører den til flere trofiske nivåer samtidig.', en: 'Some animals are **[[altetende|omnivores]]**: they eat both plants and animals. The red fox eats mice, hares and birds, but also berries. It then belongs to several trophic levels at once.' }, src: ['snl-altetende', 'snl-rodrev'] },
           { myth: { nb: '«Nedbryterne er ikke så viktige – det er dyrene som er spennende.»', en: '“Decomposers aren’t that important – it’s the animals that are exciting.”' }, truth: { nb: 'Uten nedbrytere ville skogen fylles opp av døde blader, trær og dyr, og plantene ville gå tom for næringsstoffer. Nedbryterne gjør at næringen går i **kretsløp**.', en: 'Without decomposers the forest would fill up with dead leaves, trees and animals, and the plants would run out of nutrients. Decomposers make nutrients go round in **cycles**.' }, src: ['snl-nedbrytere', 'snl-sopp'] },
+          { photo: 'knuskkjuke', caption: { nb: 'Knuskkjuke er en sopp som er svært vanlig på bjørk og andre løvtrær. Den bryter ned veden, slik at treet råtner og næringsstoffene kan brukes på nytt.', en: 'Tinder fungus is a fungus that is very common on birch and other broadleaf trees. It breaks down the wood, so the tree rots and the nutrients can be used again.' } },
           { discuss: { nb: 'Hvilken rolle har mennesket i økosystemet? Er vi produsenter, konsumenter eller nedbrytere – og på hvilke trofiske nivåer?', en: 'What role do humans have in the ecosystem? Are we producers, consumers or decomposers – and at which trophic levels?' } }
         ]
       }

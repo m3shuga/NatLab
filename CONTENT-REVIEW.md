@@ -90,3 +90,36 @@ Pilene bygger på hva artene spiser ifølge SNL. Noen er forenklet eller ikke di
 
 ## 5. Bilder
 Bare tre fotografier er lagt inn (elg, gaupe, ekorn) fordi Wikimedia Commons begrenset nedlastingene. Gaupebildet er tatt i en dyrepark. Flere bilder (skog, hare, sopp, spekkhogger, sild) kan legges til – se README del 8.
+
+# Historien om Jorda
+
+Faktaene er sjekket mot Store norske leksikon (snl.no). Punktene under bør læreren se på.
+
+## 1. Begreper som bør samkjøres med Eureka!
+- [ ] **Jordskorpe/jordskorpa**, **havskorpe** (SNL: havbunnsskorpe) og **kontinentalskorpe**.
+- [ ] **Divergent / konvergent / transform** plategrense (SNL nevner også konstruktiv / destruktiv / konservativ).
+- [ ] **Magmatiske** (størkningsbergarter), **sedimentære** (avsetningsbergarter) og **metamorfe** (omdannede) bergarter – hvilke navn bruker Eureka!?
+- [ ] **Midthavsrygg** eller **spredningsrygg**, **dyphavsgrop**, **øybue**, **riftdal**.
+- [ ] **Varm flekk** (engelsk «hotspot») – Eureka! kan bruke et annet ord.
+
+## 2. Læreplanen
+- [ ] **Kompetansemålet om geologi mangler.** Jeg fikk ikke åpnet udir.no. I `content/jorda/maal.js` står bare de generelle målene om modeller og hypoteser. Legg til det kompetansemålet i NAT01-05 som handler om Jordas oppbygning/platetektonikk.
+
+## 3. Fakta som er forenklet eller ikke har direkte kilde
+- [ ] «Slik ble Jorda til» (del 2): Stegene (støvsky, kollisjoner, tunge stoffer synker til kjernen, skorpe og hav) er en vanlig skoleforklaring. SNL sier at Jorda oppstod av en gass- og støvsky for 4,5–5 milliarder år siden, og «nærmere 4,6 milliarder år» (Jordens geologi). Detaljene om kjernedannelse og hav er ikke hentet direkte fra SNL.
+- [ ] «Jordas historie som ett døgn» (del 1, Gå dypere): klokkeslettene er regnet ut av meg fra tallene i SNL.
+- [ ] Mesosaurus: SNL (mesosaurer) sier permtiden; jeg har skrevet «for mellom 300 og 250 millioner år siden».
+- [ ] Cynognathus er **ikke** tatt med, fordi jeg ikke fant en norsk kilde.
+- [ ] Vulkanen Erebus i Antarktis er forklart som et område der skorpa er strukket og varm mantel stiger opp – dette er ikke fra SNL. Vurder å fjerne den.
+- [ ] Fuji, Mount St. Helens, Merapi og Popocatépetl er forklart med plategrensene i nærheten (fra PB2002-dataene), men har ikke egne SNL-kilder.
+- [ ] Jordskjelvet i San Francisco 1906: SNL oppgir ulike dødstall (700 i tabellen «store og kjente jordskjelv», rundt 3000 i artikkelen om San Andreas-forkastningen). Derfor står det ikke noe tall i NatLab.
+
+## 4. Forenklinger i modellene og kartene
+- [ ] **Tidskartet** er en forenklet modell: Afrika holdes fast, kontinentene flyttes ved å rotere dem på kula, og tidspunktene er omtrentlige (fra SNL: Pangea, Gondwanaland, Himalayas geologi, Norges geologi). Det står i bildeteksten.
+- [ ] **Bevissonene** (fossiler, isspor, fjellkjeder) er tegnet som omtrentlige områder, ikke eksakte funnsteder.
+- [ ] **Mantelmodellen** er animert mange millioner ganger raskere enn i virkeligheten, og strømmene er tegnet som to pene ringer. Det står i artikkelen og i modellen.
+- [ ] I **plategrensekartet** er «havbunn mot havbunn» valgt automatisk når begge platene er havplater (ellers «havbunn mot kontinent»). Noen få grenser kan derfor få feil undertype.
+- [ ] **Jordskjelvsonene** er tegnet som brede felt langs alle plategrensene (bredest der havbunn synker ned eller kontinenter kolliderer), ikke ut fra en jordskjelvdatabase.
+
+## 5. Ting som kan endre seg
+- [ ] Jordskjelvrekorder i norsk område (SNL nevner et skjelv med styrke 6,6 ved Jan Mayen i 2025).

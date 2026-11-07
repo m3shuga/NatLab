@@ -21,6 +21,13 @@ NatLab.registry = [
     art: 'skognett'
   },
   {
+    id: 'jorda',
+    status: 'klar',
+    title: { nb: 'Historien om Jorda', en: 'The story of the Earth' },
+    text: { nb: 'Jordas lag, platetektonikk, vulkaner og jordskjelv, mineraler og bergarter – og Alfred Wegener.', en: 'The Earth’s layers, plate tectonics, volcanoes and earthquakes, minerals and rocks – and Alfred Wegener.' },
+    art: 'lagene'
+  },
+  {
     id: 'universet',
     status: 'snart',
     title: { nb: 'Universet', en: 'The Universe' },

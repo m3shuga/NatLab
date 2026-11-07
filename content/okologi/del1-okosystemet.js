@@ -48,6 +48,10 @@ NatLab.topic('okologi').organisms.okosystemet = {
       {
         id: 'skog-hav', title: { nb: 'Skogen og havet – to økosystemer', en: 'The forest and the sea – two ecosystems' },
         blocks: [
+          { photos: [
+            { photo: 'skog', caption: { nb: 'Gammel granskog i Andebu i Vestfold. Grana er et av de viktigste trærne i skogen på Østlandet.', en: 'Old spruce forest in Andebu in Vestfold. The spruce is one of the most important trees in the forests of south-eastern Norway.' } },
+            { photo: 'tareskog', caption: { nb: 'Tareskog av stortare. Tareskogen er leveområde for mange fisk og smådyr. (Bildet er fra Frankrike, men stortare vokser også langs norskekysten.)', en: 'A kelp forest of tangle kelp. The kelp forest is a habitat for many fish and small animals. (The photo is from France, but tangle kelp also grows along the Norwegian coast.)' } }
+          ] },
           { table: {
             head: [{ nb: '', en: '' }, { nb: 'Skogen på Østlandet', en: 'Forest in south-eastern Norway' }, { nb: 'Norskehavet', en: 'The Norwegian Sea' }],
             rows: [

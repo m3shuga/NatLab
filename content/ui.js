@@ -44,6 +44,8 @@ NatLab.ui = {
   compareOff: { nb: 'Slå av sammenligning', en: 'Turn off comparison' },
   compareHint: { nb: 'Delene som blinker, finnes bare i den ene cellen.', en: 'The flashing parts are found in only one of the cells.' },
   onlyIn: { nb: 'Finnes bare i', en: 'Only found in' },
+  animPause: { nb: 'Pause animasjonen', en: 'Pause the animation' },
+  animPlay: { nb: 'Spill av animasjonen', en: 'Play the animation' },
   pickPart: { nb: 'Klikk på en del av modellen', en: 'Click a part of the model' },
   pickPartHelp: { nb: 'Du kan også bruke knappene under tegningen, eller Tab-tasten og Enter.', en: 'You can also use the buttons below the drawing, or the Tab key and Enter.' },
   partsList: { nb: 'Delene i modellen', en: 'Parts of the model' },

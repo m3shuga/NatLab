@@ -139,7 +139,8 @@
       level: N.settings.level,
       pins: true,
       compare: false,
-      selected: null
+      selected: null,
+      paused: !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches)
     };
 
     function partDef(diagramId, id) {
@@ -165,6 +166,7 @@
         '<div class="seg" role="group" aria-labelledby="lvl-label"><button type="button" data-level="basic" aria-pressed="' + (state.level === 'basic') + '">' + N.u('levelBasic') + '</button>' +
         '<button type="button" data-level="deeper" aria-pressed="' + (state.level === 'deeper') + '">' + N.u('levelDeeper') + '</button></div>' : '') +
         (two ? '' : '<button type="button" class="btn btn-sm" data-pins aria-pressed="' + state.pins + '">' + N.icon('target') + N.u('showNumbers') + '</button>') +
+        (ids.some(function (x) { return N.diagrams[x].animated; }) ? '<button type="button" class="btn btn-sm" data-anim aria-pressed="' + !state.paused + '">' + N.icon(state.paused ? 'play' : 'pause') + N.u(state.paused ? 'animPlay' : 'animPause') + '</button>' : '') +
         (cfg.compareWith ? '<button type="button" class="btn btn-sm" data-compare aria-pressed="' + state.compare + '">' + N.icon('compare') + (state.compare ? N.u('compareOff') : N.t(cfg.compareLabel)) + '</button>' : '') +
         '</div>';
       const figs = ids.map(function (d) {
@@ -214,6 +216,7 @@
         }
       });
       if (state.selected && list.indexOf(state.selected) < 0) state.selected = null;
+      N.$$('svg.diagram', root).forEach(function (svg) { if (state.paused && svg.pauseAnimations) svg.pauseAnimations(); });
       updateSelection(false);
     }
 
@@ -246,10 +249,27 @@
       if (t.dataset.level) { state.level = t.dataset.level; render(); return; }
       if (t.hasAttribute('data-pins')) { state.pins = !state.pins; render(); return; }
       if (t.hasAttribute('data-compare')) { state.compare = !state.compare; render(); return; }
+      if (t.hasAttribute('data-anim')) {
+        state.paused = !state.paused;
+        N.$$('svg.diagram', root).forEach(function (svg) { if (svg.pauseAnimations) { if (state.paused) svg.pauseAnimations(); else svg.unpauseAnimations(); } });
+        t.setAttribute('aria-pressed', String(!state.paused));
+        t.innerHTML = N.icon(state.paused ? 'play' : 'pause') + N.u(state.paused ? 'animPlay' : 'animPause');
+        return;
+      }
       if (t.dataset.model) { state.diagram = t.dataset.model; state.selected = null; render(); return; }
     });
 
-    if (cfg.select) state.selected = cfg.select;
+    if (cfg.select) {
+      state.selected = cfg.select;
+      // åpne tegningen som har delen (hvis det ikke er den første)
+      if (!partDef(state.diagram, cfg.select)) {
+        const d = cfg.diagrams.filter(function (x) { return partDef(x, cfg.select); })[0];
+        if (d) {
+          state.diagram = d;
+          if (N.partLevel(N.diagrams[d], partDef(d, cfg.select)) === 'deeper') state.level = 'deeper';
+        }
+      }
+    }
     render();
   };
 })();

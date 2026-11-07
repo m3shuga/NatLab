@@ -49,6 +49,11 @@
   --c-ink: #14203a;
   --c-pin: #14203a;
   --c-pin-ink: #ffffff;
+  /* Kart og jordas indre (Historien om Jorda) */
+  --c-sea: #d7e9f5; --c-sea-deep: #b9d6ec; --c-land: #e8dcc0; --c-land-line: #b9a77f; --c-plate-line: #5b6b7a;
+  --c-crust: #c8a46e; --c-ocrust: #59606b; --c-mantle: #e9935a; --c-mantle-2: #d9683c; --c-magma: #e2401f; --c-core: #f2b632; --c-core-2: #fbe28a;
+  --b-spredning: #d4380d; --b-rift: #e98a15; --b-subduksjon: #1f4fc4; --b-oybue: #0f8fa8; --b-kollisjon: #8a3fb0; --b-transform: #1b7f45;
+  --dr-na: #d9822b; --dr-sa: #3d9e57; --dr-gr: #8fb3d9; --dr-eu: #9a6fb0; --dr-af: #c9a227; --dr-ma: #c42b4f; --dr-in: #e05a9a; --dr-an: #5aa0c8; --dr-au: #8b5e34;
 
   /* Skrift */
   --f-display: "Bricolage Grotesque", "Atkinson Hyperlegible", system-ui, sans-serif;
@@ -75,6 +80,7 @@
     --slide: #0b1324; --slide-glow: #13203d;
     --c-cyto: #3b3522; --c-cyto-2: #4a4126; --c-vac: #17414a; --c-nuc: #3a3170; --c-nuc-2: #5a4ab0; --c-virus-in: #2a1f22;
     --c-ink: #e7edf8; --c-pin: #e7edf8; --c-pin-ink: #0a1020;
+    --c-sea: #0f2541; --c-sea-deep: #0b1c33; --c-land: #4a4433; --c-land-line: #7d7255; --c-plate-line: #9fb0c3; --b-spredning: #ff7a4d; --b-rift: #ffb24d; --b-subduksjon: #82a7ff; --b-oybue: #4fd0e8; --b-kollisjon: #d199ff; --b-transform: #57d693;
     color-scheme: dark;
   }
 }
@@ -86,6 +92,7 @@
   --slide: #0b1324; --slide-glow: #13203d;
   --c-cyto: #3b3522; --c-cyto-2: #4a4126; --c-vac: #17414a; --c-nuc: #3a3170; --c-nuc-2: #5a4ab0; --c-virus-in: #2a1f22;
   --c-ink: #e7edf8; --c-pin: #e7edf8; --c-pin-ink: #0a1020;
+  --c-sea: #0f2541; --c-sea-deep: #0b1c33; --c-land: #4a4433; --c-land-line: #7d7255; --c-plate-line: #9fb0c3; --b-spredning: #ff7a4d; --b-rift: #ffb24d; --b-subduksjon: #82a7ff; --b-oybue: #4fd0e8; --b-kollisjon: #d199ff; --b-transform: #57d693;
   color-scheme: dark;
 }
 
@@ -774,3 +781,98 @@ dialog.settings::backdrop { background: rgba(8, 14, 30, .55); }
 .soon-row li strong { display: block; color: var(--ink); font-family: var(--f-display); }
 .soon-row li small { display: block; font-size: .88rem; }
 .soon-icon { width: 2.6rem; height: 2.6rem; border-radius: 12px; display: grid; place-items: center; background: var(--surface-2); flex: none; }
+
+/* ===================== Historien om Jorda: kart ===================== */
+.geomap .ex-toolbar, .drift .ex-toolbar { flex-wrap: wrap; }
+.gm-layer { gap: .45rem; }
+.gm-sw { width: 14px; height: 14px; border-radius: 4px; display: inline-block; flex: none; }
+.gm-sw-grenser { background: linear-gradient(90deg, var(--b-spredning) 0 33%, var(--b-subduksjon) 33% 66%, var(--b-transform) 66%); }
+.gm-sw-skjelv { background: rgba(240, 180, 30, .55); border: 1px solid #d49a12; }
+.gm-sw-vulkaner { background: #c42b4f; clip-path: polygon(50% 0, 100% 100%, 0 100%); border-radius: 0; }
+.gm-sw-plater { background: var(--c-land); border: 1.5px dashed var(--c-plate-line); }
+.gm-layer[aria-pressed="false"] { opacity: .7; }
+.gm-layer[aria-pressed="false"] .gm-sw { filter: grayscale(1); opacity: .5; }
+.gm-figure { padding: 0; overflow: hidden; }
+.gm-svg, .dr-svg { width: 100%; height: auto; display: block; overflow: hidden; touch-action: manipulation; }
+.gm-sea, .dr-sea { fill: var(--c-sea); }
+.gm-land { fill: var(--c-land); stroke: var(--c-land-line); stroke-width: .5; pointer-events: none; }
+.gm-plates path { fill: transparent; stroke: none; pointer-events: none; }
+.gm-svg.show-plater .gm-plates path { fill: transparent; stroke: var(--c-plate-line); stroke-width: 1; stroke-dasharray: 3 3; pointer-events: fill; cursor: pointer; }
+.gm-svg.show-plater .gm-plates path:hover, .gm-svg .gm-plates path.is-sel { fill: rgba(31, 79, 196, .12); }
+.gm-svg.show-plater .gm-land { fill-opacity: .75; }
+.gm-quake path { fill: none; stroke: rgba(240, 180, 30, 0); stroke-linecap: round; stroke-linejoin: round; stroke-width: 7; pointer-events: stroke; cursor: pointer; }
+.gm-quake .qz-subduksjon, .gm-quake .qz-oybue, .gm-quake .qz-kollisjon { stroke-width: 13; }
+.gm-svg.show-skjelv .gm-quake path { stroke: rgba(240, 180, 30, .3); }
+.gm-bounds path { fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; pointer-events: stroke; cursor: pointer; opacity: 0; }
+.gm-svg.show-grenser .gm-bounds path { opacity: 1; }
+.bd-spredning { stroke: var(--b-spredning); } .bd-rift { stroke: var(--b-rift); stroke-dasharray: 4 2; }
+.bd-subduksjon { stroke: var(--b-subduksjon); stroke-width: 2.4 !important; } .bd-oybue { stroke: var(--b-oybue); stroke-width: 2.4 !important; }
+.bd-kollisjon { stroke: var(--b-kollisjon); stroke-width: 2.6 !important; } .bd-transform { stroke: var(--b-transform); }
+.gm-svg.has-sel .gm-bounds path:not(.is-sel) { opacity: .25; }
+.gm-svg.has-sel.show-grenser .gm-bounds path.is-sel { opacity: 1; stroke-width: 4 !important; filter: drop-shadow(0 0 3px var(--surface)); }
+.gm-svg.is-zoomed .gm-bounds path { stroke-width: 1.2; }
+.gm-volc, .gm-eq { display: none; }
+.gm-svg.show-vulkaner .gm-volc, .gm-svg.show-skjelv .gm-eq { display: inline; }
+.gm-v path { fill: #c42b4f; stroke: #fff; stroke-width: 1; cursor: pointer; }
+.gm-v.is-hot path { fill: #f08c00; }
+.gm-q circle { fill: rgba(255, 255, 255, .25); stroke: #8a5a00; stroke-width: 1.6; cursor: pointer; }
+.gm-v.is-sel path, .gm-q.is-sel circle { stroke: var(--accent); stroke-width: 2.6; }
+.gm-v:focus-visible path, .gm-q:focus-visible circle { stroke: var(--focus); stroke-width: 3; }
+.gm-v:focus, .gm-q:focus, .dr-c:focus { outline: none; }
+.gm-svg.is-zoomed .gm-v path { transform-box: fill-box; transform-origin: center; transform: scale(.7); }
+.gm-legend { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: .35rem .9rem; font-size: .9rem; }
+.gm-legend li { display: flex; align-items: center; gap: .4rem; }
+.gm-legend button { border: 0; background: none; padding: .25rem .1rem; display: flex; gap: .4rem; align-items: center; font: inherit; color: var(--ink); cursor: pointer; border-radius: 6px; min-height: 36px; }
+.gm-legend button:hover { background: var(--surface-2); }
+.gm-line { width: 26px; height: 0; border-top: 3px solid; display: inline-block; }
+.gm-line.bd-spredning { border-color: var(--b-spredning); } .gm-line.bd-rift { border-color: var(--b-rift); border-top-style: dashed; }
+.gm-line.bd-subduksjon { border-color: var(--b-subduksjon); } .gm-line.bd-oybue { border-color: var(--b-oybue); }
+.gm-line.bd-kollisjon { border-color: var(--b-kollisjon); } .gm-line.bd-transform { border-color: var(--b-transform); }
+.gm-tri { width: 12px; height: 11px; background: #c42b4f; clip-path: polygon(50% 0, 100% 100%, 0 100%); display: inline-block; }
+.gm-tri.is-hot { background: #f08c00; }
+.gm-dot { width: 13px; height: 13px; border-radius: 50%; border: 2px solid #8a5a00; display: inline-block; }
+.gm-zone { width: 26px; height: 10px; border-radius: 5px; background: rgba(240, 180, 30, .5); display: inline-block; }
+.gm-examples .label { font-size: .85rem; color: var(--muted); font-weight: 700; margin-bottom: .3rem; }
+.gm-steps { margin: 0; padding-left: 1.3rem; display: grid; gap: .8rem; }
+.gm-steps li { display: grid; gap: .35rem; }
+.gm-steps .btn { width: fit-content; }
+.gm-answer summary { cursor: pointer; color: var(--brand); font-weight: 700; font-size: .92rem; }
+.gm-answer p { margin-top: .3rem; }
+.gm-results { margin: 0; padding-left: 1.1rem; display: grid; gap: .2rem; }
+.gm-views button { font-size: .85rem; padding: .3rem .65rem; }
+
+.dr-time { display: grid; gap: .35rem; }
+.dr-big { font-family: var(--f-display); font-size: 1.35rem; font-weight: 700; }
+.dr-time input[type="range"] { width: 100%; accent-color: var(--brand); min-height: 32px; }
+.dr-scale { display: flex; justify-content: space-between; font-family: var(--f-mono); font-size: .8rem; color: var(--muted); }
+.dr-stops .btn[aria-pressed="true"] { border-color: var(--brand); background: var(--brand-soft); }
+.dr-grid line { stroke: var(--c-plate-line); stroke-opacity: .25; stroke-width: 1; stroke-dasharray: 2 4; }
+.dr-grid line.eq { stroke-opacity: .5; stroke-dasharray: 6 4; }
+.dr-c { stroke: rgba(20, 32, 58, .55); stroke-width: .8; stroke-linejoin: round; cursor: pointer; fill-opacity: .92; transition: opacity .2s; }
+.dr-c-na { fill: var(--dr-na); } .dr-c-sa { fill: var(--dr-sa); } .dr-c-gr { fill: var(--dr-gr); } .dr-c-eu { fill: var(--dr-eu); } .dr-c-af { fill: var(--dr-af); }
+.dr-c-ma { fill: var(--dr-ma); } .dr-c-in { fill: var(--dr-in); } .dr-c-an { fill: var(--dr-an); } .dr-c-au { fill: var(--dr-au); }
+.dr-svg.has-sel .dr-c:not(.is-sel) { opacity: .45; }
+.dr-c.is-sel { stroke: var(--ink); stroke-width: 2; }
+.dr-c:focus-visible { stroke: var(--focus); stroke-width: 3; }
+.dr-names text, .dr-oceans text { font-family: var(--f-display); font-weight: 700; font-size: 15px; text-anchor: middle; dominant-baseline: central; pointer-events: none; }
+.dr-names text { fill: #14203a; paint-order: stroke; stroke: rgba(255, 255, 255, .75); stroke-width: 3px; }
+.dr-oceans text { fill: var(--c-plate-line); font-style: italic; font-size: 18px; letter-spacing: .1em; }
+.dr-zones .zone path { pointer-events: none; }
+.zone-mark { font-family: var(--f-mono); font-size: 11px; font-weight: 700; text-anchor: middle; dominant-baseline: central; pointer-events: none; }
+.dr-event { border: 1px solid var(--line); border-left: 5px solid var(--brand); border-radius: var(--r-md); padding: .8rem 1rem; background: var(--surface); display: grid; gap: .3rem; }
+.dr-event .co-title { display: flex; gap: .4rem; align-items: center; font-weight: 700; }
+svg.diagram .zone path { cursor: pointer; }
+@media (max-width: 600px) {
+  .dr-names text { font-size: 22px; }
+  .gm-legend { font-size: .85rem; }
+}
+
+/* Etiketter inni tegningene (Historien om Jorda) */
+svg.diagram .dlab { font-family: var(--f-body); font-size: 17px; font-weight: 700; fill: #14203a; paint-order: stroke; stroke: rgba(255, 255, 255, .7); stroke-width: 3px; pointer-events: none; }
+svg.diagram .dlab.light { fill: #ffffff; stroke: rgba(20, 32, 58, .55); }
+svg.diagram .dlab.light-ish { fill: #ffffff; stroke: rgba(20, 32, 58, .4); font-size: 15px; }
+svg.diagram .dlab.mid { text-anchor: middle; dominant-baseline: central; }
+svg.diagram .dlab.small { font-size: 14px; }
+svg.diagram .dnum { font-family: var(--f-mono); font-size: 13px; font-weight: 700; text-anchor: middle; fill: #14203a; paint-order: stroke; stroke: rgba(255, 255, 255, .8); stroke-width: 3px; }
+.gm-figure figcaption, .dr-figure figcaption { text-transform: none; letter-spacing: 0; font-family: var(--f-body); font-size: .85rem; padding: .3rem .8rem .6rem; text-align: left; }
+svg.diagram[data-diagram="gondwana"] { overflow: hidden; }
