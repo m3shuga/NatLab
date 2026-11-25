@@ -12,7 +12,7 @@
     const parts = h.split('-').filter(Boolean);
     const P = N.pages;
     if (!parts.length) return { page: P.home(), nav: 'home' };
-    const top = { mal: 'goals', ordliste: 'glossary', personvern: 'privacy', kilder: 'credits' }[parts[0]];
+    const top = { mal: 'goals', ordliste: 'glossary', personvern: 'privacy', kilder: 'credits', om: 'about' }[parts[0]];
     if (top && parts.length === 1) return { page: P[top](), nav: parts[0] };
     const T = N.topics[parts[0]];
     if (!T) return { page: P.notFound() };
@@ -72,7 +72,7 @@
       '</div></div>';
     document.getElementById('site-footer').innerHTML =
       '<div class="wrap footer-row"><span style="display:flex;gap:.6rem;align-items:center"><img src="assets/img/logo.svg" alt="" width="28" height="28"><span>' + N.u('footerMade') + '</span></span>' +
-      '<nav aria-label="' + N.esc(N.t({ nb: 'Bunnmeny', en: 'Footer menu' })) + '"><a href="#personvern">' + N.u('privacy') + '</a><a href="#kilder">' + N.u('credits') + '</a><a href="#mal">' + N.u('navGoals') + '</a></nav></div>';
+      '<nav aria-label="' + N.esc(N.t({ nb: 'Bunnmeny', en: 'Footer menu' })) + '"><a href="#om">' + N.u('about') + '</a><a href="#personvern">' + N.u('privacy') + '</a><a href="#kilder">' + N.u('credits') + '</a><a href="#mal">' + N.u('navGoals') + '</a></nav></div>';
     N.$('.skip').textContent = N.u('skip');
     const pl = document.getElementById('player');
     pl.innerHTML = '<span class="pl-text"></span><button type="button" class="btn btn-sm" data-pl="pause"></button><button type="button" class="btn btn-sm" data-pl="stop">' + N.icon('stop') + '<span>' + N.u('stop') + '</span></button>';

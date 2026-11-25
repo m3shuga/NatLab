@@ -876,3 +876,13 @@ svg.diagram .dlab.small { font-size: 14px; }
 svg.diagram .dnum { font-family: var(--f-mono); font-size: 13px; font-weight: 700; text-anchor: middle; fill: #14203a; paint-order: stroke; stroke: rgba(255, 255, 255, .8); stroke-width: 3px; }
 .gm-figure figcaption, .dr-figure figcaption { text-transform: none; letter-spacing: 0; font-family: var(--f-body); font-size: .85rem; padding: .3rem .8rem .6rem; text-align: left; }
 svg.diagram[data-diagram="gondwana"] { overflow: hidden; }
+
+/* Om NatLab */
+.about { display: grid; gap: 1rem; }
+.about-sec { display: grid; gap: .7rem; scroll-margin-top: 90px; }
+.about-sec:focus { outline: none; }
+.about-list { margin: 0; padding-left: 1.2rem; display: grid; gap: .45rem; }
+.about-links { display: flex; flex-wrap: wrap; gap: .5rem; }
+.about-toc ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: .4rem .6rem; }
+.about-toc a { display: inline-block; padding: .35rem .8rem; border-radius: 999px; background: var(--surface-2); color: var(--ink); text-decoration: none; font-weight: 700; font-size: .92rem; }
+.about-toc a:hover { background: var(--brand-soft); }

@@ -4,7 +4,7 @@
 > Den oppsummerer alt som er gjort, alle beslutninger og hvordan koden er bygd opp.
 > **Oppdater filen** når noe viktig endres (nye temaer, nye beslutninger, ny arbeidsmåte).
 
-Sist oppdatert: 7. november 2026 (tema 3 «Historien om Jorda» lagt til).
+Sist oppdatert: 25. november 2026 (siden «Om NatLab» lagt til, gren `forbedringer`).
 
 ---
 
@@ -30,6 +30,7 @@ Et interaktivt, tospråklig (bokmål + engelsk) oppslagsverk i naturfag for **8.
 ## 3. Faste beslutninger
 
 - **Språk:** bokmål (standard) + engelsk; bytte på hver side. Alle tekster `{ nb: '…', en: '…' }`.
+- **Opphavsrett:** © André Espelid (læreren som lager NatLab), alle rettigheter forbeholdt – også kildekoden. Gratis bruk for elever og lærere i undervisning; lenking er velkommen. Kontakt: lektorespelid@gmail.com. Står på siden «Om NatLab» (`#om`, tekst i `content/om.js`). Tegninger er IKKE fritt gjenbrukbare (gammel formulering rettet i CREDITS/ui.js). Tredjepartsmateriale (foto, kartdata) følger egne lisenser.
 - **Personvern/GDPR:** ingen innlogging, ingen sporing, ingen cookies, ingen tredjeparts-forespørsler (fonter er selvhostet, YouTube er bare lenker – aldri innebygd). Bare innstillinger lagres i `localStorage`. Quiz/øving/feltskjema lagres ikke.
 - **Lesestøtte:** opplesing (Web Speech API, `nb-NO`), OpenDyslexic som valg, tekststørrelse, linjeavstand, lyst/mørkt tema.
 - **Nivåer:** «Grunnleggende» og «Gå dypere». Vis aldri en «Gå dypere»-kontroll som ikke endrer noe.
@@ -56,11 +57,11 @@ Et interaktivt, tospråklig (bokmål + engelsk) oppslagsverk i naturfag for **8.
 | `quiz.js` | typer `mc`, `tf`, `multi`, `hotspot` (svar kan være liste) |
 | `scale.js` | «Hvor små er de?» (celler) |
 | `geo.js` | `N.geoKit` (projeksjon, rotasjon av kontinenter på kula med kvaternioner, `rots(t)` for tidskartet, bevissoner), `N.geomap` (plategrensekart: lag, områder, eksempler, «Oppdag sammenhengen»), `N.drift` (tidskart med glidebryter/avspilling). Data: `content/jorda/kartdata.js` (`NatLab.geo`) |
-| `pages.js` | alle sider: forside, tema, kapittel/organisme, `custom` (artikkel / `foodweb` / `fieldwork` / `geomap` / `drift`), øving, quiz, mål, ordliste, personvern, kilder |
+| `pages.js` | alle sider (inkl. `P.about` = «Om NatLab»): forside, tema, kapittel/organisme, `custom` (artikkel / `foodweb` / `fieldwork` / `geomap` / `drift`), øving, quiz, mål, ordliste, personvern, kilder |
 | `app.js` | ruter (hash), topptekst, innstillinger, ordforklaring, opplesingsspiller |
 
 ### Adresser (hash-ruter)
-`#<tema>` · `#<tema>-<kapittel>` (utforsk) · `#<tema>-<kapittel>-les` · `#<tema>-<kapittel>-del-<del-id>` · `#<tema>-<side>` (fra `T.pages`) · `#<tema>-ov` · `#<tema>-ov-<type>-<id>` · `#<tema>-quiz` · `#mal` · `#ordliste` · `#personvern` · `#kilder`.
+`#<tema>` · `#<tema>-<kapittel>` (utforsk) · `#<tema>-<kapittel>-les` · `#<tema>-<kapittel>-del-<del-id>` · `#<tema>-<side>` (fra `T.pages`) · `#<tema>-ov` · `#<tema>-ov-<type>-<id>` · `#<tema>-quiz` · `#mal` · `#ordliste` · `#personvern` · `#kilder` · `#om`.
 **ID-er kan ikke inneholde bindestrek** (bindestrek skiller delene i adressen). Kapittel-id og side-id i samme tema må være forskjellige.
 
 ### Innholdsmodell per tema (`content/<tema>/`)

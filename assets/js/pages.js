@@ -86,6 +86,7 @@
       }).join('') +
       '<a class="quick-link" href="#ordliste"><span class="qi">' + N.icon('book') + '</span><span>' + N.u('navGlossary') + '<small>' + N.t({ nb: 'Fagord på norsk og engelsk', en: 'Key terms in Norwegian and English' }) + '</small></span></a>' +
       '<a class="quick-link" href="#mal"><span class="qi">' + N.icon('target') + '</span><span>' + N.u('navGoals') + '<small>' + N.t({ nb: 'Hva skal du kunne?', en: 'What should you know?' }) + '</small></span></a>' +
+      '<a class="quick-link" href="#om"><span class="qi">' + N.icon('book') + '</span><span>' + N.u('about') + '<small>' + N.t({ nb: 'Hvem har laget siden, og hvordan brukes den?', en: 'Who made the site, and how is it used?' }) + '</small></span></a>' +
       '</div></section></div>';
     return { title: null, html: html };
   };
@@ -411,6 +412,41 @@
         '<div class="prose" data-read-scope><p><button type="button" class="read-btn" data-read="section">' + N.icon('speaker') + N.u('readAloud') + '</button></p>' +
         c.sections.map(function (s) { return '<section style="display:grid;gap:.5rem"><h2 data-say style="font-size:1.3rem">' + N.esc(N.t(s.title)) + '</h2>' + s.text.map(function (p) { return '<p data-say>' + N.fmt(p) + '</p>'; }).join('') + '</section>'; }).join('') +
         '</div></div>'
+    };
+  };
+
+  /* ---------------- Om NatLab ---------------- */
+  P.about = function () {
+    const c = N.content && N.content.about;
+    const block = function (b) {
+      if (b.p) return '<p data-say>' + N.fmt(b.p) + '</p>';
+      if (b.list) return '<ul class="about-list">' + b.list.map(function (x) { return '<li data-say>' + N.fmt(x) + '</li>'; }).join('') + '</ul>';
+      if (b.links) return '<p class="about-links">' + b.links.map(function (l) {
+        const ext = /^https?:/.test(l.href);
+        return '<a class="btn btn-sm" href="' + N.esc(l.href) + '"' + (ext ? ' target="_blank" rel="noopener"' : '') + '>' + N.icon(/^mailto:/.test(l.href) ? 'doc' : 'arrow') + N.esc(N.t(l.label)) + '</a>';
+      }).join('') + '</p>';
+      return '';
+    };
+    return {
+      title: N.u('about'),
+      html: '<div class="wrap page"><header class="page-head">' + crumbs([[N.u('home'), '#'], [N.u('about')]]) + '<h1>' + N.u('about') + '</h1><p class="lead">' + N.fmt(c.lead) + '</p></header>' +
+        '<nav class="about-toc" aria-label="' + N.esc(N.t({ nb: 'Innhold på siden', en: 'Contents of the page' })) + '"><ul>' + c.sections.map(function (s) {
+          return '<li><a href="#om" data-jump="om-' + s.id + '">' + N.esc(N.t(s.title)) + '</a></li>';
+        }).join('') + '</ul></nav>' +
+        '<div class="prose about" data-read-scope><p><button type="button" class="read-btn" data-read="section">' + N.icon('speaker') + N.u('readAloud') + '</button></p>' +
+        c.sections.map(function (s) {
+          return '<section class="card-plain about-sec" id="om-' + s.id + '" tabindex="-1"><h2 data-say style="font-size:1.3rem">' + N.esc(N.t(s.title)) + '</h2>' + s.blocks.map(block).join('') + '</section>';
+        }).join('') +
+        '</div></div>',
+      mount: function (main) {
+        main.addEventListener('click', function (e) {
+          const a = e.target.closest('[data-jump]');
+          if (!a) return;
+          e.preventDefault();
+          const t = document.getElementById(a.dataset.jump);
+          if (t) { t.scrollIntoView({ behavior: 'smooth', block: 'start' }); t.focus({ preventScroll: true }); }
+        });
+      }
     };
   };
 

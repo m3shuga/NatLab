@@ -211,12 +211,13 @@ NatLab.ui = {
 
   /* Personvern og kilder */
   privacy: { nb: 'Personvern', en: 'Privacy' },
+  about: { nb: 'Om NatLab', en: 'About NatLab' },
   credits: { nb: 'Kilder og bilder', en: 'Sources and images' },
   creditsLead: { nb: 'Alle kilder, bilder og skrifttyper som er brukt i NatLab, med lisens.', en: 'All sources, images and fonts used in NatLab, with licences.' },
   images: { nb: 'Bilder', en: 'Images' },
   fonts: { nb: 'Skrifttyper', en: 'Fonts' },
   drawings: { nb: 'Tegninger', en: 'Drawings' },
-  drawingsText: { nb: 'Alle modellene av celler og virus er tegnet for NatLab, og kan brukes fritt i undervisning.', en: 'All the models of cells and viruses were drawn for NatLab and can be used freely in teaching.' },
+  drawingsText: { nb: 'Alle tegninger, modeller, animasjoner og ikoner er laget for NatLab. De er omfattet av opphavsretten til siden – se «Om NatLab».', en: 'All drawings, models, animations and icons were made for NatLab. They are covered by the copyright of the site – see “About NatLab”.' },
   curriculum: { nb: 'Læreplan', en: 'Curriculum' },
   footerMade: { nb: 'Laget for naturfag 8.–10. trinn · Bygger på LK20', en: 'Made for science, Years 8–10 · Based on LK20' },
   notFound: { nb: 'Fant ikke siden', en: 'Page not found' },

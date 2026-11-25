@@ -15,6 +15,8 @@ Elevene kan
 - se læringsmålene, slå opp i ordlisten og zoome fra hårstrå til virus
 - bytte mellom bokmål og engelsk, få teksten lest opp, velge skrift for dyslektikere og større tekst
 
+**Om NatLab:** Siden `#om` forteller hvem som har laget NatLab, hvordan den brukes, opphavsrett og kilder. Teksten står i `content/om.js`.
+
 **Personvern:** Ingen innlogging, ingen sporing, ingen informasjonskapsler. Ingenting hentes fra andre nettsteder når siden åpnes. Bare innstillingene (språk, skrift osv.) lagres i elevens egen nettleser.
 
 ---
@@ -69,6 +71,7 @@ natlab/
 │   ├── ui.js               ← knappetekster og menyer (bokmål + engelsk)
 │   ├── temaer.js           ← temaene på forsiden («Kommer snart» osv.)
 │   ├── personvern.js       ← teksten på personvernsiden
+│   ├── om.js               ← teksten på siden «Om NatLab» (#om): om deg, bruk av siden, opphavsrett og kilder
 │   └── celler/             ← temaet «Celler og virus»
 │       ├── tema.js         ← tittel, størrelsesskala, øvingsoppgaver, quizkategorier
 │       ├── maal.js         ← LÆRINGSMÅLENE  ← endre denne!

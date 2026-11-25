@@ -1,7 +1,7 @@
 # Kilder, bilder og lisenser (CREDITS)
 
 ## Tegninger
-Alle modellene av celler og virus, virussyklusen, størrelsesskalaen, økosystem-scenene, ikonene av arter i næringsnettene og logoen er tegnet for NatLab (som SVG-kode). De kan brukes fritt i undervisning.
+Alle modellene av celler og virus, virussyklusen, størrelsesskalaen, økosystem-scenene, ikonene av arter i næringsnettene og logoen er tegnet for NatLab (som SVG-kode). Det samme gjelder modellene, kartene og animasjonene i «Historien om Jorda». De er omfattet av opphavsretten til NatLab (© André Espelid) – se siden «Om NatLab» (`#om`).
 
 ## Fotografier
 Alle bildene er hentet fra Wikimedia Commons, skalert ned og lagret som WebP i `content/celler/bilder/`.
