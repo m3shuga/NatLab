@@ -164,6 +164,13 @@ p { margin: 0; }
 .main-nav a:hover { color: var(--ink); background: var(--surface-2); }
 .main-nav a[aria-current="page"] { color: var(--brand); background: var(--brand-soft); }
 .header-tools { display: flex; gap: .4rem; align-items: center; }
+@media (max-width: 859px) {
+  .main-nav { gap: .1rem; justify-content: space-between; flex-wrap: wrap; overflow: visible; }
+  .main-nav a { flex: 1 1 auto; text-align: center; padding: .4rem .35rem; }
+}
+@media (max-width: 359px) {
+  .main-nav a { font-size: .9rem; padding: .4rem .2rem; }
+}
 @media (min-width: 860px) {
   .main-nav { order: 0; width: auto; margin-right: .5rem; }
   .brand { margin-right: 1rem; }

@@ -65,7 +65,8 @@
       '<nav class="main-nav" aria-label="' + N.esc(N.t({ nb: 'Hovedmeny', en: 'Main menu' })) + '">' +
       '<a href="#" data-nav="home">' + N.u('navTopics') + '</a>' +
       '<a href="#mal" data-nav="mal">' + N.u('navGoals') + '</a>' +
-      '<a href="#ordliste" data-nav="ordliste">' + N.u('navGlossary') + '</a></nav>' +
+      '<a href="#ordliste" data-nav="ordliste">' + N.u('navGlossary') + '</a>' +
+      '<a href="#om" data-nav="om" aria-label="' + N.esc(N.u('about')) + '">' + N.u('navAbout') + '</a></nav>' +
       '<div class="header-tools">' +
       '<button type="button" class="btn btn-sm lang-btn" id="lang-toggle" aria-label="' + N.esc(N.u('switchLang')) + '" title="' + N.esc(N.u('switchLang')) + '">' + N.u('langShort') + '</button>' +
       '<button type="button" class="btn btn-icon btn-ghost" id="open-settings" aria-label="' + N.esc(N.u('settings')) + '" title="' + N.esc(N.u('settings')) + '">' + N.icon('gear') + '</button>' +

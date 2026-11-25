@@ -86,7 +86,6 @@
       }).join('') +
       '<a class="quick-link" href="#ordliste"><span class="qi">' + N.icon('book') + '</span><span>' + N.u('navGlossary') + '<small>' + N.t({ nb: 'Fagord på norsk og engelsk', en: 'Key terms in Norwegian and English' }) + '</small></span></a>' +
       '<a class="quick-link" href="#mal"><span class="qi">' + N.icon('target') + '</span><span>' + N.u('navGoals') + '<small>' + N.t({ nb: 'Hva skal du kunne?', en: 'What should you know?' }) + '</small></span></a>' +
-      '<a class="quick-link" href="#om"><span class="qi">' + N.icon('book') + '</span><span>' + N.u('about') + '<small>' + N.t({ nb: 'Hvem har laget siden, og hvordan brukes den?', en: 'Who made the site, and how is it used?' }) + '</small></span></a>' +
       '</div></section></div>';
     return { title: null, html: html };
   };
