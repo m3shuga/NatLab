@@ -28,6 +28,13 @@ NatLab.registry = [
     art: 'lagene'
   },
   {
+    id: 'klima',
+    status: 'klar',
+    title: { nb: 'Klimaendringer', en: 'Climate change' },
+    text: { nb: 'Drivhuseffekten, karbonkretsløpet, naturlige endringer og løsninger – med ekte måledata og interaktive modeller.', en: 'The greenhouse effect, the carbon cycle, natural changes and solutions – with real data and interactive models.' },
+    art: 'drivhuseffekt'
+  },
+  {
     id: 'universet',
     status: 'snart',
     title: { nb: 'Universet', en: 'The Universe' },
