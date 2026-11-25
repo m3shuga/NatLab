@@ -212,6 +212,7 @@ NatLab.ui = {
   /* Personvern og kilder */
   privacy: { nb: 'Personvern', en: 'Privacy' },
   about: { nb: 'Om NatLab', en: 'About NatLab' },
+  navAbout: { nb: 'Om', en: 'About' },
   credits: { nb: 'Kilder og bilder', en: 'Sources and images' },
   creditsLead: { nb: 'Alle kilder, bilder og skrifttyper som er brukt i NatLab, med lisens.', en: 'All sources, images and fonts used in NatLab, with licences.' },
   images: { nb: 'Bilder', en: 'Images' },
