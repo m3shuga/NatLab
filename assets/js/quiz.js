@@ -49,6 +49,15 @@
         state.set = fd.get('qset'); state.level = fd.get('qlevel'); state.count = Number(fd.get('qcount'));
         let qs = N.shuffle(pool());
         if (state.count) qs = qs.slice(0, state.count);
+        // Stokk svaralternativene, slik at riktig svar ikke alltid står på samme plass
+        qs = qs.map(function (q) {
+          if ((q.type !== 'mc' && q.type !== 'multi') || q.keepOrder) return q;
+          const order = N.shuffle(q.options.map(function (_, i) { return i; }));
+          const c = Object.assign({}, q);
+          c.options = order.map(function (i) { return q.options[i]; });
+          c.answer = q.type === 'multi' ? q.answer.map(function (a) { return order.indexOf(a); }).sort() : order.indexOf(q.answer);
+          return c;
+        });
         state.qs = qs; state.i = 0; state.answers = []; state.answered = false;
         question();
       });

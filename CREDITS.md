@@ -48,6 +48,33 @@ Alle bildene er hentet fra Wikimedia Commons, skalert ned og lagret som WebP i `
 
 CC BY-SA-bildene (phage.webp, elg.webp, ekorn.webp, skog.webp, knuskkjuke.webp, kvarts.webp, thingvellir.webp, everest.webp) er bare skalert ned og konvertert. Hvis du endrer selve bildet, må endret versjon deles under samme lisens.
 
+### Klimaendringer (content/klima/bilder/)
+
+| Fil | Bilde | Fotograf / opphav | Lisens | Kilde |
+|---|---|---|---|---|
+| nigards1898.webp | Elvekrok and Nigardsbreen glacier, ca. 1898. (12608909375).jpg | Nils Olsson Reppen / Fylkesarkivet i Sogn og Fjordane | [Ingen kjente begrensninger (Flickr Commons)](https://www.flickr.com/commons/usage/) | [Commons](https://commons.wikimedia.org/wiki/File:Elvekrok_and_Nigardsbreen_glacier%2C_ca._1898._(12608909375).jpg) |
+| nigards2017.webp | Nigardsbreen from afar.jpg | Carsten Steger | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | [Commons](https://commons.wikimedia.org/wiki/File:Nigardsbreen_from_afar.jpg) |
+| briksdal2003.webp | Briksdalsbreen and the lake in Briksdalen, Stryn, Sogn og Fjordane, Norway, 2003 July.jpg | Aulikki Räsänen (foto), Ximonic / Simo Räsänen | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | [Commons](https://commons.wikimedia.org/wiki/File:Briksdalsbreen_and_the_lake_in_Briksdalen%2C_Stryn%2C_Sogn_og_Fjordane%2C_Norway%2C_2003_July.jpg) |
+| briksdal2013.webp | Briksdalsbreen with glacial lake, Sogn og Fjordane, Norway, 2013 June.jpg | Ximonic (Simo Räsänen) | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | [Commons](https://commons.wikimedia.org/wiki/File:Briksdalsbreen_with_glacial_lake%2C_Sogn_og_Fjordane%2C_Norway%2C_2013_June.jpg) |
+| muir1941.webp | Changes in Glacier Bay- Muir Glacier (SVS25).jpg | William O. Field / NASA Scientific Visualization Studio | Offentlig eiendom (public domain) | [Commons](https://commons.wikimedia.org/wiki/File:Changes_in_Glacier_Bay-_Muir_Glacier_(SVS25).jpg) |
+| muir2004.webp | Muir Glacier, 2004, Glacier Bay National Park & Preserve (6808651941).jpg | Bruce Molnia, USGS / National Park Service | Offentlig eiendom (public domain) | [Commons](https://commons.wikimedia.org/wiki/File:Muir_Glacier%2C_2004%2C_Glacier_Bay_National_Park_%26_Preserve_(6808651941).jpg) |
+| grinnell.webp | Grinnell Glacier 1938-2009.jpg | T. J. Hileman (1938, Glacier National Park Archives) og Lindsey Bengtson (2009) | Offentlig eiendom (public domain) | [Commons](https://commons.wikimedia.org/wiki/File:Grinnell_Glacier_1938-2009.jpg) |
+| arktisis.webp | Arctic Sea Ice Minimum Comparison.png | NASA Earth Observatory (Jesse Allen) | Offentlig eiendom (public domain) | [Commons](https://commons.wikimedia.org/wiki/File:Arctic_Sea_Ice_Minimum_Comparison.png) |
+| shishmaref.webp | Shishmaref 1950-2012 grey.jpg | Hans Erren | [CC0](https://creativecommons.org/publicdomain/zero/1.0/) | [Commons](https://commons.wikimedia.org/wiki/File:Shishmaref_1950-2012_grey.jpg) |
+| kiribati.webp | As an extremely low-lying country, surrounded by vast oceans, Kiribati is at risk from the negative effects of climate change, such as sea-level rise and storm surges, 2011. Photo- Erin Magee - DFAT (12426392094).jpg | Erin Magee / DFAT | [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/) | [Commons](https://commons.wikimedia.org/wiki/File:As_an_extremely_low-lying_country%2C_surrounded_by_vast_oceans%2C_Kiribati_is_at_risk_from_the_negative_effects_of_climate_change%2C_such_as_sea-level_rise_and_storm_surges%2C_2011._Photo-_Erin_Magee_-_DFAT_(12426392094).jpg) |
+| holland.webp | Holland Island house.jpg | Flickr-bruker baldeaglebluff | [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/) | [Commons](https://commons.wikimedia.org/wiki/File:Holland_Island_house.jpg) |
+| korallbleking.webp | NMSAS - coral bleaching (27416199680).jpg | NOAA National Marine Sanctuaries | Offentlig eiendom (public domain) | [Commons](https://commons.wikimedia.org/wiki/File:NMSAS_-_coral_bleaching_(27416199680).jpg) |
+| gbr.webp | Extensive bleaching in the Great Barrier Reef (Copernicus 2024-03-05).jpg | Den europeiske union, Copernicus Sentinel-2 | Copernicus (fri bruk med kreditering) | [Commons](https://commons.wikimedia.org/wiki/File:Extensive_bleaching_in_the_Great_Barrier_Reef_(Copernicus_2024-03-05).jpg) |
+
+Bildet av Nigardsbreen fra ca. 1898 er venstre halvdel av et stereobilde. Bildet av Muir Glacier fra 1941 er beskåret litt. De andre er bare skalert ned og konvertert. CC BY-SA-bildene må deles under samme lisens hvis de endres.
+
+## Måledata (Klimaendringer)
+- **CO₂ på Mauna Loa:** NOAA Global Monitoring Laboratory (fritt tilgjengelig).
+- **Global temperatur:** NOAA NCEI, Climate at a Glance (fritt tilgjengelig). Regnet om til avvik fra 1850–1900 av NatLab.
+- **Iskjerner:** Bereiter mfl. (2015), Antarctic Ice Cores Revised 800KYr CO2 Data, og Jouzel mfl. (2007), EPICA Dome C, begge fra NOAA NCEI Paleoclimatology.
+- **Klimafotavtrykk:** Our World in Data (transport: UK BEIS 2022; mat: Poore og Nemecek 2018), CC BY 4.0.
+- Skriptet som lager data.js: tools/klima/make-data.py.
+
 ## Kartdata (Historien om Jorda)
 - **Verdenskart og kontinenter:** Natural Earth (public domain), via npm-pakken `world-atlas` 2.0.2.
 - **Plater og plategrenser:** PB2002 – Peter Bird (2003), «An updated digital model of plate boundaries», *Geochemistry Geophysics Geosystems* 4(3), 1027. GeoJSON-versjon av Hugo Ahlenius / Nordpil og csterling: <https://github.com/fraxen/tectonicplates>. Lisens: [Open Data Commons Attribution License (ODC-By 1.0)](https://opendatacommons.org/licenses/by/1.0/).

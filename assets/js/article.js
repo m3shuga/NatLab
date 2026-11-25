@@ -104,9 +104,14 @@
           (ty ? '<span class="badge t-' + a.type + '">' + N.esc(N.t(ty.name)) + '</span>' : '') + '</div></div>';
       }).join('') + '</div>';
     }
+    // Byggeklosser som er lagt til fra andre filer (f.eks. klima.js)
+    for (const k in (N.articleBlocks || {})) { if (b[k] !== undefined) return N.articleBlocks[k](c, b); }
     console.warn('Ukjent byggekloss', b);
     return '';
   }
+
+  N.articlePhoto = photo;
+  N.articleBlock = block;
 
   /** Tabell: hvilke deler finnes i hvilke organismer */
   N.structureGrid = function (topicId, rows) {
@@ -178,6 +183,7 @@
 
   /** Gjør sjekk-spørsmål og trinnfigurer interaktive */
   N.wireArticle = function (root) {
+    (N.articleWirers || []).forEach(function (fn) { fn(root); });
     N.$$('[data-check]', root).forEach(function (box) {
       const ans = Number(box.dataset.answer);
       N.$$('.opt', box).forEach(function (btn) {

@@ -163,7 +163,24 @@
     if (c.type === 'foodweb') return P.foodweb(tid, pid, sub);
     if (c.type === 'fieldwork') return P.fieldwork(tid, pid);
     if (c.type === 'geomap' || c.type === 'drift') return P.mapPage(tid, pid);
+    if (N.pageTypes && N.pageTypes[c.type]) return P.toolPage(tid, pid, sub);
     return P.compare(tid, pid);
+  };
+  /* Interaktive verktøy fra andre filer (f.eks. klima.js): N.pageTypes[type](element, { topic, page, sub }) */
+  P.toolPage = function (tid, pid, sub) {
+    const T = topicOf(tid);
+    const c = T.pages[pid];
+    return {
+      title: N.t(c.title),
+      html: '<div class="wrap page"><header class="page-head">' + crumbs([[N.u('home'), '#'], [N.t(T.title), '#' + tid], [N.t(c.title)]]) +
+        '<h1>' + N.esc(N.t(c.title)) + '</h1><p class="lead">' + N.fmt(c.lead) + '</p>' +
+        (c.tabs ? '<nav class="tabs" aria-label="' + N.esc(N.t(c.title)) + '">' + c.tabs.map(function (x) { return '<a href="' + x.href + '"' + (x.href === '#' + tid + '-' + pid ? ' aria-current="page"' : '') + '>' + N.icon(x.icon || 'arrow') + N.esc(N.t(x.label)) + '</a>'; }).join('') + '</nav>' : '') +
+        '</header><div id="tool-body"></div>' + (c.page ? '<div id="tool-article"></div>' : '') + '</div>',
+      mount: function (main) {
+        N.pageTypes[c.type](N.$('#tool-body', main), { topic: tid, id: pid, page: c, sub: sub });
+        if (c.page) { const a = N.$('#tool-article', main); a.innerHTML = N.renderArticle(tid, c.page); N.wireArticle(a); }
+      }
+    };
   };
   /* Kart: plategrenser (geomap) og kartet gjennom tid (drift) – se assets/js/geo.js */
   P.mapPage = function (tid, pid) {

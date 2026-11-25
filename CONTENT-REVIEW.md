@@ -123,3 +123,36 @@ Faktaene er sjekket mot Store norske leksikon (snl.no). Punktene under bør lær
 
 ## 5. Ting som kan endre seg
 - [ ] Jordskjelvrekorder i norsk område (SNL nevner et skjelv med styrke 6,6 ved Jan Mayen i 2025).
+
+# Klimaendringer
+
+Lagt til 25.11.2026. Fakta er sjekket mot Store norske leksikon, NDLA, FNs klimapanel (IPCC AR6), forskning.no og NOAA. Punktene under bør læreren se over.
+
+## 1. Begreper fra Eureka! / Aunivers
+Begrepene læreren sendte, er brukt og står i ordlisten: absorpsjon, global oppvarming, permafrost, refleksjon, drivhuseffekt, drivhusgasser, tilbakekoblingsmekanisme, klima, stråling, elektromagnetisk stråling, fossilt brensel, karbon, forsuring av havet.
+- Vi bruker «drivhusgasser» (ikke «klimagasser») som hovedord, og «forsuring av havet» (med «havforsuring» i parentes).
+- «Kortbølget» og «langbølget stråling» er brukt om sollys og varmestråling. Sjekk om Eureka! bruker de samme ordene.
+
+## 2. Tall og fakta som bør sjekkes
+- **Karbontallene** (140, 137, 80/78, 10, 1,5, 0,1 og lagrene 870, 450, 1700, 900, 37 000, 1750, ~930 milliarder tonn karbon) er avrundet fra IPCC AR6, kap. 5, figur 5.12 (snitt 2010–2019). Tallet for kjente reserver av kull, olje og gass er summen av tallene i figuren.
+- **2025–2026-tallene** (rekordutslipp i 2025, −0,4 % i 2026, Hormuzstredet, Kina 32 %, EU 6 %, 427,7 ppm, «under fire år igjen» av 1,5-gradersbudsjettet) er fra forskning.no 10.11.2026 (Global Carbon Project). De vil bli utdatert neste år.
+- **«Hver tidel av en grad teller»** og «varmere, våtere og villere» er fra NDLA (Konsekvenser av klimaendringer).
+- **Sleipner «siden 1990-tallet»**: SNL nevner Sleipner, men ikke årstallet (lagringen startet i 1996).
+- **Del 4, «Gå dypere»**: At istidene ofte sluttet med at jordbanen ga mer sol, og at CO₂ deretter forsterket oppvarmingen som tilbakekobling, er satt sammen fra SNL (Milanković-sykluser, Tilbakekoblinger, Klimaendringer – årsaker). Det er godt etablert kunnskap, men ingen av artiklene sier det med akkurat disse ordene.
+- **Iskjernegrafen**: Temperaturen er for Antarktis (EPICA Dome C), sammenlignet med de siste 1000 årene. Svingningene i Antarktis er omtrent dobbelt så store som globalt – dette er en vanlig tommelfingerregel, ikke fra en egen kilde.
+- **Temperaturgrafen**: NOAA oppgir avvik fra snittet for 1901–2000. NatLab har regnet om til avvik fra 1850–1900 ved å trekke fra snittet for 1850–1900 i de samme dataene.
+- **«Over 8 milliarder mennesker»** (del 1 og 4) har ingen egen kilde.
+- **Fotavtrykket**: Transporttall fra Storbritannia (BEIS 2022, via Our World in Data), mattall fra Poore og Nemecek 2018 (via Our World in Data). Porsjonen (150 g) og 190 skoledager er NatLab sine antakelser.
+
+## 3. Forenklinger i modellene
+- **«Hva skjer hvis?» i karbonmodellen** er en svært enkel modell med to «bokser» som tar opp CO₂, og oppvarmingen er regnet ut fra de samlede utslippene (ca. 2 °C per 1000 milliarder tonn karbon, for CO₂ og andre gasser til sammen). Den gir omtrent riktige tall (dagens utslipp gir rundt 3 °C i 2100), men er ingen ekte klimamodell. Dette står på siden.
+- **Drivhusmodellen** bruker IPCCs beste anslag for klimafølsomhet (3 °C per dobling av CO₂) og en enkel energibalanse for is og snø. Tallene gjelder når Jorda har kommet i balanse.
+- **Forsøket med to glass** gir ofte små og usikre forskjeller. Det står på siden, og det er et poeng i drøftingen.
+
+## 4. Lesesiden (helhetslesing)
+- Statped-siden om **helhetslesing** kunne ikke åpnes automatisk (den er bak en sikkerhetssjekk). Lesesiden bygger derfor på de vanlige fasene **før – under – etter lesing** og en egen del om **kildekritikk**. Læreren bør sammenligne med Statped-siden og si fra om noe bør endres.
+- Artiklene fra forskning.no er bare lenket til. Vi har ikke kopiert teksten. Forslagene til svar bygger på artiklene.
+
+## 5. Bilder
+- Bildene av Nigardsbreen (ca. 1898 og 2017) er ikke tatt fra nøyaktig samme sted. Det står i bildeteksten.
+- Korallbildet og satellittbildet av Great Barrier Reef viser ikke det samme revet før og etter.

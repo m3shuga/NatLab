@@ -358,3 +358,121 @@ Lenkene ligger i `content/jorda/kilder.js`. Alle ble åpnet 7. november 2026 (SN
 | [ ] | `media-wegener` | Fri bruk (Public domain) (sjekket på filsiden 7.11.2026) | <https://commons.wikimedia.org/wiki/File:Alfred_Wegener_ca.1924-30.jpg> |
 | [ ] | `media-thingvellir` | CC BY-SA 4.0 (sjekket på filsiden 7.11.2026) | <https://commons.wikimedia.org/wiki/File:Almannagj%C3%A1_rift_at_%C3%9Eingvellir_National_Park.jpg> |
 | [ ] | `media-everest` | CC BY-SA 4.0 (sjekket på filsiden 7.11.2026) | <https://commons.wikimedia.org/wiki/File:Golden_Everest_from_Kala_Patthar.jpg> |
+
+
+# Klimaendringer
+
+Alle lenkene under ble åpnet 25.11.2026. IPCC-rapportene er PDF-filer. Statped-siden kom fra læreren og er bak en sikkerhetssjekk, så den kunne ikke åpnes automatisk.
+
+## Store norske leksikon
+- [Klimaendringer](https://snl.no/klimaendringer)
+- [Klima](https://snl.no/klima)
+- [Klimaendringer – årsaker](https://snl.no/klimaendringer_-_%C3%A5rsaker)
+- [Global oppvarming](https://snl.no/global_oppvarming)
+- [Drivhuseffekten](https://snl.no/drivhuseffekten)
+- [Klimagasser](https://snl.no/klimagasser)
+- [Karbonkretsløpet](https://snl.no/karbonkretsl%C3%B8pet)
+- [Karbon](https://snl.no/karbon)
+- [Fotosyntese](https://snl.no/fotosyntese)
+- [Celleånding](https://snl.no/celle%C3%A5nding)
+- [Fossilt brensel](https://snl.no/fossilt_brensel)
+- [Kalkstein](https://snl.no/kalkstein)
+- [Havforsuring](https://snl.no/havforsuring)
+- [Kalkflagellater](https://snl.no/kalkflagellater)
+- [Permafrost](https://snl.no/permafrost)
+- [Tilbakekoblinger – klima](https://snl.no/tilbakekoblinger_-_klima)
+- [Albedoeffekt](https://snl.no/albedoeffekt)
+- [Metan](https://snl.no/metan)
+- [Vanndamp](https://snl.no/vanndamp)
+- [Stråling](https://snl.no/str%C3%A5ling)
+- [Elektromagnetisk stråling](https://snl.no/elektromagnetisk_str%C3%A5ling)
+- [Varmestråling](https://snl.no/varmestr%C3%A5ling)
+- [Infrarød stråling](https://snl.no/infrar%C3%B8d_str%C3%A5ling)
+- [Absorpsjon](https://snl.no/absorpsjon)
+- [Refleksjon – fysikk](https://snl.no/refleksjon_-_fysikk)
+- [Klimasystem](https://snl.no/klimasystem)
+- [Milanković-sykluser](https://snl.no/Milankovi%C4%87-sykluser)
+- [Istid](https://snl.no/istid)
+- [Solflekker](https://snl.no/solflekker)
+- [Pinatubo](https://snl.no/Pinatubo)
+- [Klimadebatten – faglige spørsmål](https://snl.no/klimadebatten_-_faglige_sp%C3%B8rsm%C3%A5l)
+- [FNs klimapanel – IPCC](https://snl.no/FNs_klimapanel_-_IPCC)
+- [Parisavtalen](https://snl.no/Parisavtalen)
+- [Karbonbudsjett](https://snl.no/karbonbudsjett)
+- [Karbonfangst og -lagring](https://snl.no/karbonfangst_og_-lagring)
+- [Klimatilpasning](https://snl.no/klimatilpasning)
+- [Fornybar energi](https://snl.no/fornybar_energi)
+- [Vannkraft](https://snl.no/vannkraft)
+- [Vindkraft](https://snl.no/vindkraft)
+- [Solenergi](https://snl.no/solenergi)
+- [Varmepumpe](https://snl.no/varmepumpe)
+- [Elbil](https://snl.no/elbil)
+- [Skog](https://snl.no/skog)
+- [Myr](https://snl.no/myr)
+- [Isbre](https://snl.no/isbre)
+- [Jostedalsbreen](https://snl.no/Jostedalsbreen)
+- [Nigardsbreen](https://snl.no/Nigardsbreen)
+- [Briksdalsbreen](https://snl.no/Briksdalsbreen)
+- [Havis](https://snl.no/havis)
+- [Grønlandsisen](https://snl.no/Gr%C3%B8nlandsisen)
+- [Antarktis](https://snl.no/Antarktis)
+- [Havnivå](https://snl.no/havniv%C3%A5)
+- [Korallrev](https://snl.no/korallrev)
+- [Korallbleking](https://snl.no/korallbleking)
+- [Great Barrier Reef](https://snl.no/Great_Barrier_Reef)
+- [Tuvalu](https://snl.no/Tuvalu)
+- [Maldivene](https://snl.no/Maldivene)
+- [Mauna Loa](https://snl.no/Mauna_Loa)
+- [Svante Arrhenius](https://snl.no/Svante_Arrhenius)
+- [Svalbard](https://snl.no/Svalbard)
+
+## NDLA
+- [Kilder og kildekritikk](https://ndla.no/r/naturfag-sf/kilder-og-kildekritikk/0328a386c8)
+- [Vitenskap og kildekritikk](https://ndla.no/r/tverrfaglige-temaer/vitenskap-og-kildekritikk/46324adbf1)
+- [Hva er drivhuseffekt?](https://ndla.no/r/naturfag-sf/hva-er-drivhuseffekt/01721c9289)
+- [Karbonkretsløpet](https://ndla.no/r/naturfag-sf/karbonkretslopet/914c75c262)
+- [Hva er problemet med havforsuring?](https://ndla.no/r/naturfag-sf/hva-er-problemet-med-havforsuring/252abd0bb6)
+- [Surere hav](https://ndla.no/r/naturfag-sf/surere-hav/2fbb221292)
+- [Forsøk: Forsuring av vann](https://ndla.no/r/naturfag-sf/forsok-forsuring-av-vann/9de3ff6126)
+- [Forsøk: Skjell og havforsuring](https://ndla.no/r/naturfag-sf/forsok-skjell-og-havforsuring/43bf786f85)
+- [Årsaker til klimaendringene](https://ndla.no/r/geografi/arsaker-til-klimaendringene/c629d14457)
+- [Konsekvenser av klimaendringer](https://ndla.no/r/geografi/konsekvenser-av-klimaendringer/a39499baf1)
+- [Klimasystemet](https://ndla.no/r/geografi/klimasystemet/a0057a2cb2)
+- [Klimaendringer påvirker mangfoldet](https://ndla.no/r/naturfag-sf/klimaendringer-pavirker-mangfoldet/c924874d36)
+- [Klimaendringer: Hva skjer? Hva gjør vi?](https://ndla.no/r/tverrfaglige-temaer/klimaendringer-hva-skjer-hva-gjor-vi/8a44f4a3b1)
+
+## Videoer (YouTube)
+- [Hva er drivhuseffekten?](https://www.youtube.com/watch?v=OYeEKxtKNR0) – NRK Skole (sjekket med oEmbed)
+- [Hva er menneskeskapte klimaendringer?](https://www.youtube.com/watch?v=IWDrd1f7TRU) – NRK Skole (sjekket med oEmbed)
+- [Drivhuseffekten](https://www.youtube.com/watch?v=SsChuNA5eyQ) – Meteorologisk institutt (sjekket med oEmbed)
+- [Paxi – Drivhuseffekten](https://www.youtube.com/watch?v=K9BJfsgIMcE) – European Space Agency, ESA (sjekket med oEmbed)
+- [What Is the Greenhouse Effect?](https://www.youtube.com/watch?v=SN5-DnOHQmE) – NASA Space Place (sjekket med oEmbed)
+- [How Do Greenhouse Gases Actually Work?](https://www.youtube.com/watch?v=sTvqIijqvTg) – MinuteEarth (sjekket med oEmbed)
+- [The carbon cycle – Nathaniel Manning](https://www.youtube.com/watch?v=A4cPmHGegKI) – TED-Ed (sjekket med oEmbed)
+- [Causes and Effects of Climate Change](https://www.youtube.com/watch?v=G4H1N_yXBiA) – National Geographic (sjekket med oEmbed)
+- [What do Antarctic ice cores tell us about climate change?](https://www.youtube.com/watch?v=VjTsj-fi-p0) – Natural History Museum (sjekket med oEmbed)
+- [What Is Ocean Acidification? | A Cartoon Crash Course](https://www.youtube.com/watch?v=ogZkV-Yj7Hc) – Pew (sjekket med oEmbed)
+
+## Andre kilder
+- [Climate Change 2021: The Physical Science Basis – Summary for Policymakers (AR6)](https://www.ipcc.ch/report/ar6/wg1/downloads/report/IPCC_AR6_WGI_SPM.pdf) – IPCC
+- [Climate Change 2021, kapittel 5: Global Carbon and other Biogeochemical Cycles and Feedbacks (figur 5.12)](https://www.ipcc.ch/report/ar6/wg1/downloads/report/IPCC_AR6_WGI_Chapter05.pdf) – IPCC
+- [Trends in Atmospheric Carbon Dioxide (Mauna Loa)](https://gml.noaa.gov/ccgg/trends/mlo.html) – NOAA Global Monitoring Laboratory
+- [Climate at a Glance: Global Time Series](https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/global/time-series) – NOAA National Centers for Environmental Information
+- [Antarctic Ice Cores Revised 800KYr CO2 Data (Bereiter mfl. 2015)](https://www.ncei.noaa.gov/access/paleo-search/study/17975) – NOAA National Centers for Environmental Information
+- [EPICA Dome C Ice Core 800KYr Deuterium Data and Temperature Estimates (Jouzel mfl. 2007)](https://www.ncei.noaa.gov/pub/data/paleo/icecore/antarctica/epica_domec/edc3deuttemp2007.txt) – NOAA National Centers for Environmental Information
+- [Utslipp til luft](https://www.ssb.no/natur-og-miljo/forurensning-og-klima/statistikk/utslipp-til-luft) – Statistisk sentralbyrå (SSB)
+- [Environmental Impacts of Food Production](https://ourworldindata.org/environmental-impacts-of-food) – Our World in Data
+- [You want to reduce the carbon footprint of your food? Focus on what you eat, not whether your food is local](https://ourworldindata.org/food-choice-vs-eating-local) – Our World in Data
+- [Which form of transport has the smallest carbon footprint?](https://ourworldindata.org/travel-carbon-footprint) – Our World in Data
+- [CO₂ and Greenhouse Gas Emissions](https://ourworldindata.org/co2-and-greenhouse-gas-emissions) – Our World in Data
+- [Evidence: How Do We Know Climate Change Is Real?](https://science.nasa.gov/climate-change/evidence/) – NASA Science
+- [The Causes of Climate Change](https://science.nasa.gov/climate-change/causes/) – NASA Science
+- [The Effects of Climate Change](https://science.nasa.gov/climate-change/effects/) – NASA Science
+- [World of Change (satellittbilder før og etter)](https://science.nasa.gov/earth/earth-observatory/world-of-change/) – NASA Earth Observatory
+- [Climate Interactives](https://science.nasa.gov/climate-change/climate-interactives/) – NASA Science
+- [Høyt oppå snaufjellet i Rondane ligger det furustokker. Hvordan havnet de der?](https://www.forskning.no/istiden-klima/hoyt-oppa-snaufjellet-i-rondane-ligger-det-furustokker-hvordan-havnet-de-der/2739002) – forskning.no (Elise Kjørstad, 20.11.2026)
+- [Dette gjør at de globale utslippene går litt ned i år](https://www.forskning.no/forurensning-klima/dette-gjor-at-de-globale-utslippene-gar-litt-ned-i-ar/2735829) – forskning.no (Elise Kjørstad, 10.11.2026)
+- [Havet stiger, men det rammer ulikt verden over](https://www.forskning.no/havet-klimaendringer-partner/havet-stiger-men-det-rammer-ulikt-verden-over/2545939) – forskning.no (partnerinnhold fra Universitetet i Bergen, 6.9.2025)
+- [Om forskning.no](https://www.forskning.no/om-forskningno/om-forskningno/990992) – forskning.no
+- [Helhetslesing](https://www.statped.no/ressurser-og-verktoy/ressurser/helhetslesing/) – Statped
+- [Kildekompasset](https://kildekompasset.no/) – Kildekompasset

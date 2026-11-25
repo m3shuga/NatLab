@@ -5,6 +5,7 @@ NatLab er et interaktivt oppslagsverk i naturfag for 8.–10. trinn. Foreløpig 
 - **Celler og virus**: dyrecellen, plantecellen, bakterien og virus (influensavirus, bakteriofag og meslingvirus).
 - **Økologi og økosystemer**: skogen på Østlandet og Norskehavet, tilpasninger og roller, næringskjeder og -nett (interaktivt), energi i økosystemet, mennesket og naturen – og et feltarbeid med observasjonsskjema.
 - **Historien om Jorda**: hva geologi er, hvordan Jorda ble til og er bygd opp, platetektonikk (seks klikkbare tverrsnitt og et interaktivt kart over plategrenser, vulkaner og jordskjelv), verdenskartet i endring (animert mantel og «Kartet gjennom tid» fra Pangea til i dag), mineraler og bergarter – og Alfred Wegener.
+- **Klimaendringer**: vær og klima, karbon og karbonkretsløpet (animert modell med «Hva skjer hvis?»), drivhuseffekten (interaktiv modell med tilbakekobling), naturlige klimaendringer og iskjerner, løsninger og hvordan verden ligger an, myter og målinger – med ekte måledata i grafer, før- og etter-bilder, klimafotavtrykk, helhetslesing av forskning.no og to forsøk.
 
 Elevene kan
 
@@ -104,6 +105,14 @@ natlab/
 │       ├── tegninger.js    ← tegningene (kode)
 │       ├── kartdata.js     ← verdenskart og plategrenser (generert – ikke rediger, se tools/kart)
 │       ├── kilder.js, ordliste.js, quiz.js
+│       └── bilder/         ← fotografier (.webp)
+│   └── klima/              ← temaet «Klimaendringer»
+│       ├── tema.js         ← tittel, verktøy, øving og quizkategorier
+│       ├── sider.js        ← modellene, grafene, før og etter, fotavtrykk, lesing og forsøk
+│       ├── maal.js         ← LÆRINGSMÅLENE
+│       ├── del1-…del6-*.js ← de seks delene (artiklene)
+│       ├── strukturer.js, tegninger.js, kilder.js, bilder.js, ordliste.js, quiz.js
+│       ├── data.js         ← måledata (generert – ikke rediger, se tools/klima)
 │       └── bilder/         ← fotografier (.webp)
 ├── assets/                 ← selve appen (kode, utseende, skrift, logo)
 │   ├── css/natlab.css      ← farger og utseende
@@ -255,6 +264,10 @@ Artiklene (f.eks. `plantecelle.js`) består av `sections`, og hver seksjon har e
 | `{ diagram: 'plantecelle' }` | Liten tegning (ikke klikkbar) | |
 | `{ link: { href, title, text, icon } }` | Stort lenkekort (til en side i NatLab eller en nettside) | `{ link: { href: '#okologi-naeringsnett', title: {…}, text: {…} } }` |
 | `{ adapt: [ { icon, type, title, text } ] }` | Kort med tilpasninger (type: `struktur`, `funksjon` eller `atferd`) | Se `del2-tilpasning.js` |
+| `{ chart: 'keeling' }` | Interaktiv graf med ekte målinger: `keeling` (CO₂), `temperatur` eller `iskjerne` | Se `klima/del2-karbon.js` |
+| `{ beforeafter: { items: [ {photo, label}, … ], caption } }` | To bilder side om side med årstall (før og etter) | Se `klima/sider.js` |
+| `{ claims: [ { claim, verdict, explain, src } ] }` | «Myte eller fakta?»-kort. `verdict` er `myte`, `fakta` eller `delvis` | Se `klima/del6-myter.js` |
+| `{ reading: { phases, articles } }` | Helhetslesing av en artikkel: før – under – etter lesing og kildekritikk | Se `klima/sider.js` |
 
 I tillegg har hver artikkel `goals` (vises øverst), `keypoints` («Viktigst å huske») og `resources` («Lær mer»).
 
@@ -292,6 +305,13 @@ Alt innholdet i kartene står i `content/jorda/tema.js`:
 - **Kartet gjennom tid** (`T.pages.tidskart`): `events` (tekstene som vises på ulike tidspunkter), `info` (tekst når man klikker på et kontinent) og `oceans` (navn på hav).
 - **Fossiler og andre bevis** (`T.zones`) brukes både i tidskartet og i del 6.
 Selve kartdataene (`kartdata.js`) lages av skriptene i `tools/kart/`.
+
+### Endre temaet «Klimaendringer»
+Alt står i `content/klima/`:
+- **Delene** står i `del1-hva.js` … `del6-myter.js`, og det som kan klikkes i tegningene i `strukturer.js`.
+- **De interaktive sidene** står i `sider.js`: karbonmodellen (`karbonmodell`), drivhusmodellen (`drivhusmodell`), grafene (`malinger`), før og etter (`forogetter`), klimafotavtrykket (`fotavtrykk`), lesesiden (`lesing`) og de to forsøkene (`forsokdrivhus`, `forsokhav`). Her kan du endre tekstene, knappene i «Hva skjer hvis?» (`presets`), tallene i fotavtrykket og spørsmålene på lesesiden.
+- **Bytte artikkel på lesesiden:** Kopier én av artiklene under `articles` i `sider.js` og fyll inn tittel, lenke, forfatter, dato og spørsmål.
+- **Måledataene** (`data.js`) lages av `tools/klima/make-data.py`. Kjør skriptet på nytt hvert år for å få nye CO₂- og temperaturtall.
 
 ### Endre feltarbeidsskjemaet
 Åpne `content/okologi/feltarbeid.js`. Skjemaet (`sheet`) består av seksjoner med felter: `text` (én linje), `area` (flere linjer) og `table` (tabell med `cols` og antall `rows`). Ingenting eleven skriver, blir lagret.

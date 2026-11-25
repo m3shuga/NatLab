@@ -4,7 +4,7 @@
 > Den oppsummerer alt som er gjort, alle beslutninger og hvordan koden er bygd opp.
 > **Oppdater filen** når noe viktig endres (nye temaer, nye beslutninger, ny arbeidsmåte).
 
-Sist oppdatert: 25. november 2026 (siden «Om NatLab» lagt til, gren `forbedringer`).
+Sist oppdatert: 25. november 2026 (nytt tema «Klimaendringer», gren `claude/neste-forbedring`).
 
 ---
 
@@ -16,7 +16,7 @@ Et interaktivt, tospråklig (bokmål + engelsk) oppslagsverk i naturfag for **8.
 - **Forhåndsvisning (Claude-artefakt, privat for læreren):** https://claude.ai/artifact/HbuMhfWj8N6svDi3G9X7kF
   Oppdateres med Artifact-verktøyet (`url` = lenken over; les den først med `action: "read"`). Artefakten trenger en egen `index.html` *uten* `<!doctype>/<html>/<head>/<body>` (kun `<title>`, `<meta name="claude:viewport-fit-sides" content="cover">`, `<link rel="stylesheet" href="assets/css/natlab.css">` + innholdet i `<body>`), og alle andre filer sendes via `files`.
 - **Navn:** «NatLab» er et midlertidig navn.
-- **Utgivelser:** v1.0 = «Celler og virus». v1.1 = «Økologi og økosystemer» + rettelser (release note skrevet på norsk). Neste: «Historien om Jorda» (ikke utgitt ennå).
+- **Utgivelser:** v1.0 = «Celler og virus». v1.1 = «Økologi og økosystemer» + rettelser (release note skrevet på norsk). v1.2 = «Historien om Jorda». v1.3 = «Om NatLab». Neste: «Klimaendringer».
 
 ## 2. Om læreren og klassen (viktig for alle valg)
 
@@ -30,7 +30,7 @@ Et interaktivt, tospråklig (bokmål + engelsk) oppslagsverk i naturfag for **8.
 ## 3. Faste beslutninger
 
 - **Språk:** bokmål (standard) + engelsk; bytte på hver side. Alle tekster `{ nb: '…', en: '…' }`.
-- **Opphavsrett:** © André Espelid (læreren som lager NatLab), alle rettigheter forbeholdt – også kildekoden. Gratis bruk for elever og lærere i undervisning; lenking er velkommen. Kontakt: lektorespelid@gmail.com. Står på siden «Om NatLab» (`#om`, tekst i `content/om.js`). Tegninger er IKKE fritt gjenbrukbare (gammel formulering rettet i CREDITS/ui.js). Tredjepartsmateriale (foto, kartdata) følger egne lisenser.
+- **Opphavsrett:** © André Espelid (læreren som lager NatLab), alle rettigheter forbeholdt – også kildekoden. Gratis bruk for elever og lærere i undervisning; lenking er velkommen. Kontakt: lektorespelid@gmail.com. Står på siden «Om NatLab» (`#om`, tekst i `content/om.js`) – knapp «Om» i toppmenyen (til høyre for Ordliste) + lenke i bunnteksten, ingen snarvei på forsiden. Tegninger er IKKE fritt gjenbrukbare (gammel formulering rettet i CREDITS/ui.js). Tredjepartsmateriale (foto, kartdata) følger egne lisenser.
 - **Personvern/GDPR:** ingen innlogging, ingen sporing, ingen cookies, ingen tredjeparts-forespørsler (fonter er selvhostet, YouTube er bare lenker – aldri innebygd). Bare innstillinger lagres i `localStorage`. Quiz/øving/feltskjema lagres ikke.
 - **Lesestøtte:** opplesing (Web Speech API, `nb-NO`), OpenDyslexic som valg, tekststørrelse, linjeavstand, lyst/mørkt tema.
 - **Nivåer:** «Grunnleggende» og «Gå dypere». Vis aldri en «Gå dypere»-kontroll som ikke endrer noe.
@@ -43,7 +43,7 @@ Et interaktivt, tospråklig (bokmål + engelsk) oppslagsverk i naturfag for **8.
 
 ## 4. Arkitektur (ingen byggesteg – vanilla JS, klassiske `<script>`-tagger)
 
-`index.html` laster i denne rekkefølgen: `assets/js/core.js` → `content/ui.js`, `content/temaer.js`, `content/personvern.js` → alle filer per tema → appen (`readaloud, diagram, article, activities, activities-extra, foodweb, quiz, scale, geo, pages, app`). Fungerer også ved dobbeltklikk på `index.html` (file://).
+`index.html` laster i denne rekkefølgen: `assets/js/core.js` → `content/ui.js`, `content/temaer.js`, `content/personvern.js`, `content/om.js` → alle filer per tema → appen (`readaloud, diagram, article, activities, activities-extra, foodweb, quiz, scale, geo, klima, pages, app`). Fungerer også ved dobbeltklikk på `index.html` (file://).
 
 ### Kode (`assets/js/`)
 | Fil | Ansvar |
@@ -57,6 +57,7 @@ Et interaktivt, tospråklig (bokmål + engelsk) oppslagsverk i naturfag for **8.
 | `quiz.js` | typer `mc`, `tf`, `multi`, `hotspot` (svar kan være liste) |
 | `scale.js` | «Hvor små er de?» (celler) |
 | `geo.js` | `N.geoKit` (projeksjon, rotasjon av kontinenter på kula med kvaternioner, `rots(t)` for tidskartet, bevissoner), `N.geomap` (plategrensekart: lag, områder, eksempler, «Oppdag sammenhengen»), `N.drift` (tidskart med glidebryter/avspilling). Data: `content/jorda/kartdata.js` (`NatLab.geo`) |
+| `klima.js` | Klimaverktøy: sidetypene `carbon` (karbonkretsløp med raskt/langsomt og «Hva skjer hvis?» – `N.carbonProjection`), `greenhouse` (drivhuseffekt med fotoner, glidebryter, is og tilbakekobling – `N.greenhouseTemp`) og `footprint`; grafer `N.klimaChart` (keeling/temperatur/iskjerne); nye artikkelklosser `chart`, `beforeafter`, `claims`, `reading` (helhetslesing) |
 | `pages.js` | alle sider (inkl. `P.about` = «Om NatLab»): forside, tema, kapittel/organisme, `custom` (artikkel / `foodweb` / `fieldwork` / `geomap` / `drift`), øving, quiz, mål, ordliste, personvern, kilder |
 | `app.js` | ruter (hash), topptekst, innstillinger, ordforklaring, opplesingsspiller |
 
@@ -67,6 +68,8 @@ Et interaktivt, tospråklig (bokmål + engelsk) oppslagsverk i naturfag for **8.
 ### Innholdsmodell per tema (`content/<tema>/`)
 `NatLab.topic('<id>')` = `T` med: `title, lead, organisms` (kapitler/prøver: `code, title, sub, size?, lead, art, diagrams?, modelNames, intro, extraTabs, practiceHref, page{goals, keypoints, sections[{id,title,blocks}], resources}`), `structures` (alt som kan klikkes: `name, color, level, what, does, analogy?, fact, foundIn?, tag?, src`), `sources`, `media`, `goals{intro, groups[{title, items[{text, link, level}]}], official[]}`, `glossary`, `quiz`, `quizSets`, `practice{merk, koble, sort, order, grupper, par, nett}`, `pages{…}`, `tools`, `featured`, valgfritt `cardLabel, cardCount, cardsTitle, cardsLead, orgNames, panelLabels, roles, adaptTypes, webs, scale`.
 Nytt tema = ny mappe + `<script>`-linjer i `index.html` + oppføring i `content/temaer.js` (`status: 'klar'`, `art`). Ingen endring i `assets/js` skal være nødvendig (unntak: nye typer interaktive sider, som kartene i jorda).
+
+Utvidelser: `N.pageTypes[type]` gir nye sidetyper (rendres av `P.toolPage`), `N.articleBlocks[navn]` gir nye byggeklosser, `N.articleWirers` kobler dem opp. Quizen stokker svaralternativene (riktig svar står ikke alltid først; `keepOrder: true` hindrer stokking).
 
 Ekstra i `diagram.js`: en tegning med `animated: true` (SVG/SMIL-animasjon) får en pauseknapp i utforskeren (pauses automatisk ved `prefers-reduced-motion`). Lenken `#<tema>-<kapittel>-del-<del>` åpner nå riktig tegning selv om delen ikke er i den første tegningen.
 
@@ -88,6 +91,9 @@ Hovedeksempel skogen på Østlandet, sammenlignet med Norskehavet. Fem deler (id
 ### Tema 3: Historien om Jorda (`content/jorda/`)
 Seks deler (id-er): `geologi` (scene `geolog`: geologenes metoder), `oppbygning` (`lagene` + stegfigur `jordablirtil`), `platetektonikk` (seks tverrsnitt: `spredning`, `rift`, `subduksjon`, `oybue`, `kollisjon`, `transform`), `verdenskart` (animert `konveksjon` med pauseknapp), `bergarter` (`granitt`, `kretslop`), `wegener` (`gondwana`: bevisene tegnet på Pangea). Sider: `kart` (type `geomap`: PB2002-plategrenser, jordskjelvsoner, 13 vulkaner, 5 jordskjelv, 7 eksempler, 5 steg «Oppdag sammenhengen», utsnitt Verden/Stillehavet/Atlanterhavet/Asia/Norden) og `tidskart` (type `drift`: 250 mill. år → i dag, hendelser, klikk på kontinent, fossil-/bevissoner `T.zones`). 60 quizspørsmål, øving (`merk`, `grupper`, `par`, `order`), 9 foto. Kartdata genereres med `tools/kart/` (Natural Earth + PB2002, ODC-By). Kompetansemålet om geologi mangler i `maal.js` (udir.no var blokkert) – læreren må legge det inn.
 
+### Tema 4: Klimaendringer (`content/klima/`)
+Seks deler (id-er): `hva` (tegning `klimasystem`), `karbon` (`karbonkretslop`, animert, med `flows`/tall), `arsaker` (`drivhuseffekt`, animert, + trinnfigur `tilbakekobling`), `normalt` (`naturlige`), `losninger` (`losninger`), `myter` (`malinger`). Sider i `sider.js`: `karbonmodell` (carbon), `drivhusmodell` (greenhouse), `malinger` (3 grafer), `forogetter` (før/etter-bilder), `fotavtrykk` (footprint), `lesing` (helhetslesing av to forskning.no-artikler: Rondane-furustokker 20.11.2026 og utslipp 2026, + partnerinnhold), `forsokdrivhus` og `forsokhav` (fieldwork, trinnfigur `forsokglass`). Data i `data.js` fra `tools/klima/make-data.py` (NOAA Mauna Loa, NOAA NCEI temperatur omregnet til 1850–1900, iskjerner Bereiter 2015/Jouzel 2007). 69 quizspørsmål, øving (`merk` 6 tegninger, `grupper` 3, `par` 3, `order` 3), 13 foto. Eureka!-begrepene fra læreren er brukt (absorpsjon, refleksjon, tilbakekoblingsmekanisme, forsuring av havet …). Tester: `tools/tests/run-klima.js`, `klima-interact.js`.
+
 ### Kommende (vises som «Kommer snart»)
 `universet`, `fysikk` (Fysikk og energi), `labarbeid`.
 
@@ -98,7 +104,9 @@ Seks deler (id-er): `geologi` (scene `geolog`: geologenes metoder), `oppbygning`
 - [ ] Eventuelt engelsk release note / release note for v1.0.
 - [ ] Læreren skal gå gjennom `CONTENT-REVIEW.md` og `LINKS-TO-VERIFY.md`.
 - [ ] Opplesing er bare testet i hodeløs nettleser – må testes på ekte MacBook/Windows/mobil.
-- [ ] «Historien om Jorda»: læreren legger inn kompetansemålet om geologi i `content/jorda/maal.js` og går gjennom punktene i `CONTENT-REVIEW.md`.
+- [ ] «Historien om Jorda» og «Klimaendringer»: læreren går gjennom punktene i `CONTENT-REVIEW.md`.
+- [ ] Klima: Statped-siden om helhetslesing er bak Cloudflare og kunne ikke leses – be læreren lime inn teksten og tilpass lesesiden. Oppdater 2025/2026-tallene (Global Carbon Project) og kjør `tools/klima/make-data.py` hvert år.
+- [x] Kompetansemålet om platetektonikk lagt inn i `content/jorda/maal.js` (fra LK20-PDF-en læreren sendte).
 - [ ] Mulige tillegg i jorda: flere foto (marmor, glimmer, vulkanutbrudd), øving «merk» på flere tverrsnitt, egen test `tools/tests/jorda-interact.js`.
 
 ## 7. Arbeidsmåte og testing
@@ -111,7 +119,9 @@ Seks deler (id-er): `geologi` (scene `geolog`: geologenes metoder), `oppbygning`
 6. **Leveranse:** commit med tydelig melding, lag `natlab.zip` (uten `.git`), oppdater artefakten, og gi læreren en kort liste over hvilke filer som er endret + hvordan de lastes opp på GitHub.
 
 ### Nettverk og verktøy
-- Miljøet «Default» tillater: `commons.wikimedia.org`, `upload.wikimedia.org`, `snl.no`, `sml.snl.no`, `ndla.no`, `www.fhi.no`, `www.youtube.com`, `raw.githubusercontent.com` (+ pakkeregistre). `udir.no` og `wikipedia.org` er blokkert. Andre verter krever godkjenning.
+- Miljøet «Default» tillater i tillegg (lagt til 25.11.2026): `www.forskning.no`, `www.statped.no` (Cloudflare blokkerer likevel), `gml.noaa.gov`, `data.giss.nasa.gov` (svarer ikke), `www.ncei.noaa.gov`, `www.miljodirektoratet.no`, `www.ipcc.ch` (PDF-er går, HTML gir 403), `ourworldindata.org` (CSV: `/grapher/<slug>.csv`), `science.nasa.gov`, `www.met.no`, `www.ssb.no`. `udir.no` og `kildekompasset.no` er også tillatt nå. Det finnes også et eget personlig miljø «NatLab» med de samme vertene.
+- Wikimedia: `thumb.wikimedia.org` er blokkert. Bygg miniatyr-URL selv: `upload.wikimedia.org/wikipedia/commons/thumb/<a>/<ab>/<fil>/960px-<fil>` (standardbredder 500/960/1920), én nedlasting om gangen med ~35 s pause.
+- Miljøet «Default» tillater: `commons.wikimedia.org`, `upload.wikimedia.org`, `snl.no`, `sml.snl.no`, `ndla.no`, `www.fhi.no`, `www.youtube.com`, `raw.githubusercontent.com` (+ pakkeregistre). `wikipedia.org` er blokkert. Andre verter krever godkjenning.
 - **SNL har et søke-API:** `https://snl.no/api/v1/search?query=…&limit=3` gir `permalink` og `article_url_json`; `https://snl.no/<permalink>.json` gir hele artikkelen (`xhtml_body`). Raskeste måte å faktasjekke på.
 - YouTube-søk: `https://www.youtube.com/results?search_query=…` (videoId + tittel i HTML-en), sjekk så med oEmbed.
 - **Wikimedia Commons** gir ofte 429 (for mange forespørsler). Søke-API-et er nesten ubrukelig, men **søkesiden** `https://commons.wikimedia.org/w/index.php?search=…&title=Special:MediaSearch&type=image` fungerer (filnavn i `title="File:…"`). Filsidene (`/wiki/File:…`) gir lisens (`licensetpl_short`; HTML-en skriver `licensetpl&#95;short`) og opphav (`fileinfotpl_aut`). Bruk en User-Agent med prosjekt-URL; direkte nedlasting av miniatyrbilder fra `upload.wikimedia.org/wikipedia/commons/thumb/<md5[0]>/<md5[:2]>/<fil>/1280px-<fil>` (eller 960px) med ~40 s pause fungerer best. Lisens/opphav må registreres.
