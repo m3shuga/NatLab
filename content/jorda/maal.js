@@ -3,9 +3,8 @@
    ---------------------------------------------------------------------
    DENNE FILEN ER LAGET FOR AT LÆREREN SKAL KUNNE ENDRE DEN.
    Se forklaringen øverst i content/celler/maal.js.
-   OBS: Kompetansemålene under «official» er hentet fra de andre temaene.
-   Læreren bør sjekke læreplanen (udir.no/lk20/NAT01-05) og legge til
-   det kompetansemålet som passer best for geologi.
+   Kompetansemålene under «official» er fra læreplanen i naturfag
+   (LK20, NAT01-05), etter 10. trinn.
    ===================================================================== */
 NatLab.topic('jorda').goals = {
 
@@ -68,8 +67,9 @@ NatLab.topic('jorda').goals = {
 
   /* Kompetansemål fra læreplanen (LK20, NAT01-05, etter 10. trinn).
      Den norske teksten er den offisielle. Den engelske er vår oversettelse.
-     LÆREREN: Legg til kompetansemålet om geologi/jordas oppbygning fra udir.no. */
+     Kompetansemålet om platetektonikk er hentet fra læreplanen (PDF fra læreren). */
   official: [
+    { nb: 'bruke platetektonikkteorien til å forklare jordas utvikling over tid og gi eksempler på observasjoner som støtter teorien', en: 'use the theory of plate tectonics to explain the development of the Earth over time and give examples of observations that support the theory' },
     { nb: 'bruke og lage modeller for å forutsi eller beskrive naturfaglige prosesser og systemer og gjøre rede for modellenes styrker og begrensninger', en: 'use and create models to predict or describe scientific processes and systems and explain the strengths and limitations of the models' },
     { nb: 'stille spørsmål og lage hypoteser om naturfaglige fenomener, identifisere avhengige og uavhengige variabler og samle data for å finne svar', en: 'ask questions and make hypotheses about scientific phenomena, identify dependent and independent variables and collect data to find answers' }
   ]
